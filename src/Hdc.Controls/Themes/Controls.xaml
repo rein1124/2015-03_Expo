@@ -1,0 +1,24 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <ResourceDictionary.MergedDictionaries>
+<!--        <ResourceDictionary  Source="Controls\StripColumn.xaml"></ResourceDictionary>-->
+        <ResourceDictionary  Source="Controls\NumberPad.xaml"></ResourceDictionary>
+        <ResourceDictionary  Source="Controls\VirtualKeyboard.xaml"></ResourceDictionary>
+<!--        <ResourceDictionary  Source="Controls\AskDialog.xaml"></ResourceDictionary>-->
+<!--        <ResourceDictionary  Source="Controls\MessageDialog.xaml"></ResourceDictionary>-->
+<!--        <ResourceDictionary  Source="Controls\Cip3StripColumnStyle.xaml"></ResourceDictionary>-->
+<!--        <ResourceDictionary  Source="Controls\CurveEditor.xaml"></ResourceDictionary>-->
+        <ResourceDictionary  Source="Controls\PressUnitMonitor.xaml"></ResourceDictionary>
+        <ResourceDictionary  Source="Controls\ValueBar.xaml"></ResourceDictionary>
+        <ResourceDictionary  Source="Controls\Lamp.xaml"></ResourceDictionary>
+        <ResourceDictionary  Source="Controls\ScreenContainerStyle.xaml"></ResourceDictionary>
+        <ResourceDictionary  Source="Controls\ValueIndicator.xaml"></ResourceDictionary>
+        <ResourceDictionary  Source="Controls\SwitchButton.xaml"></ResourceDictionary>
+        <ResourceDictionary  Source="Controls\WebPressSideSelector.xaml"></ResourceDictionary>
+        <ResourceDictionary  Source="Controls\WebPressPart.xaml"></ResourceDictionary>
+        <ResourceDictionary  Source="Controls\WebPressUnitSelectorLine.xaml"></ResourceDictionary>
+        <ResourceDictionary  Source="Controls\DockItemsControl.xaml"></ResourceDictionary>
+        <ResourceDictionary  Source="Controls\ValueTypeSelector.xaml"></ResourceDictionary>
+        <ResourceDictionary  Source="Controls\DisplaySinlgeItemSelector\DisplaySinlgeItemSelectorStyle.xaml"></ResourceDictionary>
+    </ResourceDictionary.MergedDictionaries>
+</ResourceDictionary>

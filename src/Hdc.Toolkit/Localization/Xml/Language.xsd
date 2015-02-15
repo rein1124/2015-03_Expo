@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <xs:element name="XLanguage">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element maxOccurs="unbounded" minOccurs="0" name="Entries" type="XLanguageEntry"
+                />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:complexType name="XLanguageEntry">
+        <xs:attribute name="Original" type="xs:string"/>
+        <xs:attribute name="Translation" type="xs:string"/>
+    </xs:complexType>
+</xs:schema>

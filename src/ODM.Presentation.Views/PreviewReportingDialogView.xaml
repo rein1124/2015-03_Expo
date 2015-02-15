@@ -1,0 +1,259 @@
+﻿<UserControl x:Class="ODM.Presentation.Views.Reporting.PreviewReportingDialogView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             mc:Ignorable="d"
+             d:DesignHeight="1080"
+             d:DesignWidth="1920"
+             xmlns:hdc="http://schemas.hdcrd.com/xaml">
+    <GroupBox Style="{DynamicResource {x:Static hdc:GroupBoxStyles.DialogGroupBoxStyleKey}}"
+              Header="{hdc:LocalizeExtension 报表预览}"
+              HorizontalAlignment="Stretch"
+              VerticalAlignment="Stretch"
+              Margin="120">
+        <DockPanel>
+            <StackPanel HorizontalAlignment="Center"
+                        DockPanel.Dock="Bottom"
+                        Orientation="Horizontal">
+                <Button Width="{DynamicResource {x:Static hdc:HdcLayout.ButtonSideLengthLargeKey}}"
+                        Height="{DynamicResource {x:Static hdc:HdcLayout.ButtonSideLengthLargeKey}}"
+                        Margin="{DynamicResource {x:Static hdc:HdcLayout.MarginLargeKey}}"
+                        Style="{DynamicResource EllipseButtonStyle}"
+                        Command="{Binding ConfirmCommand}"
+                        HorizontalContentAlignment="Stretch"
+                        VerticalContentAlignment="Stretch">
+                    <Border Background="{hdc:DrawingBrushExtension N017}"></Border>
+                </Button>
+                <FrameworkElement Width="40"></FrameworkElement>
+                <Button Width="{DynamicResource {x:Static hdc:HdcLayout.ButtonSideLengthLargeKey}}"
+                        Height="{DynamicResource {x:Static hdc:HdcLayout.ButtonSideLengthLargeKey}}"
+                        Margin="{DynamicResource {x:Static hdc:HdcLayout.MarginLargeKey}}"
+                        Style="{DynamicResource EllipseButtonStyle}"
+                        Command="{Binding CancelCommand}"
+                        HorizontalContentAlignment="Stretch"
+                        VerticalContentAlignment="Stretch">
+                    <Border Background="{hdc:DrawingBrushExtension N016}"></Border>
+                </Button>
+            </StackPanel>
+            <DockPanel DockPanel.Dock="Top">
+                <Button Width="{DynamicResource {x:Static hdc:HdcLayout.ButtonSideLengthLargeKey}}"
+                        Height="{DynamicResource {x:Static hdc:HdcLayout.ButtonSideLengthLargeKey}}"
+                        Margin="{DynamicResource {x:Static hdc:HdcLayout.MarginLargeKey}}"
+                        Style="{DynamicResource EllipseButtonStyle}"
+                        Command="{Binding SelectExportFileNameCommand}"
+                        HorizontalContentAlignment="Stretch"
+                        VerticalContentAlignment="Stretch"
+                        DockPanel.Dock="Right">
+                    <Border Background="{hdc:DrawingBrushExtension N029}"></Border>
+                </Button>
+                <Border Width="{DynamicResource {x:Static hdc:HdcLayout.ButtonSideLengthM2Key}}"
+                        Height="{DynamicResource {x:Static hdc:HdcLayout.ButtonSideLengthLargeKey}}"
+                        Margin="{DynamicResource {x:Static hdc:HdcLayout.MarginLargeKey}}">
+                    <TextBlock Text="导出路径"
+                               TextElement.FontSize="{DynamicResource {x:Static hdc:HdcFonts.FontSizeLargeKey}}"
+                               VerticalAlignment="Center"
+                               TextAlignment="Right"></TextBlock>
+                </Border>
+                <TextBox IsReadOnly="True"
+                         Text="{Binding ExportFileName}"
+                         Height="{DynamicResource {x:Static hdc:HdcLayout.ButtonSideLengthLargeKey}}"
+                         Margin="{DynamicResource {x:Static hdc:HdcLayout.MarginKey}}"></TextBox>
+            </DockPanel>
+            <UniformGrid Columns="3">
+                <StackPanel TextElement.FontSize="{DynamicResource {x:Static hdc:HdcFonts.FontSizeLargeKey}}"
+                            Margin="{DynamicResource {x:Static hdc:HdcLayout.MarginLargeKey}}">
+                    <TextBlock Text="基本信息"
+                               TextElement.FontSize="{DynamicResource {x:Static hdc:HdcFonts.FontSizeExtraLargeKey}}"
+                               Margin="{DynamicResource {x:Static hdc:HdcLayout.MarginLargeKey}}"></TextBlock>
+                    <StackPanel Orientation="Horizontal"
+                                HorizontalAlignment="Center">
+                        <Border Width="{DynamicResource {x:Static hdc:HdcLayout.ButtonSideLengthM2Key}}"
+                                Height="{DynamicResource {x:Static hdc:HdcLayout.ButtonSideLengthKey}}"
+                                Margin="{DynamicResource {x:Static hdc:HdcLayout.MarginKey}}">
+                            <TextBlock Text="报表标题"
+                                       VerticalAlignment="Center"
+                                       TextAlignment="Right"></TextBlock>
+                        </Border>
+                        <TextBox IsReadOnly="True"
+                                 Text="{Binding Report.Title}"
+                                 Width="{DynamicResource {x:Static hdc:HdcLayout.ButtonSideLengthM4Key}}"
+                                 Height="{DynamicResource {x:Static hdc:HdcLayout.ButtonSideLengthKey}}"
+                                 Margin="{DynamicResource {x:Static hdc:HdcLayout.MarginKey}}"></TextBox>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal"
+                                HorizontalAlignment="Center">
+                        <Border Width="{DynamicResource {x:Static hdc:HdcLayout.ButtonSideLengthM2Key}}"
+                                Height="{DynamicResource {x:Static hdc:HdcLayout.ButtonSideLengthKey}}"
+                                Margin="{DynamicResource {x:Static hdc:HdcLayout.MarginKey}}">
+                            <TextBlock Text="开始时间"
+                                       VerticalAlignment="Center"
+                                       TextAlignment="Right"></TextBlock>
+                        </Border>
+                        <TextBox IsReadOnly="True"
+                                 Text="{Binding Report.FromDateTime, StringFormat={}{0:yyyy-MM-dd}}"
+                                 Width="{DynamicResource {x:Static hdc:HdcLayout.ButtonSideLengthM4Key}}"
+                                 Height="{DynamicResource {x:Static hdc:HdcLayout.ButtonSideLengthKey}}"
+                                 Margin="{DynamicResource {x:Static hdc:HdcLayout.MarginKey}}"></TextBox>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal"
+                                HorizontalAlignment="Center">
+                        <Border Width="{DynamicResource {x:Static hdc:HdcLayout.ButtonSideLengthM2Key}}"
+                                Height="{DynamicResource {x:Static hdc:HdcLayout.ButtonSideLengthKey}}"
+                                Margin="{DynamicResource {x:Static hdc:HdcLayout.MarginKey}}">
+                            <TextBlock Text="结束时间"
+                                       VerticalAlignment="Center"
+                                       TextAlignment="Right"></TextBlock>
+                        </Border>
+                        <TextBox IsReadOnly="True"
+                                 Text="{Binding Report.ToDateTime, StringFormat={}{0:yyyy-MM-dd}}"
+                                 Width="{DynamicResource {x:Static hdc:HdcLayout.ButtonSideLengthM4Key}}"
+                                 Height="{DynamicResource {x:Static hdc:HdcLayout.ButtonSideLengthKey}}"
+                                 Margin="{DynamicResource {x:Static hdc:HdcLayout.MarginKey}}"></TextBox>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal"
+                                HorizontalAlignment="Center">
+                        <Border Width="{DynamicResource {x:Static hdc:HdcLayout.ButtonSideLengthM2Key}}"
+                                Height="{DynamicResource {x:Static hdc:HdcLayout.ButtonSideLengthKey}}"
+                                Margin="{DynamicResource {x:Static hdc:HdcLayout.MarginKey}}">
+                            <TextBlock Text="总数"
+                                       VerticalAlignment="Center"
+                                       TextAlignment="Right"></TextBlock>
+                        </Border>
+                        <TextBox IsReadOnly="True"
+                                 Text="{Binding Report.TotalCount}"
+                                 Width="{DynamicResource {x:Static hdc:HdcLayout.ButtonSideLengthM4Key}}"
+                                 Height="{DynamicResource {x:Static hdc:HdcLayout.ButtonSideLengthKey}}"
+                                 Margin="{DynamicResource {x:Static hdc:HdcLayout.MarginKey}}"></TextBox>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal"
+                                HorizontalAlignment="Center">
+                        <Border Width="{DynamicResource {x:Static hdc:HdcLayout.ButtonSideLengthM2Key}}"
+                                Height="{DynamicResource {x:Static hdc:HdcLayout.ButtonSideLengthKey}}"
+                                Margin="{DynamicResource {x:Static hdc:HdcLayout.MarginKey}}">
+                            <TextBlock Text="良品数"
+                                       VerticalAlignment="Center"
+                                       TextAlignment="Right"></TextBlock>
+                        </Border>
+                        <TextBox IsReadOnly="True"
+                                 Text="{Binding Report.AcceptedCount}"
+                                 Width="{DynamicResource {x:Static hdc:HdcLayout.ButtonSideLengthM4Key}}"
+                                 Height="{DynamicResource {x:Static hdc:HdcLayout.ButtonSideLengthKey}}"
+                                 Margin="{DynamicResource {x:Static hdc:HdcLayout.MarginKey}}"></TextBox>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal"
+                                HorizontalAlignment="Center">
+                        <Border Width="{DynamicResource {x:Static hdc:HdcLayout.ButtonSideLengthM2Key}}"
+                                Height="{DynamicResource {x:Static hdc:HdcLayout.ButtonSideLengthKey}}"
+                                Margin="{DynamicResource {x:Static hdc:HdcLayout.MarginKey}}">
+                            <TextBlock Text="废品数"
+                                       VerticalAlignment="Center"
+                                       TextAlignment="Right"></TextBlock>
+                        </Border>
+                        <TextBox IsReadOnly="True"
+                                 Text="{Binding Report.RejectedCount}"
+                                 Width="{DynamicResource {x:Static hdc:HdcLayout.ButtonSideLengthM4Key}}"
+                                 Height="{DynamicResource {x:Static hdc:HdcLayout.ButtonSideLengthKey}}"
+                                 Margin="{DynamicResource {x:Static hdc:HdcLayout.MarginKey}}"></TextBox>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal"
+                                HorizontalAlignment="Center">
+                        <Border Width="{DynamicResource {x:Static hdc:HdcLayout.ButtonSideLengthM2Key}}"
+                                Height="{DynamicResource {x:Static hdc:HdcLayout.ButtonSideLengthKey}}"
+                                Margin="{DynamicResource {x:Static hdc:HdcLayout.MarginKey}}">
+                            <TextBlock Text="废品率"
+                                       VerticalAlignment="Center"
+                                       TextAlignment="Right"></TextBlock>
+                        </Border>
+                        <TextBox IsReadOnly="True"
+                                 Text="{Binding Report.RejectedRate}"
+                                 Width="{DynamicResource {x:Static hdc:HdcLayout.ButtonSideLengthM4Key}}"
+                                 Height="{DynamicResource {x:Static hdc:HdcLayout.ButtonSideLengthKey}}"
+                                 Margin="{DynamicResource {x:Static hdc:HdcLayout.MarginKey}}"></TextBox>
+                    </StackPanel>
+                </StackPanel>
+                <DockPanel Margin="{DynamicResource {x:Static hdc:HdcLayout.MarginLargeKey}}">
+                    <TextBlock Text="缺陷统计"
+                               TextElement.FontSize="{DynamicResource {x:Static hdc:HdcFonts.FontSizeExtraLargeKey}}"
+                               Margin="{DynamicResource {x:Static hdc:HdcLayout.MarginLargeKey}}"
+                               DockPanel.Dock="Top"></TextBlock>
+                    <DataGrid ItemsSource="{Binding Report.DefectInfoStatisticDatas}"
+                              AutoGenerateColumns="False"
+                              x:Name="DefectInfoStatisticDatasDataGrid"
+                              Margin="{DynamicResource {x:Static hdc:HdcLayout.MarginLargeKey}}"
+                              RowHeight="{DynamicResource {x:Static hdc:HdcLayout.ButtonSideLengthKey}}"
+                              FontSize="{DynamicResource {x:Static hdc:HdcFonts.FontSizeLargeKey}}"
+                              SelectionMode="Single"
+                              IsReadOnly="True"
+                              SelectedItem="{Binding SelectedWorkpieceInfo}">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="缺陷类型"
+                                                Binding="{Binding DefectType}"
+                                                Width="120" />
+                            <DataGridTextColumn Header="缺陷总数"
+                                                Binding="{Binding DefectCount}"
+                                                Width="120" />
+                            <DataGridTextColumn Header="缺陷比例"
+                                                Binding="{Binding DefectRate}"
+                                                Width="120" />
+                        </DataGrid.Columns>
+                    </DataGrid>
+                    <!--                    <ListBox ItemsSource="{Binding DefectInfoStatisticDatas}"-->
+                    <!--                             Margin="{DynamicResource {x:Static hdc:HdcLayout.MarginLargeKey}}">-->
+                    <!--                        <ListBox.ItemTemplate>-->
+                    <!--                            <DataTemplate>-->
+                    <!--                                <Border>-->
+                    <!--                                    <TextBlock Text="{Binding DefectType}"></TextBlock>-->
+                    <!--                                </Border>-->
+                    <!--                            </DataTemplate>-->
+                    <!--                        </ListBox.ItemTemplate>-->
+                    <!--                    </ListBox>-->
+                </DockPanel>
+                <DockPanel Margin="{DynamicResource {x:Static hdc:HdcLayout.MarginLargeKey}}">
+                    <TextBlock Text="缺陷列表"
+                               TextElement.FontSize="{DynamicResource {x:Static hdc:HdcFonts.FontSizeExtraLargeKey}}"
+                               Margin="{DynamicResource {x:Static hdc:HdcLayout.MarginLargeKey}}"
+                               DockPanel.Dock="Top"></TextBlock>
+                    <!--                    <ListBox ItemsSource="{Binding RejectedDrumInfos}"-->
+                    <!--                             Margin="{DynamicResource {x:Static hdc:HdcLayout.MarginLargeKey}}"></ListBox>-->
+                    <DataGrid ItemsSource="{Binding Report.RejectedDrumInfos}"
+                              AutoGenerateColumns="False"
+                              x:Name="DefectInfosDataGrid"
+                              Margin="{DynamicResource {x:Static hdc:HdcLayout.MarginLargeKey}}"
+                              RowHeight="{DynamicResource {x:Static hdc:HdcLayout.ButtonSideLengthKey}}"
+                              FontSize="{DynamicResource {x:Static hdc:HdcFonts.FontSizeLargeKey}}"
+                              SelectionMode="Single"
+                              IsReadOnly="True"
+                              SelectedItem="{Binding SelectedDefectInfo}">
+                        <!--                        <i:Interaction.Triggers>-->
+                        <!--                            <i:EventTrigger EventName="SelectionChanged">-->
+                        <!--                                <i:InvokeCommandAction Command="{Binding SelectDefectInfoCommand}"-->
+                        <!--                                                       CommandParameter="{Binding SelectedItem, ElementName=DefectInfosDataGrid}" />-->
+                        <!--                            </i:EventTrigger>-->
+                        <!--                        </i:Interaction.Triggers>-->
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="ID"
+                                                Binding="{Binding Id}"
+                                                Width="80"></DataGridTextColumn>
+                            <DataGridTextColumn Header="缺陷类型"
+                                                Binding="{Binding DefectType}"
+                                                Width="120"></DataGridTextColumn>
+                            <DataGridTextColumn Header="X坐标"
+                                                Binding="{Binding X}"
+                                                Width="80"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Y坐标"
+                                                Binding="{Binding Y}"
+                                                Width="80"></DataGridTextColumn>
+                            <DataGridTextColumn Header="宽"
+                                                Binding="{Binding Width}"
+                                                Width="80"></DataGridTextColumn>
+                            <DataGridTextColumn Header="高"
+                                                Binding="{Binding Height}"
+                                                Width="80"></DataGridTextColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </DockPanel>
+            </UniformGrid>
+        </DockPanel>
+    </GroupBox>
+</UserControl>

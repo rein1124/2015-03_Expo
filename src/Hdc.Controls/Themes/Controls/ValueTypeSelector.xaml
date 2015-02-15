@@ -1,0 +1,338 @@
+﻿<ResourceDictionary
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                    xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+                    xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions"
+                    mc:Ignorable="d"
+                    xmlns:local="clr-namespace:Hdc.Controls">
+    <!-- Resource dictionary entries should be defined here. -->
+    <!--    Controls-->
+    <Style TargetType="{x:Type local:ValueTypeSelector}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type local:ValueTypeSelector}">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="SwitchStates">
+                                <VisualState x:Name="Active">
+                                    <Storyboard>
+                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)"
+											Storyboard.TargetName="activeLayer">
+                                            <EasingDoubleKeyFrame KeyTime="0"
+												Value="1" />
+                                        </DoubleAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Deactive">
+                                    <Storyboard>
+                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)"
+											Storyboard.TargetName="activeLayer">
+                                            <EasingDoubleKeyFrame KeyTime="0"
+												Value="0" />
+                                        </DoubleAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal" />
+                                <VisualState x:Name="MouseOver" />
+                                <VisualState x:Name="Pressed">
+                                    <Storyboard>
+                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)"
+											Storyboard.TargetName="pressedLayer">
+                                            <EasingDoubleKeyFrame KeyTime="0"
+												Value="0.4" />
+                                        </DoubleAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Disabled" />
+                            </VisualStateGroup>
+                            <VisualStateGroup x:Name="FocusStates"/>
+                            <VisualStateGroup x:Name="ValidationStates"/>
+                        </VisualStateManager.VisualStateGroups>
+                        <Grid x:Name="left">
+
+                            <Border BorderBrush="{TemplateBinding BorderBrush}"
+								BorderThickness="{TemplateBinding BorderThickness}"
+								d:LayoutOverrides="Width, Height"
+								Background="{TemplateBinding Background}" />
+                            <Border x:Name="activeLayer"
+								BorderBrush="{DynamicResource {x:Static local:HdcBrushes.AccentBrushKey}}"
+								BorderThickness="{TemplateBinding BorderThickness}"
+								Opacity="0"
+								Background="{DynamicResource {x:Static local:HdcBrushes.AccentBrushKey}}" />
+                            <Border x:Name="contentLayer"
+								BorderBrush="{TemplateBinding BorderBrush}"
+								BorderThickness="{TemplateBinding BorderThickness}">
+                                <Grid>
+<!--                                    <ContentPresenter RecognizesAccessKey="True"-->
+<!--										Content="{TemplateBinding Content}"-->
+<!--										ContentTemplate="{TemplateBinding ContentTemplate}"-->
+<!--										ContentStringFormat="{TemplateBinding ContentStringFormat}"-->
+<!--										Margin="{TemplateBinding Padding}"-->
+<!--										HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"-->
+<!--										VerticalAlignment="{TemplateBinding VerticalContentAlignment}"-->
+<!--										SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />-->
+                                </Grid>
+                            </Border>
+                            <Border x:Name="pressedLayer"
+								BorderBrush="Black"
+								Opacity="0"
+								Background="{DynamicResource {x:Static local:HdcBrushes.AccentBrushKey}}" />
+                        </Grid>
+                        <Grid x:Name="right" Grid.Column="1">
+
+                            <Border BorderBrush="{TemplateBinding BorderBrush}"
+								BorderThickness="{TemplateBinding BorderThickness}"
+								d:LayoutOverrides="Width, Height"
+								Background="{TemplateBinding Background}" />
+                            <Border x:Name="activeLayer1"
+								BorderBrush="{DynamicResource {x:Static local:HdcBrushes.AccentBrushKey}}"
+								BorderThickness="{TemplateBinding BorderThickness}"
+								Opacity="0"
+								Background="{DynamicResource {x:Static local:HdcBrushes.AccentBrushKey}}" />
+                            <Border x:Name="contentLayer1"
+								BorderBrush="{TemplateBinding BorderBrush}"
+								BorderThickness="{TemplateBinding BorderThickness}">
+                                <Grid>
+<!--                                    <ContentPresenter RecognizesAccessKey="True"-->
+<!--										Content="{TemplateBinding Content}"-->
+<!--										ContentTemplate="{TemplateBinding ContentTemplate}"-->
+<!--										ContentStringFormat="{TemplateBinding ContentStringFormat}"-->
+<!--										Margin="{TemplateBinding Padding}"-->
+<!--										HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"-->
+<!--										VerticalAlignment="{TemplateBinding VerticalContentAlignment}"-->
+<!--										SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />-->
+                                </Grid>
+                            </Border>
+                            <Border x:Name="pressedLayer1"
+								BorderBrush="Black"
+								Opacity="0"
+								Background="{DynamicResource {x:Static local:HdcBrushes.AccentBrushKey}}" />
+                        </Grid>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="HorizontalContentAlignment"
+			Value="Center" />
+        <Setter Property="VerticalContentAlignment"
+			Value="Center" />
+        <Setter Property="Background"
+			Value="{DynamicResource {x:Static local:HdcBrushes.BackgroundBrushKey}}" />
+        <Setter Property="BorderBrush"
+			Value="{DynamicResource {x:Static local:HdcBrushes.BorderBrushKey}}" />
+        <Setter Property="BorderThickness"
+			Value="0" />
+        <Setter Property="Foreground"
+			Value="{DynamicResource {x:Static local:HdcBrushes.ForegroundBrushKey}}" />
+        <Setter Property="FontSize"
+			Value="{DynamicResource {x:Static local:HdcFonts.FontSizeMediumKey}}" />
+        <Setter Property="Padding"
+			Value="2" />
+        <Setter Property="Background"
+			Value="{DynamicResource {x:Static local:HdcBrushes.ControlBrushKey}}" />
+        <Setter Property="SnapsToDevicePixels"
+			Value="True" />
+    </Style>
+    <Style x:Key="SwitchButtonStyle1" TargetType="{x:Type local:SwitchButton}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type local:SwitchButton}">
+                    <Grid>
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="SwitchStates">
+                                <VisualState x:Name="Active">
+                                    <Storyboard>
+                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)"
+											Storyboard.TargetName="activeLayer">
+                                            <EasingDoubleKeyFrame KeyTime="0"
+												Value="1" />
+                                        </DoubleAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Deactive">
+                                    <Storyboard>
+                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)"
+											Storyboard.TargetName="activeLayer">
+                                            <EasingDoubleKeyFrame KeyTime="0"
+												Value="0" />
+                                        </DoubleAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal" />
+                                <VisualState x:Name="MouseOver" />
+                                <VisualState x:Name="Pressed">
+                                    <Storyboard>
+                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)"
+											Storyboard.TargetName="pressedLayer">
+                                            <EasingDoubleKeyFrame KeyTime="0"
+												Value="0.4" />
+                                        </DoubleAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Disabled" />
+                            </VisualStateGroup>
+                            <VisualStateGroup x:Name="FocusStates"/>
+                            <VisualStateGroup x:Name="ValidationStates"/>
+                        </VisualStateManager.VisualStateGroups>
+
+                        <Border BorderBrush="{TemplateBinding BorderBrush}"
+							BorderThickness="{TemplateBinding BorderThickness}"
+							d:LayoutOverrides="Width, Height"
+							Background="{TemplateBinding Background}" CornerRadius="5,0,0,5" />
+                        <Border x:Name="activeLayer"
+							BorderBrush="{DynamicResource {x:Static local:HdcBrushes.AccentBrushKey}}"
+							BorderThickness="{TemplateBinding BorderThickness}"
+							Opacity="0"
+							Background="{DynamicResource {x:Static local:HdcBrushes.AccentBrushKey}}" CornerRadius="5,0,0,5" />
+                        <Border x:Name="contentLayer"
+							BorderBrush="{TemplateBinding BorderBrush}"
+							BorderThickness="{TemplateBinding BorderThickness}">
+                            <Grid>
+                                <ContentPresenter RecognizesAccessKey="True"
+									Content="{TemplateBinding Content}"
+									ContentTemplate="{TemplateBinding ContentTemplate}"
+									ContentStringFormat="{TemplateBinding ContentStringFormat}"
+									Margin="{TemplateBinding Padding}"
+									HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+									VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+									SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+                            </Grid>
+                        </Border>
+                        <Border x:Name="pressedLayer"
+							BorderBrush="Black"
+							Opacity="0"
+							Background="{DynamicResource {x:Static local:HdcBrushes.AccentBrushKey}}" />
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="HorizontalContentAlignment"
+			Value="Center" />
+        <Setter Property="VerticalContentAlignment"
+			Value="Center" />
+        <Setter Property="Background"
+			Value="{DynamicResource {x:Static local:HdcBrushes.BackgroundBrushKey}}" />
+        <Setter Property="BorderBrush"
+			Value="{DynamicResource {x:Static local:HdcBrushes.BorderBrushKey}}" />
+        <Setter Property="BorderThickness"
+			Value="0" />
+        <Setter Property="Foreground"
+			Value="{DynamicResource {x:Static local:HdcBrushes.ForegroundBrushKey}}" />
+        <Setter Property="FontSize"
+			Value="{DynamicResource {x:Static local:HdcFonts.FontSizeMediumKey}}" />
+        <Setter Property="Padding"
+			Value="2" />
+        <Setter Property="Background"
+			Value="{DynamicResource {x:Static local:HdcBrushes.ControlBrushKey}}" />
+        <Setter Property="SnapsToDevicePixels"
+			Value="True" />
+    </Style>
+    <Style x:Key="SwitchButtonStyle2" TargetType="{x:Type local:SwitchButton}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type local:SwitchButton}">
+                    <Grid>
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="SwitchStates">
+                                <VisualState x:Name="Active">
+                                    <Storyboard>
+                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)"
+											Storyboard.TargetName="activeLayer">
+                                            <EasingDoubleKeyFrame KeyTime="0"
+												Value="1" />
+                                        </DoubleAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Deactive">
+                                    <Storyboard>
+                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)"
+											Storyboard.TargetName="activeLayer">
+                                            <EasingDoubleKeyFrame KeyTime="0"
+												Value="0" />
+                                        </DoubleAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal" />
+                                <VisualState x:Name="MouseOver" />
+                                <VisualState x:Name="Pressed">
+                                    <Storyboard>
+                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)"
+											Storyboard.TargetName="pressedLayer">
+                                            <EasingDoubleKeyFrame KeyTime="0"
+												Value="0.4" />
+                                        </DoubleAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Disabled" />
+                            </VisualStateGroup>
+                            <VisualStateGroup x:Name="FocusStates"/>
+                            <VisualStateGroup x:Name="ValidationStates"/>
+                        </VisualStateManager.VisualStateGroups>
+
+                        <Border BorderBrush="{TemplateBinding BorderBrush}"
+							BorderThickness="{TemplateBinding BorderThickness}"
+							d:LayoutOverrides="Width, Height"
+							Background="{TemplateBinding Background}" CornerRadius="0,5,5,0" />
+                        <Border x:Name="activeLayer"
+							BorderBrush="{DynamicResource {x:Static local:HdcBrushes.AccentBrushKey}}"
+							BorderThickness="{TemplateBinding BorderThickness}"
+							Opacity="0"
+							Background="{DynamicResource {x:Static local:HdcBrushes.AccentBrushKey}}" CornerRadius="0,5,5,0" />
+                        <Border x:Name="contentLayer"
+							BorderBrush="{TemplateBinding BorderBrush}"
+							BorderThickness="{TemplateBinding BorderThickness}">
+                            <Grid>
+                                <ContentPresenter RecognizesAccessKey="True"
+									Content="{TemplateBinding Content}"
+									ContentTemplate="{TemplateBinding ContentTemplate}"
+									ContentStringFormat="{TemplateBinding ContentStringFormat}"
+									Margin="{TemplateBinding Padding}"
+									HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+									VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+									SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+                            </Grid>
+                        </Border>
+                        <Border x:Name="pressedLayer"
+							BorderBrush="Black"
+							Opacity="0"
+							Background="{DynamicResource {x:Static local:HdcBrushes.AccentBrushKey}}" />
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="HorizontalContentAlignment"
+			Value="Center" />
+        <Setter Property="VerticalContentAlignment"
+			Value="Center" />
+        <Setter Property="Background"
+			Value="{DynamicResource {x:Static local:HdcBrushes.BackgroundBrushKey}}" />
+        <Setter Property="BorderBrush"
+			Value="{DynamicResource {x:Static local:HdcBrushes.BorderBrushKey}}" />
+        <Setter Property="BorderThickness"
+			Value="0" />
+        <Setter Property="Foreground"
+			Value="{DynamicResource {x:Static local:HdcBrushes.ForegroundBrushKey}}" />
+        <Setter Property="FontSize"
+			Value="{DynamicResource {x:Static local:HdcFonts.FontSizeMediumKey}}" />
+        <Setter Property="Padding"
+			Value="2" />
+        <Setter Property="Background"
+			Value="{DynamicResource {x:Static local:HdcBrushes.ControlBrushKey}}" />
+        <Setter Property="SnapsToDevicePixels"
+			Value="True" />
+    </Style>
+
+
+</ResourceDictionary>

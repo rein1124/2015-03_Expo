@@ -1,0 +1,17 @@
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Uploadftp">
+  <PropertyGroup>
+  </PropertyGroup>
+   <ItemGroup>
+    <AllFiles Include="_publish\*"></AllFiles>
+     </ItemGroup>
+   <UsingTask TaskName="MSBuild.Community.Tasks.FtpUpload" AssemblyFile="sln\.build\MSBuild.Community.Tasks.dll" />
+<Target Name="Uploadftp">
+  <FtpUpload
+    Condition="'%(Identity)'=='%(Identity)'"
+    LocalFile="@(AllFiles->'%(FullPath)')"
+    RemoteUri="$(UploadUri)"
+    RemoteFiles="@(AllFiles->'%(filename)%(Extension)')"
+    Username="ci"
+    Password="ci"/>
+  </Target>
+</Project>

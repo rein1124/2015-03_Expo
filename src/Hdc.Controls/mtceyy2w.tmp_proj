@@ -1,0 +1,245 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{28619ECB-99C1-463C-9BEB-98EE74D594E7}</ProjectGuid>
+    <OutputType>library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Hdc.Controls</RootNamespace>
+    <AssemblyName>Hdc.Controls</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <ExpressionBlendVersion>5.2.30810.0</ExpressionBlendVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BindableConstantDialog.cs" />
+    <Compile Include="BindableDialog.cs" />
+    <Compile Include="BrowserViewModel.cs" />
+    <Compile Include="Charts\Arrow.cs" />
+    <Compile Include="Charts\ChartValue.cs" />
+    <Compile Include="Charts\Coordinate.cs" />
+    <Compile Include="Charts\LineBar.cs" />
+    <Compile Include="Charts\OneDimensionCoordinateChart.cs" />
+    <Compile Include="Charts\RelativeXLine.cs" />
+    <Compile Include="Charts\RelativeXTickbar.cs" />
+    <Compile Include="Charts\RelativeYLine.cs" />
+    <Compile Include="Charts\RelativeYTickbar.cs" />
+    <Compile Include="Charts\TwoDimensionCoordinateChart.cs" />
+    <Compile Include="Charts\XLine.cs" />
+    <Compile Include="Charts\XTickbar.cs" />
+    <Compile Include="Charts\YLine.cs" />
+    <Compile Include="Charts\YTickbar.cs" />
+    <Compile Include="ContentSwitchButton.cs" />
+    <Compile Include="Converters.cs" />
+    <Compile Include="CustomItemsControl.cs" />
+    <Compile Include="DialogBase.cs" />
+    <Compile Include="DialogChildWindow.cs" />
+    <Compile Include="DirectButton.cs" />
+    <Compile Include="Direction.cs" />
+    <Compile Include="DockItemsControl.cs" />
+    <Compile Include="HeaderButton.cs" />
+    <Compile Include="Lamp.cs" />
+    <Compile Include="ModelessWindow.xaml.cs">
+      <DependentUpon>ModelessWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Orientation4.cs" />
+    <Compile Include="DisplaySinlgeItemPanel.cs" />
+    <Compile Include="DisplaySinlgeItemSelector.cs" />
+    <Compile Include="DropDownButton.cs" />
+    <Compile Include="Effects\GrayScaleEffect.cs" />
+    <Compile Include="FolderBrowserDialog.xaml.cs">
+      <DependentUpon>FolderBrowserDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PartType.cs" />
+    <Compile Include="PressSideMonitor.cs" />
+    <Compile Include="Resources\Styles\TabControlStyles.cs" />
+    <Compile Include="Themes\CornerRadiusButton.cs" />
+    <Compile Include="ValueTypeSelector.cs" />
+    <Compile Include="WebPressPart.cs" />
+    <Compile Include="WebPressSideSelector.cs" />
+    <Compile Include="PressUnitMonitor.cs" />
+    <Compile Include="PressUnitStateKeys.cs" />
+    <Compile Include="PressUnitSuspendedState.cs" />
+    <Compile Include="PressUnitSuspendedStateConverter.cs" />
+    <Compile Include="PressUnitType.cs" />
+    <Compile Include="Resources\HdcBrushes.cs" />
+    <Compile Include="Resources\HdcColors.cs" />
+    <Compile Include="Resources\HdcFonts.cs" />
+    <Compile Include="Resources\HdcItemsPanelTemplates.cs" />
+    <Compile Include="FolderViewModel.cs" />
+    <Compile Include="JobStatus.cs" />
+    <Compile Include="JobStatusIndicator.cs" />
+    <Compile Include="LampWarning.cs" />
+    <Compile Include="MathExtension.cs" />
+    <Compile Include="AskDialog.cs" />
+    <Compile Include="CurveEditor.cs" />
+    <Compile Include="MessageDialog.cs" />
+    <Compile Include="Dialog.cs" />
+    <Compile Include="LogicalTreeWalker.cs" />
+    <Compile Include="MessagePrompt.cs" />
+    <Compile Include="NumberPadDoubleValue.cs" />
+    <Compile Include="NumberPadInt32.cs" />
+    <Compile Include="NumberPadZeroDot.cs" />
+    <Compile Include="Resources\HdcLayout.cs" />
+    <Compile Include="Resources\HdcPalette.cs" />
+    <Compile Include="QuestionPrompt.cs" />
+    <Compile Include="Resources\Styles\GroupBoxStyles.cs" />
+    <Compile Include="Resources\Styles\WindowStyles.cs" />
+    <Compile Include="ScreenContainer.cs" />
+    <Compile Include="SelectionToggleButton.cs" />
+    <Compile Include="SprocketControl.cs" />
+    <Compile Include="StringExtensions.cs" />
+    <Compile Include="SwapMode.cs" />
+    <Compile Include="SwapModeIndicator.cs" />
+    <Compile Include="SwitchButton.cs" />
+    <Compile Include="TemplateFinder.cs" />
+    <Compile Include="ToggleSwitch.cs" />
+    <Compile Include="TunnelDataTemplateSelector.cs" />
+    <Compile Include="IDialogableView.cs" />
+    <Compile Include="NumberPad.cs" />
+    <Compile Include="NumeralTickBar.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StripColumn.cs" />
+    <Compile Include="TreeViewSelector.cs" />
+    <Compile Include="ValueBar.cs" />
+    <Compile Include="ValueEditor.cs" />
+    <Compile Include="ValueIndicatedButton.cs" />
+    <Compile Include="ValueIndicatedButton2.cs" />
+    <Compile Include="ValueIndicator.cs" />
+    <Compile Include="ViewModelBase.cs" />
+    <Compile Include="VirtualKey.cs" />
+    <Compile Include="VirtualKeyboard.cs" />
+    <AppDesigner Include="Properties\" />
+    <Compile Include="WebPressUnitSelectorLine.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Effects\GrayScaleEffect.fx" />
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Hdc.Toolkit.Prism\Hdc.Toolkit.Prism.csproj">
+      <Project>{ad8670c0-923c-4f6e-b38f-37c81fa163bc}</Project>
+      <Name>Hdc.Toolkit.Prism</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\Hdc.Toolkit\Hdc.Toolkit.csproj">
+      <Project>{2aeabe20-5e8f-4310-a228-66bd3d434683}</Project>
+      <Name>Hdc.Toolkit</Name>
+      <Private>False</Private>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ItemGroup>
+    <ReferencePath Include="D:\PPG\PPG-2.x(svn)-BR\bin\Debug\Hdc.Toolkit.dll" />
+    <ReferencePath Include="D:\PPG\PPG-2.x(svn)-BR\bin\Debug\Hdc.Toolkit.Prism.dll" />
+    <ReferencePath Include="D:\PPG\PPG-2.x(svn)-BR\lib\Expression.Blend.SDK\Microsoft.Expression.Interactions.dll" />
+    <ReferencePath Include="D:\PPG\PPG-2.x(svn)-BR\lib\Prism\Microsoft.Practices.Prism.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\mscorlib.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\PresentationCore.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\PresentationFramework.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Core.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Data.DataSetExtensions.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Data.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.dll" />
+    <ReferencePath Include="D:\PPG\PPG-2.x(svn)-BR\lib\Expression.Blend.SDK\System.Windows.Interactivity.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Xaml.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Xml.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Xml.Linq.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\WindowsBase.dll" />
+    <ReferencePath Include="D:\PPG\PPG-2.x(svn)-BR\lib\ExtendedWPFToolkit\WPFToolkit.Extended.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="D:\PPG\PPG-2.x(svn)-BR\src\Hdc.Controls\obj\Debug\ModelessWindow.g.cs" />
+    <Compile Include="D:\PPG\PPG-2.x(svn)-BR\src\Hdc.Controls\obj\Debug\FolderBrowserDialog.g.cs" />
+    <Compile Include="D:\PPG\PPG-2.x(svn)-BR\src\Hdc.Controls\obj\Debug\GeneratedInternalTypeHelper.g.cs" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,174 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:System="clr-namespace:System;assembly=mscorlib"
+                    xmlns:hdc="http://schemas.hdcrd.com/xaml"
+                    xmlns:local="clr-namespace:Hdc.Controls">
+    <System:Double x:Key="{x:Static local:HdcLayout.ButtonSideLengthKey}">56</System:Double>
+    <System:Double x:Key="{x:Static local:HdcLayout.ButtonSideLengthM1Key}">56</System:Double>
+    <System:Double x:Key="{x:Static local:HdcLayout.ButtonSideLengthM2Key}">116</System:Double>
+    <System:Double x:Key="{x:Static local:HdcLayout.ButtonSideLengthM3Key}">176</System:Double>
+    <System:Double x:Key="{x:Static local:HdcLayout.ButtonSideLengthM4Key}">236</System:Double>
+
+    <System:Double x:Key="{x:Static local:HdcLayout.ButtonSideLengthWithBorderKey}">60</System:Double>
+    <System:Double x:Key="{x:Static local:HdcLayout.ButtonSideLengthM1WithBorderKey}">60</System:Double>
+    <System:Double x:Key="{x:Static local:HdcLayout.ButtonSideLengthM2WithBorderKey}">120</System:Double>
+    <System:Double x:Key="{x:Static local:HdcLayout.ButtonSideLengthM3WithBorderKey}">180</System:Double>
+    <System:Double x:Key="{x:Static local:HdcLayout.ButtonSideLengthM4WithBorderKey}">240</System:Double>
+
+    <System:Double x:Key="{x:Static local:HdcLayout.ButtonSideLengthSmallKey}">36</System:Double>
+    <System:Double x:Key="{x:Static local:HdcLayout.ButtonSideLengthSmallM1Key}">36</System:Double>
+    <System:Double x:Key="{x:Static local:HdcLayout.ButtonSideLengthSmallM2Key}">76</System:Double>
+    <System:Double x:Key="{x:Static local:HdcLayout.ButtonSideLengthSmallM3Key}">116</System:Double>
+    <System:Double x:Key="{x:Static local:HdcLayout.ButtonSideLengthSmallM4Key}">156</System:Double>
+    <System:Double x:Key="{x:Static local:HdcLayout.ButtonSideLengthSmallM5Key}">196</System:Double>
+    <System:Double x:Key="{x:Static local:HdcLayout.ButtonSideLengthSmallM6Key}">236</System:Double>
+
+    <System:Double x:Key="{x:Static local:HdcLayout.ButtonSideLengthSmallWithBorderKey}">40</System:Double>
+    <System:Double x:Key="{x:Static local:HdcLayout.ButtonSideLengthSmallM1WithBorderKey}">40</System:Double>
+    <System:Double x:Key="{x:Static local:HdcLayout.ButtonSideLengthSmallM2WithBorderKey}">80</System:Double>
+    <System:Double x:Key="{x:Static local:HdcLayout.ButtonSideLengthSmallM3WithBorderKey}">120</System:Double>
+    <System:Double x:Key="{x:Static local:HdcLayout.ButtonSideLengthSmallM4WithBorderKey}">160</System:Double>
+    <System:Double x:Key="{x:Static local:HdcLayout.ButtonSideLengthSmallM5WithBorderKey}">200</System:Double>
+    <System:Double x:Key="{x:Static local:HdcLayout.ButtonSideLengthSmallM6WithBorderKey}">240</System:Double>
+
+    <System:Double x:Key="{x:Static local:HdcLayout.ButtonSideLengthTinyKey}">26</System:Double>
+    <System:Double x:Key="{x:Static local:HdcLayout.ButtonSideLengthTinyM1Key}">26</System:Double>
+    <System:Double x:Key="{x:Static local:HdcLayout.ButtonSideLengthTinyM2Key}">56</System:Double>
+    <System:Double x:Key="{x:Static local:HdcLayout.ButtonSideLengthTinyM3Key}">86</System:Double>
+    <System:Double x:Key="{x:Static local:HdcLayout.ButtonSideLengthTinyM4Key}">116</System:Double>
+
+    <System:Double x:Key="{x:Static local:HdcLayout.ButtonSideLengthTinyWithBorderKey}">30</System:Double>
+    <System:Double x:Key="{x:Static local:HdcLayout.ButtonSideLengthTinyM1WithBorderKey}">30</System:Double>
+    <System:Double x:Key="{x:Static local:HdcLayout.ButtonSideLengthTinyM2WithBorderKey}">60</System:Double>
+    <System:Double x:Key="{x:Static local:HdcLayout.ButtonSideLengthTinyM3WithBorderKey}">90</System:Double>
+    <System:Double x:Key="{x:Static local:HdcLayout.ButtonSideLengthTinyM4WithBorderKey}">120</System:Double>
+
+    <System:Double x:Key="{x:Static local:HdcLayout.ButtonSideLengthLargeKey}">76</System:Double>
+    <System:Double x:Key="{x:Static local:HdcLayout.ButtonSideLengthLargeM1Key}">76</System:Double>
+    <System:Double x:Key="{x:Static local:HdcLayout.ButtonSideLengthLargeM2Key}">156</System:Double>
+    <System:Double x:Key="{x:Static local:HdcLayout.ButtonSideLengthLargeM3Key}">236</System:Double>
+    <System:Double x:Key="{x:Static local:HdcLayout.ButtonSideLengthLargeM4Key}">316</System:Double>
+
+    <System:Double x:Key="{x:Static local:HdcLayout.ButtonSideLengthLargeWithBorderKey}">80</System:Double>
+    <System:Double x:Key="{x:Static local:HdcLayout.ButtonSideLengthLargeM1WithBorderKey}">80</System:Double>
+    <System:Double x:Key="{x:Static local:HdcLayout.ButtonSideLengthLargeM2WithBorderKey}">160</System:Double>
+    <System:Double x:Key="{x:Static local:HdcLayout.ButtonSideLengthLargeM3WithBorderKey}">240</System:Double>
+    <System:Double x:Key="{x:Static local:HdcLayout.ButtonSideLengthLargeM4WithBorderKey}">320</System:Double>
+
+    <Thickness x:Key="{x:Static local:HdcLayout.MarginKey}">2</Thickness>
+    <Thickness x:Key="{x:Static local:HdcLayout.MarginLeftKey}">2,0,0,0</Thickness>
+    <Thickness x:Key="{x:Static local:HdcLayout.MarginTopKey}">0,2,0,0</Thickness>
+    <Thickness x:Key="{x:Static local:HdcLayout.MarginRightKey}">0,0,2,0</Thickness>
+    <Thickness x:Key="{x:Static local:HdcLayout.MarginBottomKey}">0,0,0,2</Thickness>
+    <Thickness x:Key="{x:Static local:HdcLayout.MarginVerticalKey}">0,2,0,2</Thickness>
+    <Thickness x:Key="{x:Static local:HdcLayout.MarginHorizontalKey}">2,0,2,0</Thickness>
+    <Thickness x:Key="{x:Static local:HdcLayout.MarginLeftTopKey}">2,2,0,0</Thickness>
+    <Thickness x:Key="{x:Static local:HdcLayout.MarginLeftBottomKey}">2,0,0,2</Thickness>
+    <Thickness x:Key="{x:Static local:HdcLayout.MarginRightTopKey}">0,2,2,0</Thickness>
+    <Thickness x:Key="{x:Static local:HdcLayout.MarginRightBottomKey}">0,0,2,2</Thickness>
+
+    <Thickness x:Key="{x:Static local:HdcLayout.MarginLargeKey}">8</Thickness>
+    <Thickness x:Key="{x:Static local:HdcLayout.MarginLargeLeftKey}">8,0,0,0</Thickness>
+    <Thickness x:Key="{x:Static local:HdcLayout.MarginLargeTopKey}">0,8,0,0</Thickness>
+    <Thickness x:Key="{x:Static local:HdcLayout.MarginLargeRightKey}">0,0,8,0</Thickness>
+    <Thickness x:Key="{x:Static local:HdcLayout.MarginLargeBottomKey}">0,0,0,8</Thickness>
+    <Thickness x:Key="{x:Static local:HdcLayout.MarginLargeVerticalKey}">0,8,0,8</Thickness>
+    <Thickness x:Key="{x:Static local:HdcLayout.MarginLargeHorizontalKey}">8,0,8,0</Thickness>
+    <Thickness x:Key="{x:Static local:HdcLayout.MarginLargeLeftTopKey}">8,8,0,0</Thickness>
+    <Thickness x:Key="{x:Static local:HdcLayout.MarginLargeLeftBottomKey}">8,0,0,8</Thickness>
+    <Thickness x:Key="{x:Static local:HdcLayout.MarginLargeRightTopKey}">0,8,8,0</Thickness>
+    <Thickness x:Key="{x:Static local:HdcLayout.MarginLargeRightBottomKey}">0,0,8,8</Thickness>
+
+    <Thickness x:Key="{x:Static local:HdcLayout.MarginExtraLargeKey}">16</Thickness>
+    <Thickness x:Key="{x:Static local:HdcLayout.MarginExtraLargeLeftKey}">16,0,0,0</Thickness>
+    <Thickness x:Key="{x:Static local:HdcLayout.MarginExtraLargeTopKey}">0,16,0,0</Thickness>
+    <Thickness x:Key="{x:Static local:HdcLayout.MarginExtraLargeRightKey}">0,0,16,0</Thickness>
+    <Thickness x:Key="{x:Static local:HdcLayout.MarginExtraLargeBottomKey}">0,0,0,16</Thickness>
+    <Thickness x:Key="{x:Static local:HdcLayout.MarginExtraLargeVerticalKey}">0,16,0,16</Thickness>
+    <Thickness x:Key="{x:Static local:HdcLayout.MarginExtraLargeHorizontalKey}">16,0,16,0</Thickness>
+    <Thickness x:Key="{x:Static local:HdcLayout.MarginExtraLargeLeftTopKey}">16,16,0,0</Thickness>
+    <Thickness x:Key="{x:Static local:HdcLayout.MarginExtraLargeLeftBottomKey}">16,0,0,16</Thickness>
+    <Thickness x:Key="{x:Static local:HdcLayout.MarginExtraLargeRightTopKey}">0,16,16,0</Thickness>
+    <Thickness x:Key="{x:Static local:HdcLayout.MarginExtraLargeRightBottomKey}">0,0,16,16</Thickness>
+
+    <Thickness x:Key="{x:Static local:HdcLayout.MarginExtraExtraLargeKey}">48</Thickness>
+    <Thickness x:Key="{x:Static local:HdcLayout.MarginExtraExtraLargeLeftKey}">48,0,0,0</Thickness>
+    <Thickness x:Key="{x:Static local:HdcLayout.MarginExtraExtraLargeTopKey}">0,48,0,0</Thickness>
+    <Thickness x:Key="{x:Static local:HdcLayout.MarginExtraExtraLargeRightKey}">0,0,48,0</Thickness>
+    <Thickness x:Key="{x:Static local:HdcLayout.MarginExtraExtraLargeBottomKey}">0,0,0,48</Thickness>
+    <Thickness x:Key="{x:Static local:HdcLayout.MarginExtraExtraLargeVerticalKey}">0,48,0,48</Thickness>
+    <Thickness x:Key="{x:Static local:HdcLayout.MarginExtraExtraLargeHorizontalKey}">48,0,48,0</Thickness>
+    <Thickness x:Key="{x:Static local:HdcLayout.MarginExtraExtraLargeLeftTopKey}">48,48,0,0</Thickness>
+    <Thickness x:Key="{x:Static local:HdcLayout.MarginExtraExtraLargeLeftBottomKey}">48,0,0,48</Thickness>
+    <Thickness x:Key="{x:Static local:HdcLayout.MarginExtraExtraLargeRightTopKey}">0,48,48,0</Thickness>
+    <Thickness x:Key="{x:Static local:HdcLayout.MarginExtraExtraLargeRightBottomKey}">0,0,48,48</Thickness>
+
+    <Thickness x:Key="{x:Static local:HdcLayout.PaddingKey}">2</Thickness>
+    <Thickness x:Key="{x:Static local:HdcLayout.PaddingLeftKey}">2,0,0,0</Thickness>
+    <Thickness x:Key="{x:Static local:HdcLayout.PaddingTopKey}">0,2,0,0</Thickness>
+    <Thickness x:Key="{x:Static local:HdcLayout.PaddingRightKey}">0,0,2,0</Thickness>
+    <Thickness x:Key="{x:Static local:HdcLayout.PaddingBottomKey}">0,0,0,2</Thickness>
+    <Thickness x:Key="{x:Static local:HdcLayout.PaddingVerticalKey}">0,2,0,2</Thickness>
+    <Thickness x:Key="{x:Static local:HdcLayout.PaddingHorizontalKey}">2,0,2,0</Thickness>
+    <Thickness x:Key="{x:Static local:HdcLayout.PaddingLeftTopKey}">2,2,0,0</Thickness>
+    <Thickness x:Key="{x:Static local:HdcLayout.PaddingLeftBottomKey}">2,0,0,2</Thickness>
+    <Thickness x:Key="{x:Static local:HdcLayout.PaddingRightTopKey}">0,2,2,0</Thickness>
+    <Thickness x:Key="{x:Static local:HdcLayout.PaddingRightBottomKey}">0,0,2,2</Thickness>
+
+    <Thickness x:Key="{x:Static local:HdcLayout.PaddingLargeKey}">8</Thickness>
+    <Thickness x:Key="{x:Static local:HdcLayout.PaddingLargeLeftKey}">8,0,0,0</Thickness>
+    <Thickness x:Key="{x:Static local:HdcLayout.PaddingLargeTopKey}">0,8,0,0</Thickness>
+    <Thickness x:Key="{x:Static local:HdcLayout.PaddingLargeRightKey}">0,0,8,0</Thickness>
+    <Thickness x:Key="{x:Static local:HdcLayout.PaddingLargeBottomKey}">0,0,0,8</Thickness>
+    <Thickness x:Key="{x:Static local:HdcLayout.PaddingLargeVerticalKey}">0,8,0,8</Thickness>
+    <Thickness x:Key="{x:Static local:HdcLayout.PaddingLargeHorizontalKey}">8,0,8,0</Thickness>
+    <Thickness x:Key="{x:Static local:HdcLayout.PaddingLargeLeftTopKey}">8,8,0,0</Thickness>
+    <Thickness x:Key="{x:Static local:HdcLayout.PaddingLargeLeftBottomKey}">8,0,0,8</Thickness>
+    <Thickness x:Key="{x:Static local:HdcLayout.PaddingLargeRightTopKey}">0,8,8,0</Thickness>
+    <Thickness x:Key="{x:Static local:HdcLayout.PaddingLargeRightBottomKey}">0,0,8,8</Thickness>
+
+    <Thickness x:Key="{x:Static local:HdcLayout.PaddingExtraLargeKey}">16</Thickness>
+    <Thickness x:Key="{x:Static local:HdcLayout.PaddingExtraLargeLeftKey}">16,0,0,0</Thickness>
+    <Thickness x:Key="{x:Static local:HdcLayout.PaddingExtraLargeTopKey}">0,16,0,0</Thickness>
+    <Thickness x:Key="{x:Static local:HdcLayout.PaddingExtraLargeRightKey}">0,0,16,0</Thickness>
+    <Thickness x:Key="{x:Static local:HdcLayout.PaddingExtraLargeBottomKey}">0,0,0,16</Thickness>
+    <Thickness x:Key="{x:Static local:HdcLayout.PaddingExtraLargeVerticalKey}">0,16,0,16</Thickness>
+    <Thickness x:Key="{x:Static local:HdcLayout.PaddingExtraLargeHorizontalKey}">16,0,16,0</Thickness>
+    <Thickness x:Key="{x:Static local:HdcLayout.PaddingExtraLargeLeftTopKey}">16,16,0,0</Thickness>
+    <Thickness x:Key="{x:Static local:HdcLayout.PaddingExtraLargeLeftBottomKey}">16,0,0,16</Thickness>
+    <Thickness x:Key="{x:Static local:HdcLayout.PaddingExtraLargeRightTopKey}">0,16,16,0</Thickness>
+    <Thickness x:Key="{x:Static local:HdcLayout.PaddingExtraLargeRightBottomKey}">0,0,16,16</Thickness>
+
+    <Thickness x:Key="{x:Static local:HdcLayout.PaddingExtraExtraLargeKey}">48</Thickness>
+    <Thickness x:Key="{x:Static local:HdcLayout.PaddingExtraExtraLargeLeftKey}">48,0,0,0</Thickness>
+    <Thickness x:Key="{x:Static local:HdcLayout.PaddingExtraExtraLargeTopKey}">0,48,0,0</Thickness>
+    <Thickness x:Key="{x:Static local:HdcLayout.PaddingExtraExtraLargeRightKey}">0,0,48,0</Thickness>
+    <Thickness x:Key="{x:Static local:HdcLayout.PaddingExtraExtraLargeBottomKey}">0,0,0,48</Thickness>
+    <Thickness x:Key="{x:Static local:HdcLayout.PaddingExtraExtraLargeVerticalKey}">0,48,0,48</Thickness>
+    <Thickness x:Key="{x:Static local:HdcLayout.PaddingExtraExtraLargeHorizontalKey}">48,0,48,0</Thickness>
+    <Thickness x:Key="{x:Static local:HdcLayout.PaddingExtraExtraLargeLeftTopKey}">48,48,0,0</Thickness>
+    <Thickness x:Key="{x:Static local:HdcLayout.PaddingExtraExtraLargeLeftBottomKey}">48,0,0,48</Thickness>
+    <Thickness x:Key="{x:Static local:HdcLayout.PaddingExtraExtraLargeRightTopKey}">0,48,48,0</Thickness>
+    <Thickness x:Key="{x:Static local:HdcLayout.PaddingExtraExtraLargeRightBottomKey}">0,0,48,48</Thickness>
+    
+    <Thickness x:Key="{x:Static local:HdcLayout.StrokeThicknessKey}">2</Thickness>
+    <Thickness x:Key="{x:Static local:HdcLayout.StrokeThicknessThinKey}">1</Thickness>
+    <Thickness x:Key="{x:Static local:HdcLayout.StrokeThicknessThickKey}">4</Thickness>
+
+    <Thickness x:Key="{x:Static local:HdcLayout.BorderThicknessKey}">2</Thickness>
+    <Thickness x:Key="{x:Static local:HdcLayout.BorderThicknessLeftKey}">2,0,0,0</Thickness>
+    <Thickness x:Key="{x:Static local:HdcLayout.BorderThicknessRightKey}">0,0,2,0</Thickness>
+    <Thickness x:Key="{x:Static local:HdcLayout.BorderThicknessTopKey}">0,2,0,2</Thickness>
+    <Thickness x:Key="{x:Static local:HdcLayout.BorderThicknessBottomKey}">0,0,0,2</Thickness>
+
+    <Thickness x:Key="{x:Static local:HdcLayout.BorderThicknessThickKey}">4</Thickness>
+    <Thickness x:Key="{x:Static local:HdcLayout.BorderThicknessThickLeftKey}">4,0,0,0</Thickness>
+    <Thickness x:Key="{x:Static local:HdcLayout.BorderThicknessThickRightKey}">0,0,4,0</Thickness>
+    <Thickness x:Key="{x:Static local:HdcLayout.BorderThicknessThickTopKey}">0,4,0,0</Thickness>
+    <Thickness x:Key="{x:Static local:HdcLayout.BorderThicknessThickBottomKey}">0,0,0,4</Thickness>
+
+    <CornerRadius x:Key="{x:Static local:HdcLayout.ButtonCornerRadiusKey}">0</CornerRadius>
+    <CornerRadius x:Key="{x:Static local:HdcLayout.BorderCornerRadiusKey}">16</CornerRadius>
+
+    <Thickness x:Key="{x:Static local:HdcLayout.ButtonBorderThicknessKey}">1</Thickness>
+</ResourceDictionary>

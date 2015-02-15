@@ -1,0 +1,54 @@
+﻿<Modularity:ModuleCatalog xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                          xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                          xmlns:Modularity="clr-namespace:Microsoft.Practices.Prism.Modularity;assembly=Microsoft.Practices.Prism.Composition">
+
+    <!--********************************************SplashModule********************************************-->
+    
+<!--    <Modularity:ModuleInfo ModuleName="SplashModule"-->
+<!--                           ModuleType="PPYK.Splash.SplashModule, PPYK.Splash"-->
+<!--                           InitializationMode="WhenAvailable" />-->
+
+    <!--********************************************Infrastructure********************************************-->
+
+    <Modularity:ModuleInfo ModuleName="InfrastructureModule"
+                           ModuleType="ODM.Infrastructure.InfrastructureModule, ODM.Infrastructure"
+                           InitializationMode="WhenAvailable" />
+    
+    <!--********************************************Domain********************************************-->
+
+    <Modularity:ModuleInfo ModuleName="DomainModule"
+                           ModuleType="ODM.Domain.DomainModule, ODM.Domain"
+                           InitializationMode="WhenAvailable" />
+
+    <!--******************************************** Application ********************************************-->
+
+    <Modularity:ModuleInfo ModuleName="ApplicationModule"
+                           ModuleType="ODM.Application.ApplicationModule, ODM.Application"
+                           InitializationMode="WhenAvailable" />
+
+    <!--********************************************ViewModels********************************************-->
+
+    <Modularity:ModuleInfo ModuleName="ViewModelsModule"
+                           ModuleType="ODM.Presentation.ViewModels.ViewModelsModule, ODM.Presentation.ViewModels"
+                           InitializationMode="WhenAvailable" />
+
+    <!--********************************************Views********************************************-->
+
+    <Modularity:ModuleInfo ModuleName="ViewsModule"
+                           ModuleType="ODM.Presentation.Views.ViewsModule, ODM.Presentation.Views"
+                           InitializationMode="WhenAvailable" />
+
+    <!--********************************************Boot********************************************-->
+    
+    <Modularity:ModuleInfo ModuleName="BootModule"
+                           ModuleType="ODM.Boot.BootModule, ODM.Boot"
+                           InitializationMode="WhenAvailable" />
+
+
+    <!--********************************************Layout********************************************-->
+    
+    <Modularity:ModuleInfo ModuleName="LayoutModule"
+                           ModuleType="ODM.Layout.LayoutModule, ODM.Layout"
+                           InitializationMode="WhenAvailable" />
+    
+</Modularity:ModuleCatalog>

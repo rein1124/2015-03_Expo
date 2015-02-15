@@ -1,0 +1,19 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:styles="clr-namespace:Hdc.Controls.Styles;assembly=Hdc.Controls">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/ODM.Controls;component/Themes/HdcBrushes.xaml" />
+        <ResourceDictionary Source="/ODM.Controls;component/Themes/Button/EllipseButtonStyle.xaml" />
+        <ResourceDictionary Source="/ODM.Controls;component/Themes/GroupBox/GroupBoxStyle.xaml" />
+        <ResourceDictionary Source="/ODM.Controls;component/Themes/GroupBox/DialogGroupBoxStyle.xaml" />
+        <ResourceDictionary>
+            <Style x:Key="{x:Static styles:WindowStyles.TransparentMaximizedWindowRegionStyleKey}"
+                   TargetType="Window"
+                   BasedOn="{StaticResource {x:Static styles:WindowStyles.TransparentMaximizedWindowRegionStyleKey}}">
+                <Setter Property="Topmost"
+                        Value="False" />
+            </Style>
+        </ResourceDictionary>
+    </ResourceDictionary.MergedDictionaries>
+</ResourceDictionary>

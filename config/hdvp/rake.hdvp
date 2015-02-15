@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hdevelop file_version="1.0" halcon_version="10.0" cs="155936678">
+<procedure name="rake">
+<interface>
+<io>
+<par name="Image"/>
+</io>
+<oo>
+<par name="Regions"/>
+</oo>
+<ic>
+<par name="Elements"/>
+<par name="DetectHeight"/>
+<par name="DetectWidth"/>
+<par name="Sigma"/>
+<par name="Threshold"/>
+<par name="Transition"/>
+<par name="Select"/>
+<par name="Row1"/>
+<par name="Column1"/>
+<par name="Row2"/>
+<par name="Column2"/>
+</ic>
+<oc>
+<par name="ResultRow"/>
+<par name="ResultColumn"/>
+</oc>
+</interface>
+<xb>MJ+iYVz8Yt9ON01Xgk+z91Wh1pWK3p6gNBNua5Kdqo5yDsVLMpUofXdjoEn48vZWv6w2t5yz0uh+KOwsCRIa/aiP8MRdDX+Bq58foQ5g4ZigtAwfo1O3UGUlBm8G5KEIUAp2dB+ipeZGz+ZWZSx8k0RJJy3q4MkF8wBA/myuIyXeVB96voWTJAjxjSKNnvmoYLFNo39q3Y8E2r5u0Tk7v6UJpytBuegDaObB+DT7H352nokTk0TunJndmPnNMOKdToXO16tSDMUCb8+cg8gUBwx1DvRNzyHsVjH+yvulPEGYbHTGnBxLsjJDunD5z6qgbGDENfUmnMbZgNQqEoqiGGnVyMHizt90+RjsMpoh2xX9qXEHVnWaX+1UsY7S/IwwmsLdW7Nihgr3G5n84g0DUBy3asLMd8jf8ab9buI19vZaL0sgd5wBEzstMZQNh//DFObbKCtFloOjukKrot09I3VoQZqhj5Y6QrBJz8wQfZGc2WPNBe0WwJlzBmyLcB04jm3ZN8pc4vMaXbcOTGED/ERSU+QfeQ/hTInR0spJx6fqSRpaKef+wEpPgrAEawIvrDfh+g+mDn55g/4iYTr6+HnvKDXchKKWwToOTSQ0t80t3XLlle5eeU6REzH1RhXc6xZydqmYcEscqQVFzrJ8MNgS9JNtrJ5cEQBnupg1mcpQpVr/Enqt1sPdFGgtBCoBXIfLCQs3OoopMCNN0O/hLq6njEIqHCU6FLfO5X5cglQcBl3fpRWyNmEe84zBJFNpkFmlUl1hXRJOCvmhSe9LxIu8LYUth73iutg8YxFO1zpTgU2i+lozxx2arfbM6ipmIrK7Cz2XsbIwBSqG28BheOsfq1uYnWGb1qgGwm+vTqPQd/xUViwqopZqM5uNiUUMeiMWX2sqBQhrEemwevMSZeAWUcsbw/o6m+PKqFLXE9ElrVFfJgrtUJf9wLee3dKPAAUiS+yG2g8uBRGCIE8VZ9zmIGzkh++3p03gL5ZJ2/yAhmm+wCHmD/Z0NxfF6UlPzMfxKKg3CfqLmawU527xErXlkfDZgWZtgyjSWiNV5lxDsZfYUWynY/FTshuwE7ZTBA1ORFXcImyrK/jHPOccPdrBBr77wgbgbxJci2TChtTXoVksDSku+uimccD3qIdAA98Azb+0hDXpDMSg+pqHLPBjzBnHIaZtIRBaPQNxJDPPyEM6tfbwmUTAxSSCoqsD2b3XACRurGg</xb>
+<docu id="rake">
+<library lang="zh_CN">MVTec Standard Procedures</library>
+<parameters>
+<parameter id="Column1">
+<description lang="zh_CN">检测区域起点的x值</description>
+<sem_type>real</sem_type>
+<type_list>
+<item>real</item>
+</type_list>
+</parameter>
+<parameter id="Column2">
+<description lang="zh_CN">检测区域终点的x值</description>
+<sem_type>real</sem_type>
+<type_list>
+<item>real</item>
+</type_list>
+</parameter>
+<parameter id="DetectHeight">
+<default_value>60</default_value>
+<description lang="zh_CN">卡尺工具的高度</description>
+<multivalue>false</multivalue>
+<sem_type>integer</sem_type>
+<type_list>
+<item>integer</item>
+</type_list>
+<values>
+<item>30</item>
+<item>60</item>
+<item>90</item>
+<item>120</item>
+</values>
+</parameter>
+<parameter id="DetectWidth">
+<default_value>15</default_value>
+<description lang="zh_CN">卡尺工具的宽度</description>
+<multivalue>false</multivalue>
+<sem_type>integer</sem_type>
+<type_list>
+<item>integer</item>
+</type_list>
+<values>
+<item>5</item>
+<item>10</item>
+<item>15</item>
+<item>20</item>
+<item>25</item>
+<item>30</item>
+</values>
+</parameter>
+<parameter id="Elements">
+<default_value>30</default_value>
+<description lang="zh_CN">检测边缘点数</description>
+<multivalue>false</multivalue>
+<sem_type>number</sem_type>
+<type_list>
+<item>integer</item>
+</type_list>
+<value_list>
+<item>1</item>
+<item>5</item>
+<item>10</item>
+<item>20</item>
+<item>30</item>
+</value_list>
+<value_max>100000</value_max>
+<value_min>1</value_min>
+</parameter>
+<parameter id="Image">
+<description lang="zh_CN">输入图像</description>
+<sem_type>image</sem_type>
+<type_list>
+<item>byte</item>
+<item>int1</item>
+<item>int2</item>
+<item>uint2</item>
+<item>int4</item>
+<item>int8</item>
+<item>real</item>
+<item>cyclic</item>
+<item>direction</item>
+<item>complex</item>
+<item>vector_field</item>
+</type_list>
+</parameter>
+<parameter id="Regions">
+<description lang="zh_CN">输出边缘点检测区域及方向</description>
+<sem_type>object</sem_type>
+</parameter>
+<parameter id="ResultColumn">
+<description lang="zh_CN">检测到的边缘点的x坐标数组</description>
+<sem_type>real</sem_type>
+<type_list>
+<item>real</item>
+</type_list>
+<values>
+<item>ResultColumn</item>
+</values>
+</parameter>
+<parameter id="ResultRow">
+<description lang="zh_CN">检测到的边缘点的y坐标数组</description>
+<sem_type>real</sem_type>
+<type_list>
+<item>real</item>
+<item>string</item>
+</type_list>
+<values>
+<item>ResultRow</item>
+</values>
+</parameter>
+<parameter id="Row1">
+<description lang="zh_CN">检测区域起点的y值</description>
+<sem_type>real</sem_type>
+<type_list>
+<item>real</item>
+</type_list>
+</parameter>
+<parameter id="Row2">
+<description lang="zh_CN">检测区域终点的y值</description>
+<sem_type>real</sem_type>
+<type_list>
+<item>real</item>
+</type_list>
+</parameter>
+<parameter id="Select">
+<default_value>'max'</default_value>
+<description lang="zh_CN">first表示选择第一点
+last表示选择最后一点
+max表示选择边缘强度最强点</description>
+<sem_type>string</sem_type>
+<type_list>
+<item>string</item>
+</type_list>
+<values>
+<item>'first'</item>
+<item>'last'</item>
+<item>'max'</item>
+</values>
+</parameter>
+<parameter id="Sigma">
+<default_value>1</default_value>
+<description lang="zh_CN">高斯滤波因子</description>
+<multivalue>false</multivalue>
+<sem_type>real</sem_type>
+<type_list>
+<item>real</item>
+</type_list>
+<values>
+<item>0.5</item>
+<item>1</item>
+<item>1.5</item>
+<item>2</item>
+<item>2.5</item>
+<item>3</item>
+</values>
+</parameter>
+<parameter id="Threshold">
+<default_value>20</default_value>
+<description lang="zh_CN">边缘检测阈值，又叫边缘强度</description>
+<multivalue>false</multivalue>
+<sem_type>real</sem_type>
+<type_list>
+<item>integer</item>
+<item>real</item>
+</type_list>
+<values>
+<item>5</item>
+<item>10</item>
+<item>15</item>
+<item>20</item>
+<item>25</item>
+<item>30</item>
+<item>40</item>
+</values>
+</parameter>
+<parameter id="Transition">
+<default_value>'all'</default_value>
+<description lang="zh_CN">极性：
+positive表示由黑到白
+negative表示由白到黑
+all表示以上两种方向</description>
+<multivalue>false</multivalue>
+<sem_type>string</sem_type>
+<type_list>
+<item>string</item>
+</type_list>
+<values>
+<item>'positive'</item>
+<item>'negative'</item>
+<item>'all'</item>
+</values>
+</parameter>
+</parameters>
+</docu>
+</procedure>
+</hdevelop>

@@ -1,0 +1,74 @@
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <BinDirectory>bin\$(Configuration)</BinDirectory>
+    <BinDebugDirectory>bin\Debug</BinDebugDirectory>
+    <BinReleaseDirectory>bin\Release</BinReleaseDirectory>
+    <!--<PublishDirectory>bin.demo\$(Configuration)</PublishDirectory>-->
+    <!--<OutDirectory>bin\$(Configuration)</OutDirectory>-->
+    <CleanRoot>.</CleanRoot>
+  </PropertyGroup>
+  <ItemGroup>
+  
+    <PublishDirectory Include="bin\$(Configuration)"></PublishDirectory>
+    <PublishDirectory Include="bin.demo\$(Configuration)"></PublishDirectory>
+
+    <!--DependentFiles-->
+    <DependentFiles Include="lib\Advosol.PaXi\PaXiNet4.dll"></DependentFiles>
+    <DependentFiles Include="lib\Advosol.PaXi\*.License"></DependentFiles>
+    <DependentFiles Include="lib\WriteableBitmapEx\*.dll"></DependentFiles>
+    <DependentFiles Include="lib\Aspose.Cells\*.dll"></DependentFiles>
+    <DependentFiles Include="lib\ini-parser\*.dll"></DependentFiles>
+    <DependentFiles Include="lib\Expression.Blend.SDK\Microsoft.Expression.Interactions.dll"></DependentFiles>
+    <DependentFiles Include="lib\Expression.Blend.SDK\System.Windows.Interactivity.dll"></DependentFiles>
+    <DependentFiles Include="lib\HalconDotNet\*.dll"></DependentFiles>
+    
+    <DependentFiles Include="lib\xxxx\*.dll"></DependentFiles>
+    
+    <DependentFiles Include="config\ParameterMetadataSchema.xaml"></DependentFiles>
+    <DependentFiles Include="config\DeviceConfigs.xaml"></DependentFiles>
+    <DependentFiles Include="config\Config.xaml"></DependentFiles>
+    <DependentFiles Include="config\camera_params.cal"></DependentFiles>
+    <DependentFiles Include="config\camera_pose.dat"></DependentFiles>
+    
+    <DependentFiles Include="config\hdvp\*"></DependentFiles>
+
+    <!--DependentFolders-->
+    <DependentFolders Include="lib\RecursiveDir\**\*"></DependentFolders>
+    <DependentFolders Include="resource\**\*.xaml"></DependentFolders>
+    <DependentFolders Include="resource\**\*.xml"></DependentFolders>
+    <DependentFolders Include="resource\**\*.bmp"></DependentFolders>
+    <DependentFolders Include="resource\**\*.tif"></DependentFolders>
+
+    <!--Projects-->
+    <Projects Include="sln\Publish.sln"></Projects>
+    <PublishProjects Include="sln\Publish.sln"></PublishProjects>
+
+    <!--SolutionsToClean-->
+    <SolutionsToClean Include="**\*.csproj"></SolutionsToClean>
+
+    <!--FilesToClean-->
+    <FilesToClean Include="**\*.user"></FilesToClean>
+    <FilesToClean Include="**\*.cache"></FilesToClean>
+    <FilesToClean Include="**\*.suo"></FilesToClean>
+    <FilesToClean Include="**\*.vs10x"></FilesToClean>
+    <FilesToClean Include="**\*.docstates"></FilesToClean>
+    <FilesToClean Include="**\*.gpState"></FilesToClean>
+    <FilesToClean Include="**\*.sdf"></FilesToClean>
+
+    <!--DirectoriesToClean-->
+    <DirectoriesToClean Include="bin"></DirectoriesToClean>
+    <DirectoriesToClean Include="bin.demo"></DirectoriesToClean>
+    <DirectoriesToClean Include="bin.test"></DirectoriesToClean>
+    <DirectoriesToClean Include="_setup"></DirectoriesToClean>
+    <DirectoriesToClean Include="_publish"></DirectoriesToClean>
+    <DirectoriesToClean Include="AdvInst-cache"></DirectoriesToClean>
+    <DirectoriesToClean Include="sln\ipch"></DirectoriesToClean>
+
+	<!--DirectoriesToRecursionClean-->
+    <DirectoriesToRecursionClean Include="bin"></DirectoriesToRecursionClean>
+    <DirectoriesToRecursionClean Include="obj"></DirectoriesToRecursionClean>
+    <DirectoriesToRecursionClean Include="debug"></DirectoriesToRecursionClean>
+    <DirectoriesToRecursionClean Include="release"></DirectoriesToRecursionClean>
+    
+  </ItemGroup>
+</Project>

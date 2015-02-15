@@ -1,0 +1,71 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:Hdc.Controls"
+                    xmlns:styles="clr-namespace:Hdc.Controls.Styles">
+    <!--dialoggroupboxstyle-->
+    <Style x:Key="{x:Static styles:GroupBoxStyles.DialogGroupBoxStyleKey}"
+           TargetType="GroupBox">
+        <Setter Property="Border.BorderBrush"
+                Value="{DynamicResource {x:Static local:HdcBrushes.DialogBorderBrushKey}}"></Setter>
+        <Setter Property="Border.BorderThickness"
+                Value="{DynamicResource {x:Static local:HdcLayout.BorderThicknessKey}}"></Setter>
+        <Setter Property="Background"
+                Value="{DynamicResource {x:Static local:HdcBrushes.DialogBackgroundBrushKey}}"></Setter>
+        <Setter Property="Padding"
+                Value="0"></Setter>
+        <Setter Property="Margin"
+                Value="{DynamicResource {x:Static local:HdcLayout.MarginLargeKey}}"></Setter>
+        <Setter Property="FontSize"
+                Value="{DynamicResource {x:Static local:HdcFonts.FontSizeMediumKey}}"></Setter>
+        <Setter Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="GroupBox">
+                    <Grid SnapsToDevicePixels="True"
+                          Margin="0">
+                        <Border Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding Border.BorderBrush}"
+                                BorderThickness="{TemplateBinding Border.BorderThickness}">
+                            <Border.BitmapEffect>
+                                <DropShadowBitmapEffect Color="Black"
+                                                        Direction="315"
+                                                        ShadowDepth="4"
+                                                        Softness="0.3"
+                                                        Opacity="0.3"></DropShadowBitmapEffect>
+                            </Border.BitmapEffect>
+                        </Border>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto" />
+                                <RowDefinition />
+                            </Grid.RowDefinitions>
+                            <Border Background="{DynamicResource {x:Static local:HdcBrushes.AccentBrushKey}}"
+                                    BorderThickness="{TemplateBinding  Border.BorderThickness}"
+                                    TextElement.Foreground="{DynamicResource {x:Static local:HdcBrushes.ForegroundBrushKey}}"
+                                    TextElement.FontSize="{DynamicResource {x:Static local:HdcFonts.FontSizeLargeKey}}">
+                                <ContentPresenter ContentSource="Header"
+                                                  VerticalAlignment="Center"
+                                                  HorizontalAlignment="Left"
+                                                  Margin="{DynamicResource {x:Static local:HdcLayout.MarginLargeKey}}"
+                                                  Content="{TemplateBinding HeaderedContentControl.Header}"
+                                                  ContentTemplate="{TemplateBinding HeaderedContentControl.HeaderTemplate}"
+                                                  ContentStringFormat="{TemplateBinding HeaderedContentControl.HeaderStringFormat}"
+                                                  SnapsToDevicePixels="{TemplateBinding UIElement.SnapsToDevicePixels}" />
+                            </Border>
+                            <Border Grid.Row="1"
+                                    Background="{TemplateBinding  Background}"
+                                    BorderThickness="{TemplateBinding  Border.BorderThickness}"
+                                    Padding="{TemplateBinding Padding}">
+                                <ContentPresenter VerticalAlignment="Stretch"
+                                                  Content="{TemplateBinding ContentControl.Content}"
+                                                  ContentTemplate="{TemplateBinding ContentControl.ContentTemplate}"
+                                                  ContentStringFormat="{TemplateBinding ContentControl.ContentStringFormat}"
+                                                  SnapsToDevicePixels="{TemplateBinding UIElement.SnapsToDevicePixels}" />
+                            </Border>
+                        </Grid>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>

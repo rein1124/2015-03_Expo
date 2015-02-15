@@ -1,0 +1,128 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+                    xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions"
+                    xmlns:hdc="http://schemas.hdcrd.com/xaml"
+                    xmlns:views="clr-namespace:ODM.Presentation.Views">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="DefectInfoDataTemplate.xaml" />
+        <ResourceDictionary Source="MeasurementInfoDataTemplate.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+    <DataTemplate x:Key="SurfaceMonitorDataTemplate">
+        <Grid Margin="4"
+              x:Name="SurfaceMonitorGrid">
+            <i:Interaction.Triggers>
+                <ei:PropertyChangedTrigger Binding="{Binding ZoomInCommandChanged}">
+                    <ei:CallMethodAction TargetObject="{Binding ElementName=SurfaceMonitorMultiIndicator}"
+                                         MethodName="ZoomIn"></ei:CallMethodAction>
+                </ei:PropertyChangedTrigger>
+                <ei:PropertyChangedTrigger Binding="{Binding ZoomOutCommandChanged}">
+                    <ei:CallMethodAction TargetObject="{Binding ElementName=SurfaceMonitorMultiIndicator}"
+                                         MethodName="ZoomOut"></ei:CallMethodAction>
+                </ei:PropertyChangedTrigger>
+                <ei:PropertyChangedTrigger Binding="{Binding ZoomFitCommandChanged}">
+                    <ei:CallMethodAction TargetObject="{Binding ElementName=SurfaceMonitorMultiIndicator}"
+                                         MethodName="ZoomFit"></ei:CallMethodAction>
+                </ei:PropertyChangedTrigger>
+                <ei:PropertyChangedTrigger Binding="{Binding ZoomFitDiplayAreaCommandChanged}">
+                    <ei:CallMethodAction TargetObject="{Binding ElementName=SurfaceMonitorMultiIndicator}"
+                                         MethodName="ZoomFitDiplayArea"></ei:CallMethodAction>
+                </ei:PropertyChangedTrigger>
+                <ei:PropertyChangedTrigger Binding="{Binding ZoomActualCommandChanged}">
+                    <ei:CallMethodAction TargetObject="{Binding ElementName=SurfaceMonitorMultiIndicator}"
+                                         MethodName="ZoomActual"></ei:CallMethodAction>
+                </ei:PropertyChangedTrigger>
+            </i:Interaction.Triggers>
+            <Border BorderBrush="Gray"
+                    BorderThickness="4"
+                    Background="DarkGray"
+                    x:Name="SurfaceMonitorBorder"
+                    Visibility="Visible">
+                <i:Interaction.Triggers>
+                    <ei:DataTrigger Binding="{Binding IsSelected}"
+                                    Value="False">
+                        <ei:DataTrigger.Actions>
+                            <ei:ChangePropertyAction TargetName="SurfaceMonitorBorder"
+                                                     PropertyName="BorderBrush"
+                                                     Value="Gray" />
+                        </ei:DataTrigger.Actions>
+                    </ei:DataTrigger>
+                    <ei:DataTrigger Binding="{Binding IsSelected}"
+                                    Value="True">
+                        <ei:DataTrigger.Actions>
+                            <ei:ChangePropertyAction TargetName="SurfaceMonitorBorder"
+                                                     PropertyName="BorderBrush"
+                                                     Value="Orange" />
+                        </ei:DataTrigger.Actions>
+                    </ei:DataTrigger>
+                </i:Interaction.Triggers>
+                <hdc:MultiIndicator x:Name="SurfaceMonitorMultiIndicator"
+                                    Scale="1"
+                                    X="0"
+                                    Y="0"
+                                    BitmapSource="{Binding BitmapSource, IsAsync=True}"
+                                    ClickCommand="{Binding DataContext.SelectSurfaceMonitorCommand, ElementName=SurfaceMonitorsGrid}"
+                                    ClickCommandParameter="{Binding }"
+                                    DisplayAreaElement="{Binding ElementName=SurfaceMonitorsGrid}"
+                                    
+                                    DefectXPath="X"
+                                    DefectYPath="Y"
+                                    DefectWidthPath="Width"
+                                    DefectHeightPath="Height"
+                                    DefectItemsSource="{Binding DefectInfos}"
+                                    IsDefectEnabled="{Binding DisplayDefectInfo}"
+                                    DefectItemTemplate="{StaticResource DefectInfoDataTemplate}"
+                                    DisplayAllDefects="{Binding DisplayAllDefectInfos}"
+                                    SelectedDefectItem="{Binding SelectedDefectInfo, Mode=OneWay}"
+                                    
+                                    MeasurementStartPointXPath="StartPointX"
+                                    MeasurementStartPointYPath="StartPointY"
+                                    MeasurementEndPointXPath="EndPointX"
+                                    MeasurementEndPointYPath="EndPointY"
+                                    IsMeasurementEnabled="{Binding DisplayMeasurementInfo}"
+                                    DisplayAllMeasurements="{Binding DisplayAllMeasurementInfos}"
+                                    MeasurementItemsSource="{Binding MeasurementInfosCollectionView}"
+                                    SelectedMeasurementItem="{Binding SelectedMeasurementInfo, Mode=OneWay}"
+                                    MeasurementItemTemplate="{StaticResource MeasurementInfoTemplate}" />
+            </Border>
+            <Border>
+                <StackPanel Margin="{DynamicResource {x:Static hdc:HdcLayout.MarginLargeKey}}"
+                            Orientation="Horizontal"
+                            VerticalAlignment="Top">
+                    <views:InspectStateIndicator Width="{DynamicResource {x:Static hdc:HdcLayout.ButtonSideLengthSmallKey}}"
+                                                 Height="{DynamicResource {x:Static hdc:HdcLayout.ButtonSideLengthSmallKey}}"
+                                                 Margin="{DynamicResource {x:Static hdc:HdcLayout.MarginKey}}"
+                                                 InspectState="{Binding InspectState}"
+                                                 HorizontalAlignment="Left"
+                                                 VerticalAlignment="Center" />
+                    <TextBlock Text="{Binding InspectStateTranslation}"
+                               VerticalAlignment="Center"
+                               HorizontalAlignment="Left"
+                               FontSize="{DynamicResource {x:Static hdc:HdcFonts.FontSizeExtraLargeKey}}"
+                               Margin="{DynamicResource {x:Static hdc:HdcLayout.MarginKey}}"
+                               Foreground="White" />
+                </StackPanel>
+            </Border>
+<!--            <Border Background="Yellow"-->
+<!--                    Opacity="0.5"-->
+<!--                    Visibility="Hidden">-->
+<!--                <i:Interaction.Triggers>-->
+<!--                    <ei:DataTrigger Binding="{Binding IsGrabbing}"-->
+<!--                                    Value="True">-->
+<!--                        <ei:DataTrigger.Actions>-->
+<!--                            <ei:ChangePropertyAction PropertyName="Visibility"-->
+<!--                                                     Value="Visible" />-->
+<!--                        </ei:DataTrigger.Actions>-->
+<!--                    </ei:DataTrigger>-->
+<!--                    <ei:DataTrigger Binding="{Binding IsGrabbing}"-->
+<!--                                    Value="False">-->
+<!--                        <ei:DataTrigger.Actions>-->
+<!--                            <ei:ChangePropertyAction PropertyName="Visibility"-->
+<!--                                                     Value="Hidden" />-->
+<!--                        </ei:DataTrigger.Actions>-->
+<!--                    </ei:DataTrigger>-->
+<!--                </i:Interaction.Triggers>-->
+<!--            </Border>-->
+        </Grid>
+    </DataTemplate>
+</ResourceDictionary>

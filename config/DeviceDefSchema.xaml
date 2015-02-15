@@ -1,0 +1,104 @@
+﻿<DeviceDefSchema GenerationCount="0" IsSimulated="False" xmlns="http://schemas.hdcrd.com/mercury" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <DeviceDefSchema.RootGroupDef>
+    <DeviceGroupDef Name="Machine" Total="1">
+    </DeviceGroupDef>
+  </DeviceDefSchema.RootGroupDef>
+
+  <!-- General -->
+  <DeviceDef DataType="Boolean" GroupName="Machine" IsSimulated="False" Name="General_UpdateWatchdogCommand" Path="QCPUQ.General.UpdateWatchdogCommand" TagIndexLength="0" TagIndexPosition="0" />
+  <DeviceDef DataType="Boolean" GroupName="Machine" IsSimulated="False" Name="General_AppStartedPcEvent" Path="QCPUQ.General.AppStartedPcEvent" TagIndexLength="0" TagIndexPosition="0" />
+  <DeviceDef DataType="Boolean" GroupName="Machine" IsSimulated="False" Name="General_PlcStartedPlcEvent" Path="QCPUQ.General.PlcStartedPlcEvent" TagIndexLength="0" TagIndexPosition="0" />
+  
+  <DeviceDef DataType="Boolean" GroupName="Machine" IsSimulated="False" Name="General_EN_IsInspectSurfaceFrontEnabledOperation" Path="QCPUQ.General.EN_IsInspectSurfaceFrontEnabledOperation" TagIndexLength="0" TagIndexPosition="0" />
+  <DeviceDef DataType="Boolean" GroupName="Machine" IsSimulated="False" Name="General_EN_IsInspectSurfaceBackEnabledOperation" Path="QCPUQ.General.EN_IsInspectSurfaceBackEnabledOperation" TagIndexLength="0" TagIndexPosition="0" />
+  
+  <!-- Production -->
+  <DeviceDef DataType="Boolean" GroupName="Machine" IsSimulated="False" Name="Production_StartCommand" Path="QCPUQ.Production.StartCommand" TagIndexLength="0" TagIndexPosition="0" />
+  <DeviceDef DataType="Boolean" GroupName="Machine" IsSimulated="False" Name="Production_StopCommand" Path="QCPUQ.Production.StopCommand" TagIndexLength="0" TagIndexPosition="0" />
+  <DeviceDef DataType="Boolean" GroupName="Machine" IsSimulated="False" Name="Production_ResetCommand" Path="QCPUQ.Production.ResetCommand" TagIndexLength="0" TagIndexPosition="0" />
+
+  <DeviceDef DataType="Int32  " GroupName="Machine" IsSimulated="False" Name="Production_TotalCount" Path="QCPUQ.Production.TotalCount" TagIndexLength="0" TagIndexPosition="0" />
+  <DeviceDef DataType="Int32  " GroupName="Machine" IsSimulated="False" Name="Production_TotalRejectCount" Path="QCPUQ.Production.TotalRejectCount" TagIndexLength="0" TagIndexPosition="0" />
+  <DeviceDef DataType="Boolean" GroupName="Machine" IsSimulated="False" Name="Production_ResetTotalCounterCommand" Path="QCPUQ.Production.ResetTotalCounterCommand" TagIndexLength="0" TagIndexPosition="0" />
+  
+  <DeviceDef DataType="Int32  " GroupName="Machine" IsSimulated="False" Name="Production_JobCount" Path="QCPUQ.Production.JobCount" TagIndexLength="0" TagIndexPosition="0" />
+  <DeviceDef DataType="Int32  " GroupName="Machine" IsSimulated="False" Name="Production_JobRejectCount" Path="QCPUQ.Production.JobRejectCount" TagIndexLength="0" TagIndexPosition="0" />
+  <DeviceDef DataType="Boolean" GroupName="Machine" IsSimulated="False" Name="Production_ResetJobCounterCommand" Path="QCPUQ.Production.ResetJobCounterCommand" TagIndexLength="0" TagIndexPosition="0" />
+  
+  <DeviceDef DataType="Int32  " GroupName="Machine" IsSimulated="False" Name="Production_ProductionSpeed" Path="QCPUQ.Production.ProductionSpeed" TagIndexLength="0" TagIndexPosition="0" />
+  
+  <!-- Inspection -->
+  <DeviceDef DataType="Boolean" GroupName="Machine" IsSimulated="False" Name="Inspection_SurfaceFront_GrabReadyPlcEvent" Path="QCPUQ.Inspection.SurfaceFront_GrabReadyPlcEvent" TagIndexLength="0" TagIndexPosition="0" />
+  <DeviceDef DataType="Boolean" GroupName="Machine" IsSimulated="False" Name="Inspection_SurfaceFront_GrabFinishedPcEvent" Path="QCPUQ.Inspection.SurfaceFront_GrabFinishedPcEvent" TagIndexLength="0" TagIndexPosition="0" />
+  <DeviceDef DataType="Boolean" GroupName="Machine" IsSimulated="False" Name="Inspection_SurfaceFront_InspectionFinishedWithAcceptedPcEvent" Path="QCPUQ.Inspection.SurfaceFront_InspectionFinishedWithAcceptedPcEvent" TagIndexLength="0" TagIndexPosition="0" />
+  <DeviceDef DataType="Boolean" GroupName="Machine" IsSimulated="False" Name="Inspection_SurfaceFront_InspectionFinishedWithRejectedPcEvent" Path="QCPUQ.Inspection.SurfaceFront_InspectionFinishedWithRejectedPcEvent" TagIndexLength="0" TagIndexPosition="0" />
+  
+  <DeviceDef DataType="Boolean" GroupName="Machine" IsSimulated="False" Name="Inspection_Forward_MotionStartedPlcEvent" Path="QCPUQ.Inspection.Forward_MotionStartedPlcEvent" TagIndexLength="0" TagIndexPosition="0" />
+  <DeviceDef DataType="Boolean" GroupName="Machine" IsSimulated="False" Name="Inspection_Forward_MotionFinishedPlcEvent" Path="QCPUQ.Inspection.Forward_MotionFinishedPlcEvent" TagIndexLength="0" TagIndexPosition="0" />
+  
+  <DeviceDef DataType="Boolean" GroupName="Machine" IsSimulated="False" Name="Inspection_SurfaceBack_GrabReadyPlcEvent" Path="QCPUQ.Inspection.SurfaceBack_GrabReadyPlcEvent" TagIndexLength="0" TagIndexPosition="0" />
+  <DeviceDef DataType="Boolean" GroupName="Machine" IsSimulated="False" Name="Inspection_SurfaceBack_GrabFinishedPcEvent" Path="QCPUQ.Inspection.SurfaceBack_GrabFinishedPcEvent" TagIndexLength="0" TagIndexPosition="0" />
+  <DeviceDef DataType="Boolean" GroupName="Machine" IsSimulated="False" Name="Inspection_SurfaceBack_InspectionFinishedWithAcceptedPcEvent" Path="QCPUQ.Inspection.SurfaceBack_InspectionFinishedWithAcceptedPcEvent" TagIndexLength="0" TagIndexPosition="0" />
+  <DeviceDef DataType="Boolean" GroupName="Machine" IsSimulated="False" Name="Inspection_SurfaceBack_InspectionFinishedWithRejectedPcEvent" Path="QCPUQ.Inspection.SurfaceBack_InspectionFinishedWithRejectedPcEvent" TagIndexLength="0" TagIndexPosition="0" />
+  
+  <DeviceDef DataType="Boolean" GroupName="Machine" IsSimulated="False" Name="Inspection_Backward_MotionStartedPlcEvent" Path="QCPUQ.Inspection.Backward_MotionStartedPlcEvent" TagIndexLength="0" TagIndexPosition="0" />
+  <DeviceDef DataType="Boolean" GroupName="Machine" IsSimulated="False" Name="Inspection_Backward_MotionFinishedPlcEvent" Path="QCPUQ.Inspection.Backward_MotionFinishedPlcEvent" TagIndexLength="0" TagIndexPosition="0" />
+  
+  <!-- TestME -->
+  <DeviceDef DataType="Boolean" GroupName="Machine" IsSimulated="False" Name="TestME_Slider_StartMoveToFarEndCommmand" Path="QCPUQ.TestME.Slider_StartMoveToFarEndCommmand" TagIndexLength="0" TagIndexPosition="0" />
+  <DeviceDef DataType="Boolean" GroupName="Machine" IsSimulated="False" Name="TestME_Slider_StartMoveToOriginCommmand" Path="QCPUQ.TestME.Slider_StartMoveToOriginCommmand" TagIndexLength="0" TagIndexPosition="0" />
+  <DeviceDef DataType="Boolean" GroupName="Machine" IsSimulated="False" Name="TestME_Slider_StopMoveCommand" Path="QCPUQ.TestME.Slider_StopMoveCommand" TagIndexLength="0" TagIndexPosition="0" />
+  <DeviceDef DataType="Int32  " GroupName="Machine" IsSimulated="False" Name="TestME_Slider_MoveSpeed" Path="QCPUQ.TestME.Slider_MoveSpeed" TagIndexLength="0" TagIndexPosition="0" />
+  <DeviceDef DataType="Boolean" GroupName="Machine" IsSimulated="False" Name="TestME_Slider_StartVacuumCommand" Path="QCPUQ.TestME.Slider_StartVacuumCommand" TagIndexLength="0" TagIndexPosition="0" />
+  
+  <!-- Parameters -->
+  <DeviceDef DataType="Int32  " GroupName="Machine" IsSimulated="False" Name="Parameters_WorkpieceLength" Path="QCPUQ.Parameters.WorkpieceLength" TagIndexLength="0" TagIndexPosition="0" />  
+  
+  <DeviceDef DataType="Int32  " GroupName="Machine" IsSimulated="False" Name="Parameters_Forward_YOriginToResetDistance"               Path="QCPUQ.Parameters.Forward_YOriginToResetDistance"              TagIndexLength="0" TagIndexPosition="0" />
+  <DeviceDef DataType="Int32  " GroupName="Machine" IsSimulated="False" Name="Parameters_Forward_XOriginToResetDistance"               Path="QCPUQ.Parameters.Forward_XOriginToResetDistance"              TagIndexLength="0" TagIndexPosition="0" />
+  <DeviceDef DataType="Int32  " GroupName="Machine" IsSimulated="False" Name="Parameters_Forward_YResetToClampingDistance"             Path="QCPUQ.Parameters.Forward_YResetToClampingDistance"            TagIndexLength="0" TagIndexPosition="0" />
+  <DeviceDef DataType="Int32  " GroupName="Machine" IsSimulated="False" Name="Parameters_Forward_YClampingToScanningDistance"          Path="QCPUQ.Parameters.Forward_YClampingToScanningDistance"         TagIndexLength="0" TagIndexPosition="0" />
+  <DeviceDef DataType="Int32  " GroupName="Machine" IsSimulated="False" Name="Parameters_Forward_XResetToScaningStartDistance"         Path="QCPUQ.Parameters.Forward_XResetToScaningStartDistance"        TagIndexLength="0" TagIndexPosition="0" />
+  <DeviceDef DataType="Int32  " GroupName="Machine" IsSimulated="False" Name="Parameters_Forward_XScanningStartToScanningEndDistance"  Path="QCPUQ.Parameters.Forward_XScanningStartToScanningEndDistance" TagIndexLength="0" TagIndexPosition="0" />
+  <DeviceDef DataType="Int32  " GroupName="Machine" IsSimulated="False" Name="Parameters_Forward_YScanningToResetDistance"        	   Path="QCPUQ.Parameters.Forward_YScanningToResetDistance"            TagIndexLength="0" TagIndexPosition="0" />
+  
+  <DeviceDef DataType="Int32  " GroupName="Machine" IsSimulated="False" Name="Parameters_Backward_YOriginToResetDistance"              Path="QCPUQ.Parameters.Backward_YOriginToResetDistance"              TagIndexLength="0" TagIndexPosition="0" />
+  <DeviceDef DataType="Int32  " GroupName="Machine" IsSimulated="False" Name="Parameters_Backward_XOriginToResetDistance"              Path="QCPUQ.Parameters.Backward_XOriginToResetDistance"              TagIndexLength="0" TagIndexPosition="0" />
+  <DeviceDef DataType="Int32  " GroupName="Machine" IsSimulated="False" Name="Parameters_Backward_YResetToClampingDistance"            Path="QCPUQ.Parameters.Backward_YResetToClampingDistance"            TagIndexLength="0" TagIndexPosition="0" />
+  <DeviceDef DataType="Int32  " GroupName="Machine" IsSimulated="False" Name="Parameters_Backward_YClampingToScanningDistance"         Path="QCPUQ.Parameters.Backward_YClampingToScanningDistance"         TagIndexLength="0" TagIndexPosition="0" />
+  <DeviceDef DataType="Int32  " GroupName="Machine" IsSimulated="False" Name="Parameters_Backward_XResetToScaningStartDistance"        Path="QCPUQ.Parameters.Backward_XResetToScaningStartDistance"        TagIndexLength="0" TagIndexPosition="0" />
+  <DeviceDef DataType="Int32  " GroupName="Machine" IsSimulated="False" Name="Parameters_Backward_XScanningStartToScanningEndDistance" Path="QCPUQ.Parameters.Backward_XScanningStartToScanningEndDistance" TagIndexLength="0" TagIndexPosition="0" />
+  <DeviceDef DataType="Int32  " GroupName="Machine" IsSimulated="False" Name="Parameters_Backward_YScanningToResetDistance"        	   Path="QCPUQ.Parameters.Backward_YScanningToResetDistance"        	TagIndexLength="0" TagIndexPosition="0" />
+  
+  <DeviceDef DataType="Int32  " GroupName="Machine" IsSimulated="False" Name="Parameters_Forward_YOriginToResetSpeed"               Path="QCPUQ.Parameters.Forward_YOriginToResetSpeed"              TagIndexLength="0" TagIndexPosition="0" />
+  <DeviceDef DataType="Int32  " GroupName="Machine" IsSimulated="False" Name="Parameters_Forward_XOriginToResetSpeed"               Path="QCPUQ.Parameters.Forward_XOriginToResetSpeed"              TagIndexLength="0" TagIndexPosition="0" />
+  <DeviceDef DataType="Int32  " GroupName="Machine" IsSimulated="False" Name="Parameters_Forward_YResetToClampingSpeed"             Path="QCPUQ.Parameters.Forward_YResetToClampingSpeed"            TagIndexLength="0" TagIndexPosition="0" />
+  <DeviceDef DataType="Int32  " GroupName="Machine" IsSimulated="False" Name="Parameters_Forward_YClampingToScanningSpeed"          Path="QCPUQ.Parameters.Forward_YClampingToScanningSpeed"         TagIndexLength="0" TagIndexPosition="0" />
+  <DeviceDef DataType="Int32  " GroupName="Machine" IsSimulated="False" Name="Parameters_Forward_XResetToScaningStartSpeed"         Path="QCPUQ.Parameters.Forward_XResetToScaningStartSpeed"        TagIndexLength="0" TagIndexPosition="0" />
+  <DeviceDef DataType="Int32  " GroupName="Machine" IsSimulated="False" Name="Parameters_Forward_XScanningStartToScanningEndSpeed"  Path="QCPUQ.Parameters.Forward_XScanningStartToScanningEndSpeed" TagIndexLength="0" TagIndexPosition="0" />
+  <DeviceDef DataType="Int32  " GroupName="Machine" IsSimulated="False" Name="Parameters_Forward_YScanningToResetSpeed"        	   Path="QCPUQ.Parameters.Forward_YScanningToResetSpeed"            TagIndexLength="0" TagIndexPosition="0" />
+  
+  <DeviceDef DataType="Int32  " GroupName="Machine" IsSimulated="False" Name="Parameters_Backward_YOriginToResetSpeed"              Path="QCPUQ.Parameters.Backward_YOriginToResetSpeed"              TagIndexLength="0" TagIndexPosition="0" />
+  <DeviceDef DataType="Int32  " GroupName="Machine" IsSimulated="False" Name="Parameters_Backward_XOriginToResetSpeed"              Path="QCPUQ.Parameters.Backward_XOriginToResetSpeed"              TagIndexLength="0" TagIndexPosition="0" />
+  <DeviceDef DataType="Int32  " GroupName="Machine" IsSimulated="False" Name="Parameters_Backward_YResetToClampingSpeed"            Path="QCPUQ.Parameters.Backward_YResetToClampingSpeed"            TagIndexLength="0" TagIndexPosition="0" />
+  <DeviceDef DataType="Int32  " GroupName="Machine" IsSimulated="False" Name="Parameters_Backward_YClampingToScanningSpeed"         Path="QCPUQ.Parameters.Backward_YClampingToScanningSpeed"         TagIndexLength="0" TagIndexPosition="0" />
+  <DeviceDef DataType="Int32  " GroupName="Machine" IsSimulated="False" Name="Parameters_Backward_XResetToScaningStartSpeed"        Path="QCPUQ.Parameters.Backward_XResetToScaningStartSpeed"        TagIndexLength="0" TagIndexPosition="0" />
+  <DeviceDef DataType="Int32  " GroupName="Machine" IsSimulated="False" Name="Parameters_Backward_XScanningStartToScanningEndSpeed" Path="QCPUQ.Parameters.Backward_XScanningStartToScanningEndSpeed" TagIndexLength="0" TagIndexPosition="0" />
+  <DeviceDef DataType="Int32  " GroupName="Machine" IsSimulated="False" Name="Parameters_Backward_YScanningToResetSpeed"        	   Path="QCPUQ.Parameters.Backward_YScanningToResetSpeed"        	TagIndexLength="0" TagIndexPosition="0" />
+  
+  
+  <!-- Alarms -->
+  <DeviceDef DataType="Boolean  " GroupName="Machine" IsSimulated="False" Name="Alarms_ResetAlarmsCommand"        	                   Path="QCPUQ.Alarms.ResetAlarmsCommand"        	                   TagIndexLength="0" TagIndexPosition="0" />
+  <DeviceDef DataType="Boolean  " GroupName="Machine" IsSimulated="False" Name="Alarms_ForwardClampingCylinderDownError"        	   Path="QCPUQ.Alarms.ForwardClampingCylinderDownError"        	       TagIndexLength="0" TagIndexPosition="0" />
+  <DeviceDef DataType="Boolean  " GroupName="Machine" IsSimulated="False" Name="Alarms_ForwardClampingCylinderUpError"        	       Path="QCPUQ.Alarms.ForwardClampingCylinderUpError"        	       TagIndexLength="0" TagIndexPosition="0" />
+  <DeviceDef DataType="Boolean  " GroupName="Machine" IsSimulated="False" Name="Alarms_BackwardClampingCylinderDownError"        	   Path="QCPUQ.Alarms.BackwardClampingCylinderDownError"        	   TagIndexLength="0" TagIndexPosition="0" />
+  <DeviceDef DataType="Boolean  " GroupName="Machine" IsSimulated="False" Name="Alarms_BackwardClampingCylinderUpError"        	       Path="QCPUQ.Alarms.BackwardClampingCylinderUpError"        	       TagIndexLength="0" TagIndexPosition="0" />
+  <DeviceDef DataType="Boolean  " GroupName="Machine" IsSimulated="False" Name="Alarms_ForwardClampingCylinderForwardError"        	   Path="QCPUQ.Alarms.ForwardClampingCylinderForwardError"        	   TagIndexLength="0" TagIndexPosition="0" />
+  <DeviceDef DataType="Boolean  " GroupName="Machine" IsSimulated="False" Name="Alarms_ForwardClampingCylinderBackwardError"           Path="QCPUQ.Alarms.ForwardClampingCylinderBackwardError"            TagIndexLength="0" TagIndexPosition="0" />
+  <DeviceDef DataType="Boolean  " GroupName="Machine" IsSimulated="False" Name="Alarms_BackwardClampingCylinderForwardError"           Path="QCPUQ.Alarms.BackwardClampingCylinderForwardError"            TagIndexLength="0" TagIndexPosition="0" />
+  <DeviceDef DataType="Boolean  " GroupName="Machine" IsSimulated="False" Name="Alarms_BackwardClampingCylinderBackwardError"          Path="QCPUQ.Alarms.BackwardClampingCylinderBackwardError"           TagIndexLength="0" TagIndexPosition="0" />
+  <DeviceDef DataType="Boolean  " GroupName="Machine" IsSimulated="False" Name="Alarms_AirPressureError"        	                   Path="QCPUQ.Alarms.AirPressureError"        	                       TagIndexLength="0" TagIndexPosition="0" />
+
+  
+  
+</DeviceDefSchema>

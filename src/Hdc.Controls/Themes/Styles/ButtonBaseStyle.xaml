@@ -1,0 +1,115 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+                    xmlns:local="clr-namespace:Hdc.Controls">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="..\Basic.xaml"></ResourceDictionary>
+    </ResourceDictionary.MergedDictionaries>
+    <Style BasedOn="{x:Null}"
+           TargetType="{x:Type ButtonBase}">
+        <Setter Property="Background"
+                Value="{DynamicResource {x:Static local:HdcBrushes.ButtonBackgroundBrushKey}}"></Setter>
+        <Setter Property="TextElement.Foreground"
+                Value="{DynamicResource {x:Static local:HdcBrushes.ButtonForegroundBrushKey}}"></Setter>
+        <Setter Property="BorderBrush"
+                Value="{DynamicResource {x:Static local:HdcBrushes.ButtonBorderBrushKey}}"></Setter>
+        <Setter Property="BorderThickness"
+                Value="{DynamicResource {x:Static local:HdcLayout.ButtonBorderThicknessKey}}"></Setter>
+        <Setter Property="Padding"
+                Value="{DynamicResource {x:Static local:HdcLayout.ButtonPaddingKey}}"></Setter>
+        <Setter Property="Border.CornerRadius"
+                Value="{DynamicResource {x:Static local:HdcLayout.ButtonCornerRadiusKey}}"></Setter>
+        <Setter Property="FocusVisualStyle"
+                Value="{x:Null}"></Setter>
+        <Setter Property="HorizontalContentAlignment"
+                Value="Stretch"></Setter>
+        <Setter Property="VerticalContentAlignment"
+                Value="Stretch"></Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ButtonBase}">
+                    <Border  x:Name="Panel"
+                             RenderTransformOrigin="0.5,0.5"
+                             CornerRadius="{TemplateBinding Border.CornerRadius}"
+                             BorderBrush="{TemplateBinding BorderBrush}"
+                             BorderThickness="{TemplateBinding BorderThickness}"
+                             Padding="{TemplateBinding Padding}"
+                             Background="{TemplateBinding Background}">
+                    	<VisualStateManager.VisualStateGroups>
+                    		<VisualStateGroup x:Name="ValidationStates"/>
+                    	</VisualStateManager.VisualStateGroups>
+                        <!--                        <Border.Background>-->
+                        <!--                            <LinearGradientBrush StartPoint="0,0"-->
+                        <!--                                                 EndPoint="0,1">-->
+                        <!--                                <GradientBrush.GradientStops>-->
+                        <!--                                    <GradientStop Color="#fff"-->
+                        <!--                                                  Offset="0"></GradientStop>-->
+                        <!--                                    <GradientStop Color="#f0f0f0"-->
+                        <!--                                                  Offset="0.58"></GradientStop>-->
+                        <!--                                    <GradientStop Color="#ddd"-->
+                        <!--                                                  Offset="0.62"></GradientStop>-->
+                        <!--                                    <GradientStop Color="#ccc"-->
+                        <!--                                                  Offset="1.0"></GradientStop>-->
+                        <!--                                </GradientBrush.GradientStops>-->
+                        <!--                            </LinearGradientBrush >-->
+                        <!--                        </Border.Background>-->
+                        <ContentPresenter RenderTransformOrigin="0.5,0.5"
+                                          Grid.Column="1"
+                                          Grid.Row="1"
+                                          Content="{TemplateBinding ContentControl.Content}"
+                                          ContentTemplate="{TemplateBinding ContentControl.ContentTemplate}"
+                                          ContentStringFormat="{TemplateBinding ContentControl.ContentStringFormat}"
+                                          HorizontalAlignment="{TemplateBinding Control.HorizontalContentAlignment}"
+                                          VerticalAlignment="{TemplateBinding Control.VerticalContentAlignment}"
+                                          SnapsToDevicePixels="{TemplateBinding UIElement.SnapsToDevicePixels}"
+                                          RecognizesAccessKey="True" />
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver"
+                                 Value="True">
+                            <Trigger.Setters>
+                                <Setter TargetName="Panel"
+                                        Property="Background"
+                                        Value="{DynamicResource {x:Static local:HdcBrushes.ButtonMouseOverBackgroundBrushKey}}">
+                                </Setter>
+                                <Setter TargetName="Panel"
+                                        Property="BorderBrush"
+                                        Value="{DynamicResource {x:Static local:HdcBrushes.ButtonMouseOverBorderBrushKey}}">
+                                </Setter>
+                            </Trigger.Setters>
+                        </Trigger>
+                        <Trigger Property="IsPressed"
+                                 Value="True">
+                            <Trigger.Setters>
+                                <Setter TargetName="Panel"
+                                        Property="RenderTransform">
+                                    <Setter.Value>
+                                        <ScaleTransform ScaleX="0.95"
+                                                        ScaleY="0.95"></ScaleTransform>
+                                    </Setter.Value>
+                                </Setter>
+                                <!--                                <Setter Property="BorderBrush"-->
+                                <!--                                        Value="{StaticResource DarkBrush}"></Setter>-->
+                            </Trigger.Setters>
+                        </Trigger>
+                        <Trigger Property="IsEnabled"
+                                 Value="False">
+                            <Trigger.Setters>
+                                <Setter Property="Background"
+                                        TargetName="Panel"
+                                        Value="{DynamicResource {x:Static local:HdcBrushes.ButtonDisabledBackgroundBrushKey}}"></Setter>
+                                <Setter Property="BorderBrush"
+                                        Value="{DynamicResource {x:Static local:HdcBrushes.ButtonDisabledBorderBrushKey}}"></Setter>
+                                <Setter Property="Foreground"
+                                        Value="{DynamicResource {x:Static local:HdcBrushes.ButtonDisabledForegroundBrushKey}}"></Setter>
+                            </Trigger.Setters>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style BasedOn="{StaticResource {x:Type ButtonBase}}"
+           TargetType="{x:Type Button}"></Style>
+    <Style BasedOn="{StaticResource {x:Type ButtonBase}}"
+           TargetType="{x:Type RepeatButton}"></Style>
+</ResourceDictionary>

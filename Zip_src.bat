@@ -1,0 +1,1 @@
+msbuild Zip.msbuild /t:ZipSrc

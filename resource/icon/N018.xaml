@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<DrawingBrush x:Key="N018" Stretch="Uniform">
+		<DrawingBrush.Drawing>
+			<DrawingGroup>
+				<DrawingGroup.Children>
+					<GeometryDrawing Brush="#00000000" Geometry="F1 M -3.8147e-006,0L 100,0L 100,100L -3.8147e-006,100L -3.8147e-006,0 Z "/>
+					<GeometryDrawing Geometry="F1 M 36.2333,40.1667L 63.7667,40.1667L 63.7667,59.8333L 36.2333,59.8333L 36.2333,40.1667 Z ">
+						<GeometryDrawing.Pen>
+							<Pen Thickness="7" MiterLimit="2.75" Brush="#FF313131"/>
+						</GeometryDrawing.Pen>
+					</GeometryDrawing>
+					<GeometryDrawing Brush="#FF313131" Geometry="F1 M 21.3462,25.1666L 38.1313,25.1666L 21.3462,41.9517L 21.3462,25.1666 Z M 78.6539,25.1667L 78.6539,41.9518L 61.8688,25.1667L 78.6539,25.1667 Z M 78.6538,74.8334L 61.8688,74.8334L 78.6538,58.0484L 78.6538,74.8334 Z M 21.3461,74.8334L 21.3461,58.0484L 38.1311,74.8334L 21.3461,74.8334 Z "/>
+				</DrawingGroup.Children>
+			</DrawingGroup>
+		</DrawingBrush.Drawing>
+	</DrawingBrush>
+</ResourceDictionary>

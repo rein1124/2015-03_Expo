@@ -1,0 +1,31 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:System="clr-namespace:System;assembly=mscorlib"
+                    xmlns:local="clr-namespace:Hdc.Controls"
+                    xmlns:hdc="http://schemas.hdcrd.com/xaml">
+    <System:Double x:Key="FontSizeTitle">18</System:Double>
+    <System:Double x:Key="FontSizeButton">15</System:Double>
+
+    <System:Double x:Key="{x:Static hdc:HdcFonts.FontSizeHugeKey}">64</System:Double>
+    <System:Double x:Key="{x:Static hdc:HdcFonts.FontSizeExtraLargeKey}">32</System:Double>
+    <System:Double x:Key="{x:Static hdc:HdcFonts.FontSizeLargeKey}">24</System:Double>
+    <System:Double x:Key="{x:Static hdc:HdcFonts.FontSizeMediumKey}">18</System:Double>
+    <System:Double x:Key="{x:Static hdc:HdcFonts.FontSizeSmallKey}">14</System:Double>
+    <System:Double x:Key="{x:Static hdc:HdcFonts.FontSizeTinyKey}">10</System:Double>
+
+    <FontFamily x:Key="FontFamilyTitle">Microsoft YaHei</FontFamily>
+    <FontFamily x:Key="{x:Static hdc:HdcFonts.FontFamilyNormalKey}">Segoe UI</FontFamily>
+    <FontFamily x:Key="{x:Static hdc:HdcFonts.FontFamilyNumberKey}">MS Gothic</FontFamily>
+    <FontFamily x:Key="{x:Static hdc:HdcFonts.FontFamilyMonoKey}">Segoe UI Mono</FontFamily>
+    <System:Double x:Key="AccFontSizeLarge">28</System:Double>
+    <!--Segoe UI-->
+    
+    <!--Mono:
+    Segoe UI Mono
+    Liberation Sans
+    -->
+    
+    <!--Microsoft YaHei-->
+
+
+</ResourceDictionary>

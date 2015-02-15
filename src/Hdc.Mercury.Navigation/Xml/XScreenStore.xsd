@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:hdc="http://www.chinahdc.com"
+    targetNamespace="http://www.chinahdc.com">
+    <xs:complexType name="XScreen">
+        <xs:sequence>
+            <xs:element name="Screens" type="hdc:XScreenCollection"/>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="ViewModelName" type="xs:string"/>
+        </xs:sequence>
+        <xs:attribute name="Name" type="xs:string" use="required"/>
+        <xs:attribute name="GroupName" type="xs:string" use="required"/>
+        <xs:attribute name="IsMutual" type="xs:boolean" use="required"/>
+        <xs:attribute name="IsDefaultActive" type="xs:boolean" use="required"/>
+        <xs:attribute name="DefaultIndex" type="xs:int" use="required"/>
+    </xs:complexType>
+    <xs:complexType name="XScreenCollection">
+        <xs:sequence>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="Screen" type="hdc:XScreen"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:element name="XScreenStore">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="TopScreen" type="hdc:XScreen"/>
+             <!--   <xs:element name="ViewModels" type="hdc:XViewModelCollection"/>-->
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:complexType name="XViewModel">
+        <xs:sequence>
+            <xs:element name="DevicePaths" type="hdc:XDevicePathCollection"/>
+        </xs:sequence>
+        <xs:attribute name="ViewModelName" type="xs:string" use="required"/>
+    </xs:complexType>
+    <xs:complexType name="XViewModelCollection">
+        <xs:sequence>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="ViewModel" type="hdc:XViewModel"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="XDevicePath">
+        <xs:sequence>
+            <xs:element name="Entries" type="hdc:XDevicePathEntryCollection"/>
+        </xs:sequence>
+        <xs:attribute name="DeviceName" type="xs:string" use="required"/>
+    </xs:complexType>
+    <xs:complexType name="XDevicePathCollection">
+        <xs:sequence>
+            <xs:element name="Path" type="hdc:XDevicePath" maxOccurs="unbounded" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="XDevicePathEntry">
+        <xs:attribute name="EntryName" type="xs:string" use="required"/>
+    </xs:complexType>
+    <xs:complexType name="XDevicePathEntryCollection">
+        <xs:sequence>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="Entry" type="hdc:XDevicePathEntry"
+            />
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

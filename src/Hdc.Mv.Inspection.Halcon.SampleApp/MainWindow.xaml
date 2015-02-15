@@ -1,0 +1,180 @@
+﻿<Window x:Class="ODM.Inspectors.Halcon.SampleApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:hdc="http://schemas.hdcrd.com/xaml"
+        xmlns:sampleApp="clr-namespace:Hdc.Mv.Inspection.Halcon.SampleApp"
+        Title="MainWindow"
+        Height="600"
+        Width="800"
+        WindowState="Maximized"
+        WindowStartupLocation="CenterScreen">
+    <Window.Resources>
+        <sampleApp:InvertConverter x:Key="InvertConverter"></sampleApp:InvertConverter>
+    </Window.Resources>
+    <Grid Background="Silver">
+        <hdc:IndicatorViewer x:Name="IndicatorViewer"
+                             Margin="0">
+            <hdc:RegionIndicatorSeries ItemsSource="{Binding RegionIndicators}"
+                                       StartPointXPath="StartPointX"
+                                       StartPointYPath="StartPointY"
+                                       EndPointXPath="EndPointX"
+                                       EndPointYPath="EndPointY"
+                                       RegionWidthPath="RegionWidth"
+                                       StrokePath="Stroke"
+                                       StrokeThicknessPath="StrokeThickness"
+                                       StrokeDashArrayPath="StrokeDashArray">
+            </hdc:RegionIndicatorSeries>
+            <hdc:RectangleIndicatorSeries ItemsSource="{Binding DefectIndicators}"
+                                          RectCenterXPath="CenterX"
+                                          RectCenterYPath="CenterY"
+                                          RectWidthPath="Width"
+                                          RectHeightPath="Height"
+                                          StrokePath="Stroke"
+                                          StrokeThicknessPath="StrokeThickness"
+                                          StrokeDashArrayPath="StrokeDashArray">
+            </hdc:RectangleIndicatorSeries>
+            <hdc:LineIndicatorSeries ItemsSource="{Binding LineIndicators,Mode=TwoWay}"
+                                     StartPointXPath="StartPointX"
+                                     StartPointYPath="StartPointY"
+                                     EndPointXPath="EndPointX"
+                                     EndPointYPath="EndPointY"
+                                     StrokePath="Stroke"
+                                     StrokeThicknessPath="StrokeThickness"
+                                     StrokeDashArrayPath="StrokeDashArray" />
+            <hdc:CircleIndicatorSeries ItemsSource="{Binding CircleIndicators,Mode=TwoWay}"
+                                       CenterXPath="CenterX"
+                                       CenterYPath="CenterY"
+                                       RadiusPath="Radius"
+                                       StrokePath="Stroke"
+                                       StrokeThicknessPath="StrokeThickness"
+                                       StrokeDashArrayPath="StrokeDashArray" />
+        </hdc:IndicatorViewer>
+        <Grid>
+            <ScrollBar Orientation="Horizontal"
+                       VerticalAlignment="Bottom"
+                       Minimum="0"
+                       Maximum="8192"
+                       SmallChange="10"
+                       LargeChange="100"
+                       Value="{Binding ElementName=IndicatorViewer, Path=X, Converter={StaticResource InvertConverter}}"></ScrollBar>
+            <ScrollBar Orientation="Vertical"
+                       HorizontalAlignment="Right"
+                       Minimum="0"
+                       Maximum="12500"
+                       SmallChange="10"
+                       LargeChange="100"
+                       Value="{Binding ElementName=IndicatorViewer, Path=Y, Converter={StaticResource InvertConverter}}"></ScrollBar>
+        </Grid>
+        <Grid Margin="20"
+              HorizontalAlignment="Left"
+              VerticalAlignment="Top"
+              Background="Gray">
+            <StackPanel Margin="20">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Scale: "></TextBlock>
+                    <TextBlock Text="{Binding Scale, ElementName=IndicatorViewer}"></TextBlock>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Width="60"
+                               Height="40"
+                               Text="OffsetX"></TextBlock>
+                    <TextBox Width="60"
+                             Height="40"
+                             Text="{Binding X, ElementName=IndicatorViewer}"
+                             x:Name="OffsetX"></TextBox>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Width="60"
+                               Height="40"
+                               Text="OffsetY"></TextBlock>
+                    <TextBox Width="60"
+                             Height="40"
+                             Text="{Binding Y, ElementName=IndicatorViewer}"
+                             x:Name="OffsetY"></TextBox>
+                </StackPanel>
+                <UniformGrid Rows="4"
+                             Columns="4">
+                    <Button Width="80"
+                            Height="40"
+                            Margin="2"
+                            x:Name="RefreshButton"
+                            Click="RefreshButton_OnClick">Refresh</Button>
+                    <Button Width="80"
+                            Height="40"
+                            Margin="2"
+                            x:Name="SaveImageButton"
+                            Click="SaveImageButton_OnClick">Save Image</Button>
+                    <Button Width="80"
+                            Height="40"
+                            Margin="2"
+                            x:Name="ExportReportButton"
+                            Click="ExportReportButton_OnClick">Export Report</Button>
+                    <Button Width="80"
+                            Height="40"
+                            Margin="2"
+                            x:Name="xxx"></Button>
+
+                    <Button Width="80"
+                            Height="40"
+                            Margin="2"
+                            x:Name="ZoomFitButton"
+                            Click="ZoomFitButton_OnClick">Zoom Fit</Button>
+                    <Button Width="80"
+                            Height="40"
+                            Margin="2"
+                            x:Name="ZoomActualButton"
+                            Click="ZoomActualButton_OnClick">Zoom Actual</Button>
+                    <Button Width="80"
+                            Height="40"
+                            Margin="2"
+                            x:Name="ZoomQuarterButton"
+                            Click="ZoomQuarterButton_OnClick">Zoom Quarter</Button>
+                    <Button Width="80"
+                            Height="40"
+                            Margin="2"
+                            x:Name="ZoomHalfButton"
+                            Click="ZoomHalfButton_OnClick">Zoom Half</Button>
+                    <Button Width="80"
+                            Height="40"
+                            Margin="2"
+                            x:Name="ZoomInButton"
+                            Click="ZoomInButton_OnClick">Zoom +</Button>
+                    <Button Width="80"
+                            Height="40"
+                            Margin="2"
+                            x:Name="ZoomOutButton"
+                            Click="ZoomOutButton_OnClick">Zoom -</Button>
+                    <Button Width="80"
+                            Height="40"
+                            Margin="2"
+                            x:Name="ZoomActualToCenterButton"
+                            Click="ZoomActualToCenterButton_OnClick">Zoom Actual Center</Button>
+                </UniformGrid>
+
+
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Text1Name"
+                               Width="120"></TextBlock>
+                    <TextBox Text="{Binding Text1Name}"></TextBox>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Text1Content"
+                               Width="120"></TextBlock>
+                    <TextBox Text="{Binding Text1Content}"></TextBox>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Text2Name"
+                               Width="120"></TextBlock>
+                    <TextBox Text="{Binding Text2Name}"></TextBox>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Text2Content"
+                               Width="120"></TextBlock>
+                    <TextBox Text="{Binding Text2Content}"></TextBox>
+                </StackPanel>
+
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>

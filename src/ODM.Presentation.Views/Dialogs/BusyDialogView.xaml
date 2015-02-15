@@ -1,0 +1,25 @@
+﻿<UserControl x:Class="PPG.Presentation.Views.Dialogs.BusyDialogView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:hdc="http://schemas.hdcrd.com/xaml"
+             xmlns:PPG="clr-namespace:PPG"
+             mc:Ignorable="d"
+             d:DesignHeight="300"
+             d:DesignWidth="300">
+    <Grid>
+        <GroupBox Style="{DynamicResource {x:Static hdc:GroupBoxStyles.DialogGroupBoxStyleKey}}"
+                  Header="{hdc:LocalizeExtension PleaseWait}"
+                  HorizontalAlignment="Center"
+                  VerticalAlignment="Center"
+                  MinHeight="400"
+                  MinWidth="400">
+            <TextBlock Text="{Binding Message}"
+                       Margin="{DynamicResource {x:Static hdc:HdcLayout.MarginLargeKey}}"
+                       TextWrapping="Wrap"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"></TextBlock>
+        </GroupBox>
+    </Grid>
+</UserControl>

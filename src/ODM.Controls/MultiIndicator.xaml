@@ -1,0 +1,27 @@
+﻿<UserControl x:Class="Hdc.Controls.MultiIndicator"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:controls="clr-namespace:Hdc.Controls"
+             mc:Ignorable="d"
+             d:DesignHeight="300"
+             d:DesignWidth="300"
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+             xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions"
+             x:Name="Root">
+    <Grid>
+        <controls:ZoomImageViewer x:Name="ZoomImageViewer">
+        </controls:ZoomImageViewer>
+        <Canvas x:Name="Canvas"></Canvas>
+        <Label x:Name="InteractionPanel"
+               Background="Transparent">
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="PreviewMouseDown">
+                    <i:InvokeCommandAction Command="{Binding ClickCommand,ElementName=Root}"
+                                           CommandParameter="{Binding ClickCommandParameter,ElementName=Root}"></i:InvokeCommandAction>
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
+        </Label>
+    </Grid>
+</UserControl>

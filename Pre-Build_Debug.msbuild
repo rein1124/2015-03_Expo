@@ -1,0 +1,19 @@
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="Variable.msbuild"/>
+
+  <Target Name="Pre-Build_Debug">
+    <Message Text="Copy Dependent Files Start..."></Message>
+    <Copy SourceFiles="@(DependentFiles)"
+          DestinationFolder="$(BinDebugDirectory)"
+          ContinueOnError="true"/>
+    <Message Text="Copy Dependent Files Finished"></Message>
+    
+    
+    <Message Text="Copy Destination Folders Start..."></Message>
+    <Message Text="&#x0D; &#x0A;RecursiveDir:&#x0D;&#x0A;@(DependentFolders->'%(RecursiveDir)%(Filename)%(Extension)','&#x0D; &#x0A;')&#x0D; &#x0A;"></Message>
+    <Copy DestinationFiles="@(DependentFolders->'$(BinDebugDirectory)\%(RecursiveDir)%(Filename)%(Extension)')"
+          SourceFiles="@(DependentFolders)"
+          ContinueOnError="true"/>
+    <Message Text="Copy Destination Folders Finished"></Message>
+  </Target>
+</Project>

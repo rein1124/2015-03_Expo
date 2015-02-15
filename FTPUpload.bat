@@ -1,0 +1,1 @@
+msbuild FTPUpload.msbuild /t:Uploadftp /p:UploadUri="ftp://hdcrd.com/Template/CI/1.x/Build/"

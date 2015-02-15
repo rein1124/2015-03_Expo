@@ -1,0 +1,13 @@
+﻿<Application x:Class="ODM.Shell.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <!--            <Style TargetType="{x:Type Control}" />-->
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Hdc.Controls;component\Themes\Generic.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="/ODM.Controls;component\Themes\Generic.xaml"></ResourceDictionary>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

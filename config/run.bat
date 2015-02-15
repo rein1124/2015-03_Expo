@@ -1,0 +1,1 @@
+Hdc.Mercury.SchemaConverter.Xaml.exe DeviceDefSchema.xaml

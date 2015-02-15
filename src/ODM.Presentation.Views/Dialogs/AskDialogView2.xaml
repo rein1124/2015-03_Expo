@@ -1,0 +1,52 @@
+﻿<UserControl x:Class="PPG.Presentation.Views.Dialogs.AskDialogView2"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             mc:Ignorable="d"
+             d:DesignHeight="300"
+             d:DesignWidth="300"
+             xmlns:hdc="http://schemas.hdcrd.com/xaml">
+    <Grid>
+        <GroupBox Style="{DynamicResource {x:Static hdc:GroupBoxStyles.DialogGroupBoxStyleKey}}"
+                  Header="{hdc:LocalizeExtension 询问}"
+                  HorizontalAlignment="Center"
+                  VerticalAlignment="Center"
+                  MinHeight="480"
+                  MinWidth="640">
+            <DockPanel>
+                <Border DockPanel.Dock="Bottom">
+                    <StackPanel HorizontalAlignment="Center"
+                                Orientation="Horizontal">
+                        <Button Command="{Binding YesCommand}"
+                                Height="{DynamicResource {x:Static hdc:HdcLayout.ButtonSideLengthLargeKey}}"
+                                Width="{DynamicResource {x:Static hdc:HdcLayout.ButtonSideLengthLargeKey}}"
+                                Margin="{DynamicResource {x:Static hdc:HdcLayout.MarginLargeKey}}"
+                                HorizontalContentAlignment="Stretch"
+                                VerticalContentAlignment="Stretch"
+                                Style="{DynamicResource EllipseButtonStyle}">
+                            <Border Background="{hdc:DrawingBrushExtension N017}" />
+                        </Button>
+                        <FrameworkElement Width="40"></FrameworkElement>
+                        <Button Command="{Binding NoCommand}"
+                                Height="{DynamicResource {x:Static hdc:HdcLayout.ButtonSideLengthLargeKey}}"
+                                Width="{DynamicResource {x:Static hdc:HdcLayout.ButtonSideLengthLargeKey}}"
+                                Margin="{DynamicResource {x:Static hdc:HdcLayout.MarginLargeKey}}"
+                                HorizontalContentAlignment="Stretch"
+                                VerticalContentAlignment="Stretch"
+                                Style="{DynamicResource EllipseButtonStyle}">
+                            <Border Background="{hdc:DrawingBrushExtension N016}" />
+                        </Button>
+                    </StackPanel>
+                </Border>
+                <Grid Background="#EEE">
+                    <TextBlock Text="{Binding Message}"
+                               Margin="{DynamicResource {x:Static hdc:HdcLayout.MarginLargeKey}}"
+                               TextWrapping="Wrap"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Center"></TextBlock>
+                </Grid>
+            </DockPanel>
+        </GroupBox>
+    </Grid>
+</UserControl>

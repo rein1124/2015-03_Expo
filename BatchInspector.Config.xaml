@@ -1,0 +1,14 @@
+﻿<BatchInspectorConfig InspectionSchemaFileName="InspectionSchema.xaml" xmlns="clr-namespace:Hdc.Mv.Inspection.Halcon.BatchInspector;assembly=Hdc.Mv.Inspection.Halcon.BatchInspector" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <BatchInspectorConfig.Directories>
+    <DirectoryViewModel DirectoryPath="B:\5t1" />
+    <DirectoryViewModel DirectoryPath="{x:Null}" />
+    <DirectoryViewModel DirectoryPath="{x:Null}" />
+    <DirectoryViewModel DirectoryPath="{x:Null}" />
+    <DirectoryViewModel DirectoryPath="{x:Null}" />
+    <DirectoryViewModel DirectoryPath="{x:Null}" />
+    <DirectoryViewModel DirectoryPath="{x:Null}" />
+    <DirectoryViewModel DirectoryPath="{x:Null}" />
+    <DirectoryViewModel DirectoryPath="{x:Null}" />
+    <DirectoryViewModel DirectoryPath="{x:Null}" />
+  </BatchInspectorConfig.Directories>
+</BatchInspectorConfig>

@@ -1,0 +1,594 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{2AEABE20-5E8F-4310-A228-66BD3D434683}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Hdc</RootNamespace>
+    <AssemblyName>Hdc.Toolkit</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Practices.ServiceLocation">
+      <HintPath>..\..\sln\packages\CommonServiceLocator.1.3\lib\portable-net4+sl5+netcore45+wpa81+wp8\Microsoft.Practices.ServiceLocation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity">
+      <HintPath>..\..\sln\packages\Unity.3.5.1404.0\lib\net45\Microsoft.Practices.Unity.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Configuration">
+      <HintPath>..\..\sln\packages\Unity.3.5.1404.0\lib\net45\Microsoft.Practices.Unity.Configuration.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.RegistrationByConvention">
+      <HintPath>..\..\sln\packages\Unity.3.5.1404.0\lib\net45\Microsoft.Practices.Unity.RegistrationByConvention.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PresentationCore">
+    </Reference>
+    <Reference Include="PresentationFramework">
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+    </Reference>
+    <Reference Include="System.Interactive">
+      <HintPath>..\..\sln\packages\Ix-Main.1.2.2\lib\net45\System.Interactive.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Interactive.Async">
+      <HintPath>..\..\sln\packages\Ix-Async.1.2.2\lib\net45\System.Interactive.Async.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Interactive.Providers">
+      <HintPath>..\..\sln\packages\Ix-Providers.1.2.2\lib\net45\System.Interactive.Providers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reactive.Core">
+      <HintPath>..\..\sln\packages\Rx-Core.2.2.4\lib\net45\System.Reactive.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Reactive.Interfaces">
+      <HintPath>..\..\sln\packages\Rx-Interfaces.2.2.4\lib\net45\System.Reactive.Interfaces.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Reactive.Linq">
+      <HintPath>..\..\sln\packages\Rx-Linq.2.2.4\lib\net45\System.Reactive.Linq.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Reactive.PlatformServices">
+      <HintPath>..\..\sln\packages\Rx-PlatformServices.2.2.4\lib\net45\System.Reactive.PlatformServices.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Reactive.Windows.Threading">
+      <HintPath>..\..\sln\packages\Rx-Xaml.2.2.4\lib\net45\System.Reactive.Windows.Threading.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Windows.Interactivity">
+      <HintPath>..\..\lib\Expression.Blend.SDK\System.Windows.Interactivity.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq">
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase">
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Boot\BootstrapperExtension.cs" />
+    <Compile Include="Collections.Generic.Structured\BidirectionStructureMiddle.cs" />
+    <Compile Include="Collections.Generic.Structured\BidirectionStructureMiddleChildTerminal.cs" />
+    <Compile Include="Collections.Generic.Structured\BidirectionStructureMiddleParentTerminal.cs" />
+    <Compile Include="Collections.Generic.Structured\BidirectionStructureMiddleTerminal.cs" />
+    <Compile Include="Collections.Generic.Structured\ContextNodeMiddle.cs" />
+    <Compile Include="Collections.Generic.Structured\ContextNodeMiddleChildTerminal.cs" />
+    <Compile Include="Collections.Generic.Structured\ContextNodeMiddleParentTerminal.cs" />
+    <Compile Include="Collections.Generic.Structured\ContextNodeMiddleTerminal.cs" />
+    <Compile Include="Collections.Generic.Structured\ContextNodeUnityExtensions.cs" />
+    <Compile Include="Collections.Generic.Structured\IChild.cs" />
+    <Compile Include="Collections.Generic.Structured\IParent.cs" />
+    <Compile Include="Collections.Generic\BooleansExtensions.cs" />
+    <Compile Include="Collections.Generic\CollectionExtensions.cs" />
+    <Compile Include="Collections.Generic\SerializableNodeExtensions.cs" />
+    <Compile Include="Collections.Generic\SerializableNode.cs" />
+    <Compile Include="Collections.ObjectModel\BindableCollection.cs" />
+    <Compile Include="Collections.ObjectModel\BindableCollectionExtensions.cs" />
+    <Compile Include="Collections.ObjectModel\Execute.cs" />
+    <Compile Include="Collections.ObjectModel\INotifyPropertyChangedEx.cs" />
+    <Compile Include="Collections.ObjectModel\IObservableCollection.cs" />
+    <Compile Include="Collections.ObjectModel\ObservableCollectionExtensions.cs" />
+    <Compile Include="Collections.ObjectModel\SafeObservable.cs" />
+    <Compile Include="Collections.Specialized\NotifyCollectionChangedEventArgs.cs" />
+    <Compile Include="Collections\BitArrayExtensions.cs" />
+    <Compile Include="Controls\RelocatePopupBehavior.cs" />
+    <Compile Include="Controls\UpdateTextBindingOnPropertyChanged.cs" />
+    <Compile Include="Controls\WpfSingleInstance.cs" />
+    <Compile Include="DataStructure\Pair.cs" />
+    <Compile Include="DataStructure\StringPair.cs" />
+    <Compile Include="DataStructure\StringPairCollection.cs" />
+    <Compile Include="Generators\IdentityGenerator.cs" />
+    <Compile Include="Generators\IdentityGeneratorServiceLocator.cs" />
+    <Compile Include="Generators\IIdentityGenerator.cs" />
+    <Compile Include="Generators\ISequenceGenerator.cs" />
+    <Compile Include="Generators\SequentialIdentityGenerator.cs" />
+    <Compile Include="Hdc\AsyncResult.cs" />
+    <Compile Include="Hdc\BitConverterExtensions.cs" />
+    <Compile Include="Hdc\ComparableExtensions2.cs" />
+    <Compile Include="Hdc\CustomEvent.cs" />
+    <Compile Include="Hdc\GuidCombGenerator.cs" />
+    <Compile Include="Hdc\ICustomEvent.cs" />
+    <Compile Include="Hdc\IUniqueIdentifierGenerator.cs" />
+    <Compile Include="Hdc\IUpdatable.cs" />
+    <Compile Include="Hdc\IValueGetter.cs" />
+    <Compile Include="Hdc\IValueSetter.cs" />
+    <Compile Include="Hdc\IValueWrapper.cs" />
+    <Compile Include="Hdc\NotifyPropertyChangedRetainedSubject.cs" />
+    <Compile Include="Hdc\NullableExtensions.cs" />
+    <Compile Include="Hdc\ObservableExtensions.cs" />
+    <Compile Include="Hdc\PercentInt32Extensions.cs" />
+    <Compile Include="Hdc\PropertySupport.cs" />
+    <Compile Include="Hdc\PropertySupport2.cs" />
+    <Compile Include="Hdc\ServiceLocatorExtensions.cs" />
+    <Compile Include="Hdc\StringExtensions3.cs" />
+    <Compile Include="Hdc\Switch.cs" />
+    <Compile Include="Hdc\TypeExtensions2.cs" />
+    <Compile Include="Hdc\ValueRange.cs" />
+    <Compile Include="IO\FileExtensions.cs" />
+    <Compile Include="Linq\Enumerable.cs" />
+    <Compile Include="Linq\EnumerableExtensions.cs" />
+    <Compile Include="Linq\EnumerableExtensions2.cs" />
+    <Compile Include="Linq\EnumerableIterator.cs" />
+    <Compile Include="Linq\MoreLINQ\DistinctBy.cs" />
+    <Compile Include="Linq\MoreLINQ\MoreEnumerable.cs" />
+    <Compile Include="Linq\MoreLINQ\ThrowHelper.cs" />
+    <Compile Include="Linq\QueryableExtensions.cs" />
+    <Compile Include="Localization\StringExtensions.cs" />
+    <Compile Include="Localization\Xml\Language1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Language.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\NegateBooleanConverter.cs" />
+    <Compile Include="Controls\SizeToBooleanConverter.cs" />
+    <Compile Include="Mvvm.Commands\BasicCommand.cs" />
+    <Compile Include="Mvvm.Commands\BasicCommandController.cs" />
+    <Compile Include="Mvvm.Commands\BasicCommandController2.cs" />
+    <Compile Include="Mvvm.Commands\CommandReference.cs" />
+    <Compile Include="Mvvm.Commands\CommandRegistry.cs" />
+    <Compile Include="Mvvm.Commands\ICommandRegistry.cs" />
+    <Compile Include="Mvvm.Commands\IReactiveCommand.cs" />
+    <Compile Include="Mvvm.Commands\RelayCommand.cs" />
+    <Compile Include="Mvvm.Converters\ArithmeticConverter.cs" />
+    <Compile Include="Mvvm.Converters\BooleansToVisibilityConverter.cs" />
+    <Compile Include="Mvvm.Converters\BooleanToVisibilityConverter.cs" />
+    <Compile Include="Mvvm.Converters\ByteToBitmapConverter.cs" />
+    <Compile Include="Mvvm.Converters\ConverterMarkupExtension.cs" />
+    <Compile Include="Mvvm.Converters\DoubleConverter.cs" />
+    <Compile Include="Mvvm.Converters\DoubleLinearConverter.cs" />
+    <Compile Include="Mvvm.Converters\IndexOfListConverter.cs" />
+    <Compile Include="Mvvm.Converters\IndexOfListToStringConverter.cs" />
+    <Compile Include="Mvvm.Converters\Int32LinearConverter.cs" />
+    <Compile Include="Mvvm.Converters\Int32ToRomaOffset0Converter.cs" />
+    <Compile Include="Mvvm.Converters\IntConverter.cs" />
+    <Compile Include="Mvvm.Converters\InverseBooleanConverter.cs" />
+    <Compile Include="Mvvm.Converters\IsHiddenToVisibilityConverter.cs" />
+    <Compile Include="Mvvm.Converters\IsNotNullToBooleanConverter.cs" />
+    <Compile Include="Mvvm.Converters\IsNullToBooleanConverter.cs" />
+    <Compile Include="Mvvm.Converters\IsNullToVisibilityConverter.cs" />
+    <Compile Include="Mvvm.Converters\OperatorConverter.cs" />
+    <Compile Include="Mvvm.Converters\RegisterTickConverter.cs" />
+    <Compile Include="Mvvm.Converters\StringToBrushConverter.cs" />
+    <Compile Include="Mvvm.Converters\StringToColorConverter.cs" />
+    <Compile Include="Mvvm.Converters\ThicknessArithmeticConverter.cs" />
+    <Compile Include="Mvvm.Dialogs\Ask3DialogResult.cs" />
+    <Compile Include="Mvvm.Dialogs\DialogEventArgs.cs" />
+    <Compile Include="Mvvm.Dialogs\DialogEventArgs.T.cs" />
+    <Compile Include="Mvvm.Dialogs\IAsk3DialogService.cs" />
+    <Compile Include="Mvvm.Dialogs\IAskDialogService.cs" />
+    <Compile Include="Mvvm.Dialogs\IBusyDialogService.cs" />
+    <Compile Include="Mvvm.Dialogs\IBusyIndicatorDialogPromptViewModel.cs" />
+    <Compile Include="Mvvm.Dialogs\IBusyIndicatorDialogService.cs" />
+    <Compile Include="Mvvm.Dialogs\ICalculateDialogService.cs" />
+    <Compile Include="Mvvm.Dialogs\IChangeDateDialogService.cs" />
+    <Compile Include="Mvvm.Dialogs\IChangeDateTimeDialogService.cs" />
+    <Compile Include="Mvvm.Dialogs\IChangeTimeDialogService.cs" />
+    <Compile Include="Mvvm.Dialogs\IChangeTimeSpanDialogService.cs" />
+    <Compile Include="Mvvm.Dialogs\IClosable.cs" />
+    <Compile Include="Mvvm.Dialogs\ICommonDialogServices.cs" />
+    <Compile Include="Mvvm.Dialogs\IDoubleNumberInputDialogPromptViewModel.cs" />
+    <Compile Include="Mvvm.Dialogs\IDoubleNumberInputDialogService.cs" />
+    <Compile Include="Mvvm.Dialogs\IEditDataDialogService.cs" />
+    <Compile Include="Mvvm.Dialogs\IGeneralInputDialogService.cs" />
+    <Compile Include="Mvvm.Dialogs\IGeneralInputOutputDialogService.cs" />
+    <Compile Include="Mvvm.Dialogs\IGeneralOutputDialogService.cs" />
+    <Compile Include="Mvvm.Dialogs\IInt32NumberInputDialogPromptViewModel.cs" />
+    <Compile Include="Mvvm.Dialogs\IInt32NumberInputDialogService.cs" />
+    <Compile Include="Mvvm.Dialogs\IMessageDialogService.cs" />
+    <Compile Include="Mvvm.Dialogs\IModalDialogViewModel.cs" />
+    <Compile Include="Mvvm.Dialogs\IObserverDialogService.cs" />
+    <Compile Include="Mvvm.Dialogs\IPromptViewModel.cs" />
+    <Compile Include="Mvvm.Dialogs\ISelectDirectoryDialogService.cs" />
+    <Compile Include="Mvvm.Dialogs\ISeqenceOutputDialogService.cs" />
+    <Compile Include="Mvvm.Dialogs\ISimpleDialogService.cs" />
+    <Compile Include="Mvvm.Dialogs\IStringInputAppService.cs" />
+    <Compile Include="Mvvm.Dialogs\IStringInputDialogService.cs" />
+    <Compile Include="Mvvm.Resources\Extensions.cs" />
+    <Compile Include="Mvvm.Resources\IResourceLoaderManager.cs" />
+    <Compile Include="Mvvm.Resources\ResourceLoadingFailedException.cs" />
+    <Compile Include="Controls\SynchronizeSelectedItems.cs" />
+    <Compile Include="Mvvm\IInputOutputService.cs" />
+    <Compile Include="Mvvm\IInputService.cs" />
+    <Compile Include="Mvvm\IOutputService.cs" />
+    <Compile Include="Mvvm\IShell.cs" />
+    <Compile Include="Mvvm\IView.cs" />
+    <Compile Include="Mvvm\IViewModel.cs" />
+    <Compile Include="Mvvm\IViewModelProvider.cs" />
+    <Compile Include="Mvvm\IViewModelRegister.cs" />
+    <Compile Include="Mvvm\IWindowController.cs" />
+    <Compile Include="Mvvm\MockViewModelProvider.cs" />
+    <Compile Include="Mvvm\ServiceLocatorViewModelProvider.cs" />
+    <Compile Include="Mvvm\ViewBase.cs" />
+    <Compile Include="Mvvm\ViewModelExtensions.cs" />
+    <Compile Include="Mvvm\ViewModelManager.cs" />
+    <Compile Include="Mvvm\ViewModelNotFoundExcepton.cs" />
+    <Compile Include="Mvvm\ViewModelRegisterExtensions.cs" />
+    <Compile Include="Mvvm\WindowController.cs" />
+    <Compile Include="Mvvm\WindowControllerExtensions.cs" />
+    <Compile Include="Patterns\DDD\CommandBus.cs" />
+    <Compile Include="Patterns\DDD\EventBus.cs" />
+    <Compile Include="Patterns\DDD\EventHandlerExtensions.cs" />
+    <Compile Include="Patterns\DDD\ICommand.cs" />
+    <Compile Include="Patterns\DDD\ICommandBus.cs" />
+    <Compile Include="Patterns\DDD\ICommandHandler.cs" />
+    <Compile Include="Patterns\DDD\IEvent.cs" />
+    <Compile Include="Patterns\DDD\IEventBus.cs" />
+    <Compile Include="Patterns\DDD\IEventHandler.cs" />
+    <Compile Include="Patterns\DDD\RxEventBus.cs" />
+    <Compile Include="Patterns\DDD\ValueObject.cs" />
+    <Compile Include="Patterns\Entity.cs" />
+    <Compile Include="Patterns\EventPublisher.cs" />
+    <Compile Include="Patterns\EventPublisherHost.cs" />
+    <Compile Include="Patterns\IBootstrapper.cs" />
+    <Compile Include="Patterns\IEventPublisher.cs" />
+    <Compile Include="Patterns\IEventSource.cs" />
+    <Compile Include="Patterns\IFileExporter.cs" />
+    <Compile Include="Patterns\IFileImporter.cs" />
+    <Compile Include="Patterns\IFileRepository.cs" />
+    <Compile Include="Patterns\PoEAA\CollectionChangedEvent.cs" />
+    <Compile Include="Patterns\PoEAA\IEventAggregator.cs" />
+    <Compile Include="Patterns\PoEAA\IPaginable.cs" />
+    <Compile Include="Patterns\PoEAA\IPersistenceManager.cs" />
+    <Compile Include="Patterns\PoEAA\IQueryRepository.cs" />
+    <Compile Include="Patterns\PoEAA\IRepository.cs" />
+    <Compile Include="Patterns\PoEAA\IRepositoryFactory.cs" />
+    <Compile Include="Patterns\PoEAA\IUnitOfWork.cs" />
+    <Compile Include="Patterns\Specification\AndSpecification.cs" />
+    <Compile Include="Patterns\Specification\CompositeSpecification.cs" />
+    <Compile Include="Patterns\Specification\ExpressionExtension.cs" />
+    <Compile Include="Patterns\Specification\ExpressionVisitor.cs" />
+    <Compile Include="Patterns\Specification\ISpecification.cs" />
+    <Compile Include="Patterns\Specification\OrSpecification.cs" />
+    <Compile Include="Patterns\Specification\ParameterRebinder.cs" />
+    <Compile Include="Patterns\Specification\Specification.cs" />
+    <Compile Include="Reactive\IRetainedObservable.cs" />
+    <Compile Include="Reactive\IRetainedSubject.cs" />
+    <Compile Include="Reactive\IValueObservable.cs" />
+    <Compile Include="Reactive\ObservableExtensions.cs" />
+    <Compile Include="Reactive\ValueMonitorAttribute.cs" />
+    <Compile Include="Reactive\_\IValueGetter.cs" />
+    <Compile Include="Reactive\IValueMonitor.cs" />
+    <Compile Include="Reactive\_\IValueSetter.cs" />
+    <Compile Include="Reactive\RetainedSubject.cs" />
+    <Compile Include="Reactive\ValueMonitor.cs" />
+    <Compile Include="Serialization\BinarySerializationExtensions.cs" />
+    <Compile Include="Statistics\StatisticsExtensions.cs" />
+    <Compile Include="Unity\EnumerableResolutionStrategy.cs" />
+    <Compile Include="Unity\LazyResolveBuildPlanPolicy.cs" />
+    <Compile Include="Unity\LazySupportExtension.cs" />
+    <Compile Include="Unity\UnityApplicationContainer.cs" />
+    <Compile Include="Unity\UnityContainerExtensions.cs" />
+    <Compile Include="Unity\UnityExtensions.cs" />
+    <Compile Include="Windows.Interactivity\AutoScrollSelectedItemIntoViewListBoxBehavior.cs" />
+    <Compile Include="Windows.Interactivity\ClickBehavior.cs" />
+    <Compile Include="Windows.Interactivity\DragAdorner.cs" />
+    <Compile Include="Windows.Interactivity\DragDropBehavior.cs" />
+    <Compile Include="Windows.Interactivity\DragOverDistanceDifferBehavior.cs" />
+    <Compile Include="Windows.Interactivity\DropAdorner.cs" />
+    <Compile Include="Windows.Interactivity\_\InvokeVMCommandBehavior.cs" />
+    <Compile Include="Windows.Interactivity\MouseWheelDeltaBehavior.cs" />
+    <Compile Include="Windows.Interactivity\RegexTextBoxBehavior.cs" />
+    <Compile Include="Windows.Interactivity\SelectionChangedBehavior.cs" />
+    <Compile Include="Controls\BooleanToGrayscaleConverter.cs" />
+    <Compile Include="Controls\ConverterHelper.cs" />
+    <Compile Include="Hdc\BooleanExtensions.cs" />
+    <Compile Include="Collections.Generic.Structured\IBidirectionStructureChild.cs" />
+    <Compile Include="Collections.Generic.Structured\IBidirectionStructureChildTerminal.cs" />
+    <Compile Include="Collections.Generic.Structured\IBidirectionStructureMiddle.cs" />
+    <Compile Include="Collections.Generic.Structured\IBidirectionStructureMiddleChildTerminal.cs" />
+    <Compile Include="Collections.Generic.Structured\IBidirectionStructureMiddleParentTerminal.cs" />
+    <Compile Include="Collections.Generic.Structured\IBidirectionStructureParent.cs" />
+    <Compile Include="Collections.Generic.Structured\IBidirectionStructureParentTerminal.cs" />
+    <Compile Include="Collections.Generic.Structured\IContextNodeChild.cs" />
+    <Compile Include="Collections.Generic.Structured\IContextNodeChildTerminal.cs" />
+    <Compile Include="Collections.Generic.Structured\IContextNodeMiddle.cs" />
+    <Compile Include="Collections.Generic.Structured\IContextNodeMiddleChildTerminal.cs" />
+    <Compile Include="Collections.Generic.Structured\IContextNodeMiddleParentTerminal.cs" />
+    <Compile Include="Collections.Generic.Structured\IContextNodeMiddleTerminal.cs" />
+    <Compile Include="Collections.Generic.Structured\IContextNodeParent.cs" />
+    <Compile Include="Collections.Generic.Structured\IContextNodeParentTerminal.cs" />
+    <Compile Include="Collections.Generic\INode.cs" />
+    <Compile Include="Collections.Generic.Structured\IStructureChild.cs" />
+    <Compile Include="Collections.Generic.Structured\IStructureMiddle.cs" />
+    <Compile Include="Collections.Generic.Structured\IStructureParent.cs" />
+    <Compile Include="Collections.Generic\ITree2.cs" />
+    <Compile Include="Collections.Generic\Node.cs" />
+    <Compile Include="Collections.Generic\NodeAlgorithm.cs" />
+    <Compile Include="Collections.Generic\NodeExtensions.cs" />
+    <Compile Include="Collections.Generic\Tree2.cs" />
+    <Compile Include="Collections.Generic\TreeExtensions.cs" />
+    <Compile Include="Collections.Generic\WeakReferenceCollection.cs" />
+    <Compile Include="Collections\INode.cs" />
+    <Compile Include="Collections\Node.cs" />
+    <Compile Include="Collections\TraverseEx.cs" />
+    <Compile Include="Collections.Generic\ComplexNode.cs" />
+    <Compile Include="Collections.Generic\CompositeNode.cs" />
+    <Compile Include="Collections.Generic\IComplexDualNode.cs" />
+    <Compile Include="Collections.Generic\IComplexNode.cs" />
+    <Compile Include="Collections.Generic\ICompositeNode.cs" />
+    <Compile Include="Collections.Generic.Structured\IGenericStructureBase.cs" />
+    <Compile Include="Collections.Generic.Structured\IGenericStructureChild.cs" />
+    <Compile Include="Collections.Generic.Structured\IGenericStructureMiddle.cs" />
+    <Compile Include="Collections.Generic.Structured\IGenericStructureParent.cs" />
+    <Compile Include="Collections.Generic\Pair.cs" />
+    <Compile Include="Collections.Generic\StringPair.cs" />
+    <Compile Include="Collections.Generic\StringPairCollection.cs" />
+    <Compile Include="Collections.Generic.Levels\DpGenericStructureChild.cs" />
+    <Compile Include="Collections.Generic.Levels\DpGenericStructureMiddle.cs" />
+    <Compile Include="Collections.Generic.Levels\DpGenericStructureParent.cs" />
+    <Compile Include="Collections.Generic.Levels\GenericCTreeChild.cs" />
+    <Compile Include="Collections.Generic.Levels\GenericCTreeMiddle.cs" />
+    <Compile Include="Collections.Generic.Levels\GenericCTreeParent.cs" />
+    <Compile Include="Collections.Generic.Levels\ICTreeBase.cs" />
+    <Compile Include="Collections.Generic.Levels\ICTreeChild.cs" />
+    <Compile Include="Collections.Generic.Levels\ICTreeParent.cs" />
+    <Compile Include="Collections.Generic.Levels\IGenericCTreeBase.cs" />
+    <Compile Include="Collections.Generic.Levels\IGenericCTreeChild.cs" />
+    <Compile Include="Collections.Generic.Levels\IGenericCTreeParent.cs" />
+    <Compile Include="Patterns\IObjectRepository.cs" />
+    <Compile Include="Patterns\IPlugin.cs" />
+    <Compile Include="Mvvm.DesignTime\DesignTimeViewModelProvider.cs" />
+    <Compile Include="Hdc\AnonymousDisposable.cs" />
+    <Compile Include="Hdc\AnonymousObservable.cs" />
+    <Compile Include="Hdc\ContextualObjectProvider.cs" />
+    <Compile Include="Patterns\CustomEvent.cs" />
+    <Compile Include="Threading\DispatcherExtensions.cs" />
+    <Compile Include="Windows.Interactivity\Utilities\UIHelpers.cs" />
+    <Compile Include="Windows.Media.Imaging\BitmapSourceExtensions.cs" />
+    <Compile Include="Windows.Media.Imaging\BitmapSourceInfo.cs" />
+    <Compile Include="Windows.Media.Imaging\BitmapSourceInfoExtensions.cs" />
+    <Compile Include="Windows\ComponentResourceKeyExtensions.cs" />
+    <Compile Include="Windows\Extensions.cs" />
+    <Compile Include="Windows\Int32Size.cs" />
+    <Compile Include="Windows\VectorExtensions.cs" />
+    <Compile Include="_\DependencyPropertyObjectWrapper.cs" />
+    <Compile Include="Hdc\IBindable.cs" />
+    <Compile Include="Hdc\ICloneable.cs" />
+    <Compile Include="Hdc\IContextNode.cs" />
+    <Compile Include="Patterns\ICustomEvent.cs" />
+    <Compile Include="Hdc\Int32Extensions.cs" />
+    <Compile Include="Hdc\IObjectProvider.cs" />
+    <Compile Include="_\NotifyPropertyChangedObjectWrapper.cs" />
+    <Compile Include="Hdc\ObjectExtensions2.cs" />
+    <Compile Include="Hdc\Observable.cs" />
+    <Compile Include="Collections.Generic\ObservableTree.cs" />
+    <Compile Include="Collections.Generic\DictionaryExtensions.cs" />
+    <Compile Include="Collections.Generic\EnumerableExtensions.cs" />
+    <Compile Include="Collections.Generic\Iesi\DictionarySet.cs" />
+    <Compile Include="Collections.Generic\Iesi\HashedSet.cs" />
+    <Compile Include="Collections.Generic\Iesi\ImmutableSet.cs" />
+    <Compile Include="Collections.Generic\Iesi\ISet.cs" />
+    <Compile Include="Collections.Generic\Iesi\OrderedSet.cs" />
+    <Compile Include="Collections.Generic\Iesi\Set.cs" />
+    <Compile Include="Collections.Generic\Iesi\SortedSet.cs" />
+    <Compile Include="Collections.Generic\Iesi\SynchronizedSet.cs" />
+    <Compile Include="Collections.Generic\InternalTree.cs" />
+    <Compile Include="Collections.Generic\IObservableTree.cs" />
+    <Compile Include="Collections.Generic\ISimpleTree.cs" />
+    <Compile Include="Collections.Generic\ITree.cs" />
+    <Compile Include="Collections.Generic\ListExtensions.cs" />
+    <Compile Include="Collections\Iesi\DictionarySet.cs" />
+    <Compile Include="Collections\Iesi\HashedSet.cs" />
+    <Compile Include="Collections\Iesi\HybridSet.cs" />
+    <Compile Include="Collections\Iesi\ImmutableSet.cs" />
+    <Compile Include="Collections\Iesi\ISet.cs" />
+    <Compile Include="Collections\Iesi\ListSet.cs" />
+    <Compile Include="Collections\Iesi\Set.cs" />
+    <Compile Include="Collections\Iesi\SortedSet.cs" />
+    <Compile Include="Collections\Iesi\SynchronizedSet.cs" />
+    <Compile Include="ComponentModel\INotifyCollectionsChangedExtensions.cs" />
+    <Compile Include="ComponentModel\INotifyPropertyWrapper.cs" />
+    <Compile Include="ComponentModel\NotifyPropertyWrapper.cs" />
+    <Compile Include="Localization\LCIDExtension.cs" />
+    <Compile Include="Localization\LCIDStrings.cs" />
+    <Compile Include="Hdc\StringExtensions2.cs" />
+    <Compile Include="Hdc\SystemTime.cs" />
+    <Compile Include="Hdc\UriExtensions.cs" />
+    <Compile Include="Patterns\Ioc\IApplicationContainer.cs" />
+    <Compile Include="IO\FileInfoExtensions2.cs" />
+    <Compile Include="Reactive.Linq\ObservableExtensions.cs" />
+    <Compile Include="Localization\DefaultLocalizationService.cs" />
+    <Compile Include="Localization\ILocalizationService.cs" />
+    <Compile Include="Localization\LocalizationServiceLocator.cs" />
+    <Compile Include="Localization\LocalizeExtension.cs" />
+    <Compile Include="Localization\Xml\LanguageEntry.cs" />
+    <Compile Include="Localization\Xml\XmlLocalizationService.cs" />
+    <Compile Include="Patterns\ICopyable.cs" />
+    <Compile Include="Patterns\IFactory.cs" />
+    <Compile Include="Patterns\IMapper.cs" />
+    <Compile Include="Patterns\IProvider.cs" />
+    <Compile Include="Patterns\IShallowCopyable.cs" />
+    <Compile Include="Patterns\IShallowCopyFactory.cs" />
+    <Compile Include="Patterns\Provider.cs" />
+    <Compile Include="Patterns\ServiceLocatorFactory.cs" />
+    <Compile Include="Reflection\ApplicationInfo.cs" />
+    <Compile Include="Reflection\ICustomAttributeProviderExtensions.cs" />
+    <Compile Include="Reflection\MethodBaseExtensions.cs" />
+    <Compile Include="Reflection\TypeManager.cs" />
+    <Compile Include="Mvvm.Resources\DrawingBrushServiceLocator.cs" />
+    <Compile Include="Mvvm.Resources\IconImageSourceLoader.cs" />
+    <Compile Include="Mvvm.Resources\IconImageSourceLoaderServiceLocator.cs" />
+    <Compile Include="Mvvm.Resources\IDrawingBrushLoader.cs" />
+    <Compile Include="Mvvm.Resources\IIconImageSourceLoader.cs" />
+    <Compile Include="Mvvm.Resources\_\ILocalizationLoader.cs" />
+    <Compile Include="Mvvm.Resources\_\LocalizationServiceLocator.cs" />
+    <Compile Include="Mvvm.Resources\MockDrawingBrushLoader.cs" />
+    <Compile Include="Mvvm.Resources\MockIconImageSourceLoader.cs" />
+    <Compile Include="Mvvm.Resources\ResourceLoader.cs" />
+    <Compile Include="Mvvm.Resources\ResourceLoaderManager.cs" />
+    <Compile Include="Mvvm.Resources\XamlDrawingBrushLoader.cs" />
+    <Compile Include="_\ObjectWrapper.cs" />
+    <Compile Include="Threading.Tasks\StaTaskScheduler.cs" />
+    <Compile Include="Threading\ThreadHelpers.cs" />
+    <Compile Include="Windows.Data\BindingExtensions.cs" />
+    <Compile Include="Mvvm.Resources\DrawingBrushExtension.cs" />
+    <Compile Include="Mvvm.Resources\IconBrushExtension.cs" />
+    <Compile Include="Mvvm.Resources\IconImageExtension.cs" />
+    <Compile Include="Windows.Markup\XamlTypeResolver.cs" />
+    <Compile Include="Windows\DependencyObjectExtensions.cs" />
+    <Compile Include="Windows\DependencyPropertyWrapper.cs" />
+    <Compile Include="Windows\IDependencyPropertyWrapper.cs" />
+    <Compile Include="Windows\DelegatingWeakEventListener .cs" />
+    <Compile Include="Windows\GenericWeakEventManager.cs" />
+    <Compile Include="Windows\ResourceService.cs" />
+    <Compile Include="Windows\SharedResourceDictionary.cs" />
+    <Compile Include="Windows\WeakEventHandler.cs" />
+    <Compile Include="Hdc\WeakEventHandler.cs" />
+    <Compile Include="Hdc\DebugTimeSpaner.cs" />
+    <Compile Include="Hdc\Guard.cs" />
+    <Compile Include="Hdc\PropertyNotFoundException.cs" />
+    <Compile Include="Hdc\Range.cs" />
+    <Compile Include="Hdc\RotateDirection.cs" />
+    <Compile Include="Collections.Generic\SimpleTree.cs" />
+    <Compile Include="Collections.Generic\SimpleTreeExtension.cs" />
+    <Compile Include="Collections.Generic\Tree.cs" />
+    <Compile Include="Collections\EnumerableExtensions2.cs" />
+    <Compile Include="ComponentModel\NotifyPropertyChangedObject.cs" />
+    <Compile Include="ComponentModel\PropertyObserver.cs" />
+    <Compile Include="Diagnostics\DiagnosticsExtensions.cs" />
+    <Compile Include="Diagnostics\DiagnosticsUtils.cs" />
+    <Compile Include="Localization\CurrentCultureContext.cs" />
+    <Compile Include="IO\DirectoryInfoExtensions.cs" />
+    <Compile Include="IO\FileInfoExtensions.cs" />
+    <Compile Include="IO\FileIO.cs" />
+    <Compile Include="IO\TemporaryDirectory.cs" />
+    <Compile Include="IO\TemporaryFile.cs" />
+    <Compile Include="IO\TemporaryFileCopier.cs" />
+    <Compile Include="IO\TextReaderExtensions.cs" />
+    <Compile Include="Reflection\TypeExtensions.cs" />
+    <Compile Include="Serialization\SerializationTestServices.cs" />
+    <Compile Include="Serialization\StrictFormatterConverter.cs" />
+    <Compile Include="Security.Cryptography\Md5CryptHelper.cs" />
+    <Compile Include="Windows\WeakEventListener.cs" />
+    <Compile Include="Windows\WeakEventManagerBase.cs" />
+    <Compile Include="Serialization\XamlSerializationExtensions.cs" />
+    <Compile Include="Xml\XmlNodeExtensions.cs" />
+    <Compile Include="Hdc\ActionExtensions.cs" />
+    <Compile Include="Hdc\CombinedException.cs" />
+    <Compile Include="Hdc\ComparableExtensions.cs" />
+    <Compile Include="Hdc\DateTimeExtensions.cs" />
+    <Compile Include="Hdc\DisposableObject.cs" />
+    <Compile Include="Collections\EnumerableExtensions.cs" />
+    <Compile Include="Hdc\ExceptionExtensions.cs" />
+    <Compile Include="Hdc\ObjectExtensions.cs" />
+    <Compile Include="Hdc\RandomGenerator.cs" />
+    <Compile Include="Hdc\ScopeSwitcher.cs" />
+    <Compile Include="Hdc\ScopeSwitcherHelpers.cs" />
+    <Compile Include="Hdc\SecureRandom.cs" />
+    <Compile Include="Hdc\StringExtensions.cs" />
+    <Compile Include="Hdc\StringHelper.cs" />
+    <Compile Include="Hdc\TextSplitter.cs" />
+    <Compile Include="Hdc\TimeSpaner.cs" />
+    <Compile Include="Hdc\MathExtensions.cs" />
+    <Compile Include="Reflection\ReflectionExtensions.cs" />
+    <Compile Include="Hdc\ArgumentExtensions.cs" />
+    <Compile Include="Hdc\ArgumentHelper.cs" />
+    <Compile Include="Hdc\EnumExtensions.cs" />
+    <Compile Include="Hdc\EventExtensions.cs" />
+    <Compile Include="Hdc\EventHelper.cs" />
+    <Compile Include="Hdc\SystemExtensions.cs" />
+    <Compile Include="Serialization\XmlSerializationExtensions.cs" />
+    <Compile Include="Collections.Generic\Association.cs" />
+    <Compile Include="Collections.Generic\DictionaryBase.cs" />
+    <Compile Include="Collections.Generic\HashList.cs" />
+    <Compile Include="Collections.Generic\SerializableDictionary.cs" />
+    <Compile Include="Diagnostics\DebugTimeSpaner.cs" />
+    <Compile Include="Hdc\EventArgs.cs" />
+    <Compile Include="ComponentModel\ComponentModelExtensions.cs" />
+    <Compile Include="Threading\ThreadingExtensions.cs" />
+    <Compile Include="IO\IOExtensions.cs" />
+    <Compile Include="Windows\WindowsApi.cs" />
+    <Compile Include="Diagnostics\NotifyStopwatch.cs" />
+    <Compile Include="Patterns\Composite.cs" />
+    <Compile Include="Patterns\CompositeWithIdAndName.cs" />
+    <Compile Include="Patterns\Factory.cs" />
+    <Compile Include="Patterns\Singleton.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Threading\SuspendableThread.cs" />
+    <Compile Include="Hdc\TypeExtensions.cs" />
+    <Compile Include="Hdc\ValueGeneration.cs" />
+    <Compile Include="Hdc\WeakEventHandlerManager.cs" />
+    <Compile Include="Localization\LCID.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Localization\Xml\Language.xsd">
+      <SubType>Designer</SubType>
+      <Generator>Xsd2CodeCustomTool</Generator>
+      <LastGenOutput>Language1.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Modularity\" />
+    <Folder Include="Mvvm.Navigation\" />
+    <Folder Include="Xaml\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Patterns\Specification\note.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<DrawingBrush x:Key="N029" Stretch="Uniform">
+		<DrawingBrush.Drawing>
+			<DrawingGroup>
+				<DrawingGroup.Children>
+					<GeometryDrawing Brush="#00000000" Geometry="F1 M 0,0L 100,0L 100,100L 0,100L 0,0 Z "/>
+					<GeometryDrawing Brush="#FF313131" Geometry="M 25,22.5L 75,22.5C 75.5523,22.5 76,22.9477 76,23.5L 76,76.5C 76,77.0523 75.5523,77.5 75,77.5L 25,77.5C 24.4477,77.5 24,77.0523 24,76.5L 24,23.5C 24,22.9477 24.4477,22.5 25,22.5 Z "/>
+					<GeometryDrawing Brush="#FFFFFFFF" Geometry="M 30,43.5L 38.6956,43.5L 38.6956,52.1957L 30,52.1957L 30,43.5 Z "/>
+					<GeometryDrawing Brush="#FFFFFFFF" Geometry="M 30,53.5L 38.6956,53.5L 38.6956,62.1957L 30,62.1957L 30,53.5 Z "/>
+					<GeometryDrawing Brush="#FFFFFFFF" Geometry="M 40.4348,43.5L 49.1304,43.5L 49.1304,52.1957L 40.4348,52.1957L 40.4348,43.5 Z "/>
+					<GeometryDrawing Brush="#FFFFFFFF" Geometry="M 40.4348,53.5L 49.1304,53.5L 49.1304,62.1957L 40.4348,62.1957L 40.4348,53.5 Z "/>
+					<GeometryDrawing Brush="#FFFFFFFF" Geometry="M 50.8696,43.5L 59.5652,43.5L 59.5652,52.1956L 50.8696,52.1956L 50.8696,43.5 Z "/>
+					<GeometryDrawing Brush="#FFFFFFFF" Geometry="M 50.8696,53.5L 59.5652,53.5L 59.5652,62.1957L 50.8696,62.1957L 50.8696,53.5 Z "/>
+					<GeometryDrawing Brush="#FFFFFFFF" Geometry="M 61.3043,43.5L 70,43.5L 70,52.1956L 61.3043,52.1956L 61.3043,43.5 Z "/>
+					<GeometryDrawing Brush="#FFFFFFFF" Geometry="M 61.3043,53.5L 70,53.5L 70,62.1956L 61.3043,62.1956L 61.3043,53.5 Z "/>
+					<GeometryDrawing Brush="#FFFFFFFF" Geometry="M 30,63.5L 38.6956,63.5L 38.6956,72.1957L 30,72.1957L 30,63.5 Z "/>
+					<GeometryDrawing Brush="#FFFFFFFF" Geometry="M 40.4348,63.5L 49.1304,63.5L 49.1304,72.1956L 40.4348,72.1956L 40.4348,63.5 Z "/>
+					<GeometryDrawing Brush="#FFFFFFFF" Geometry="M 50.8696,63.5L 59.5652,63.5L 59.5652,72.1956L 50.8696,72.1956L 50.8696,63.5 Z "/>
+					<GeometryDrawing Brush="#FFFFFFFF" Geometry="M 61.3043,63.5L 70,63.5L 70,72.1956L 61.3043,72.1956L 61.3043,63.5 Z "/>
+					<GeometryDrawing Brush="#FFFFFFFF" Geometry="M 31,28L 69,28C 69.5523,28 70,28.4477 70,29L 70,37C 70,37.5523 69.5523,38 69,38L 31,38C 30.4477,38 30,37.5523 30,37L 30,29C 30,28.4477 30.4477,28 31,28 Z "/>
+				</DrawingGroup.Children>
+			</DrawingGroup>
+		</DrawingBrush.Drawing>
+	</DrawingBrush>
+</ResourceDictionary>

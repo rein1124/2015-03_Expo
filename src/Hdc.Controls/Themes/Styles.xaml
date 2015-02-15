@@ -1,0 +1,31 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary  Source="Styles\ButtonBaseStyle.xaml"></ResourceDictionary>
+        <ResourceDictionary  Source="Styles\TextBoxStyle.xaml"></ResourceDictionary>
+        <ResourceDictionary  Source="Styles\MacListBoxItemStyle.xaml"></ResourceDictionary>
+        <ResourceDictionary  Source="Styles\MacListBoxStyle.xaml"></ResourceDictionary>
+        <ResourceDictionary  Source="Styles\IconButtonStyle.xaml"></ResourceDictionary>
+        <ResourceDictionary  Source="Styles\ButtonScrollbar.xaml"></ResourceDictionary>
+        <ResourceDictionary  Source="Styles\ButtonScrollListBox.xaml"></ResourceDictionary>
+        <ResourceDictionary  Source="Styles\ButtonScrollViewer.xaml"></ResourceDictionary>
+        <ResourceDictionary  Source="Styles\StripValueIndicatorProgressBar.xaml"></ResourceDictionary>
+        <ResourceDictionary  Source="Styles\ThumbStyle.xaml"></ResourceDictionary>
+        <ResourceDictionary  Source="Styles\AnimationListBoxItemStyle.xaml"></ResourceDictionary>
+        <ResourceDictionary  Source="Styles\AnimationListBoxStyle.xaml"></ResourceDictionary>
+        <ResourceDictionary  Source="Styles\SubPageListBoxItemStyle.xaml"></ResourceDictionary>
+        <ResourceDictionary  Source="Styles\SubPageListBoxStyle.xaml"></ResourceDictionary>
+        <ResourceDictionary  Source="Styles\PageSelectorListBoxItemStyle.xaml"></ResourceDictionary>
+        <ResourceDictionary  Source="Styles\PageSelectorListBoxStyle.xaml"></ResourceDictionary>
+        <ResourceDictionary  Source="Styles\TabControl\PageSelectorTabControlStyle.xaml"></ResourceDictionary>
+        <ResourceDictionary  Source="Styles\TabControl\PageSelectorTabItemStyle.xaml"></ResourceDictionary>
+        <ResourceDictionary  Source="Styles\TabControl\NoHeaderTabControlStyleKey.xaml"></ResourceDictionary>
+        <ResourceDictionary  Source="Styles\ArrowButtonStyle.xaml"></ResourceDictionary>
+        <ResourceDictionary  Source="Styles\ComboBoxStyle.xaml"></ResourceDictionary>
+        <ResourceDictionary  Source="Styles\SecondaryPageSelectorListBoxItemStyle.xaml"></ResourceDictionary>
+        <ResourceDictionary  Source="Styles\NoneBorderButtonStyle.xaml"></ResourceDictionary>
+        <ResourceDictionary  Source="Styles\WindowRegionStyle.xaml"></ResourceDictionary>
+        <ResourceDictionary  Source="Styles\GroupBox\GroupBoxStyle.xaml"></ResourceDictionary>
+        <ResourceDictionary  Source="Styles\GroupBox\DialogGroupBoxStyle.xaml"></ResourceDictionary>
+    </ResourceDictionary.MergedDictionaries>
+</ResourceDictionary>

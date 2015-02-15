@@ -1,0 +1,33 @@
+﻿<UserControl x:Class="Hdc.Controls.ZoomImageViewerR2"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             mc:Ignorable="d"
+             d:DesignHeight="300"
+             d:DesignWidth="300"
+             x:Name="Root">
+    <Canvas Margin="0"
+            x:Name="Canvas"
+            Background="Transparent">
+        <Image Source="{Binding BitmapSource, ElementName=Root}"
+               Stretch="None"
+               HorizontalAlignment="Left"
+               VerticalAlignment="Top"
+               x:Name="Image"
+               RenderOptions.BitmapScalingMode="NearestNeighbor">
+            <Image.RenderTransform>
+                <TransformGroup x:Name="TransformGroup">
+                    <ScaleTransform  ScaleX="{Binding Scale,ElementName=Root, Mode=OneWay, IsAsync=True}"
+                                     ScaleY="{Binding Scale,ElementName=Root, Mode=OneWay, IsAsync=True}"
+                                     x:Name="ScaleTransform"></ScaleTransform>
+                    <TranslateTransform x:Name="TranslateTransform"
+                                        X="{Binding X,ElementName=Root, Mode=OneWay, IsAsync=True}"
+                                        Y="{Binding Y,ElementName=Root, Mode=OneWay, IsAsync=True}"></TranslateTransform>
+                    <!--                    <ScaleTransform  x:Name="ScaleTransform"></ScaleTransform>-->
+                    <!--                    <TranslateTransform x:Name="TranslateTransform"></TranslateTransform>-->
+                </TransformGroup>
+            </Image.RenderTransform>
+        </Image>
+    </Canvas>
+</UserControl>

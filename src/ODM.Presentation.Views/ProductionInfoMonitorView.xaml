@@ -1,0 +1,66 @@
+﻿<UserControl x:Class="ODM.Presentation.Views.ProductionInfoMonitorView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             mc:Ignorable="d"
+             d:DesignHeight="600"
+             d:DesignWidth="300"
+             xmlns:hdc="http://schemas.hdcrd.com/xaml"
+             Background="Silver"
+             TextElement.FontSize="{DynamicResource {x:Static hdc:HdcFonts.FontSizeLargeKey}}">
+    <StackPanel VerticalAlignment="Center"
+                HorizontalAlignment="Center">
+        <Grid Margin="{DynamicResource {x:Static hdc:HdcLayout.MarginLargeKey}}"
+              VerticalAlignment="Center">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0" />
+                <ColumnDefinition Width="2*" />
+                <ColumnDefinition Width="2*" />
+            </Grid.ColumnDefinitions>
+            <TextBlock Text="总产"
+                       FontSize="{DynamicResource {x:Static hdc:HdcFonts.FontSizeExtraLargeKey}}"
+                       Grid.RowSpan="4"
+                       Grid.Row="1"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Center"
+                       Margin="{DynamicResource {x:Static hdc:HdcLayout.MarginLargeKey}}"
+                       TextWrapping="Wrap" />
+            <TextBlock Text="总产量："
+                       Grid.Row="1"
+                       Grid.Column="1"
+                       TextAlignment="Right" />
+            <TextBlock Text="{Binding Machine.TotalCount}"
+                       Grid.Row="1"
+                       Grid.Column="2" />
+            <TextBlock Text="良品数："
+                       Grid.Row="2"
+                       Grid.Column="1"
+                       TextAlignment="Right" />
+            <TextBlock Text="{Binding Machine.TotalAcceptedCount}"
+                       Grid.Row="2"
+                       Grid.Column="2" />
+            <TextBlock Text="废品数："
+                       Grid.Row="3"
+                       Grid.Column="1"
+                       TextAlignment="Right" />
+            <TextBlock Text="{Binding Machine.TotalRejectCount}"
+                       Grid.Row="3"
+                       Grid.Column="2" />
+            <TextBlock Text="废品率："
+                       Grid.Row="4"
+                       Grid.Column="1"
+                       TextAlignment="Right" />
+            <TextBlock Text="{Binding Machine.TotalRejectRate, StringFormat={}{0}%}"
+                       Grid.Row="4"
+                       Grid.Column="2" />
+        </Grid>
+    </StackPanel>
+</UserControl>

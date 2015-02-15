@@ -1,0 +1,287 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="..\Basic.xaml"></ResourceDictionary>
+        <ResourceDictionary Source="ButtonBaseStyle.xaml"></ResourceDictionary>
+    </ResourceDictionary.MergedDictionaries>
+    <Style x:Key="ScrollBarPageButton"
+           TargetType="{x:Type RepeatButton}">
+        <Setter Property="SnapsToDevicePixels"
+                Value="True" />
+        <Setter Property="OverridesDefaultStyle"
+                Value="true" />
+        <Setter Property="IsTabStop"
+                Value="false" />
+        <Setter Property="Focusable"
+                Value="false" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type RepeatButton}">
+                    <Border Background="Transparent" />
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <ControlTemplate x:Key="VerticalScrollBar"
+                     TargetType="{x:Type ScrollBar}">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="30"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Border Grid.Column="1">
+                <Track Name="PART_Track"
+                       IsDirectionReversed="true">
+                    <Track.DecreaseRepeatButton>
+                        <RepeatButton Command="ScrollBar.PageUpCommand"
+                                      Style="{StaticResource ScrollBarPageButton}" />
+                    </Track.DecreaseRepeatButton>
+                    <Track.Thumb>
+                        <Thumb Margin="1,0,1,0"></Thumb>
+                    </Track.Thumb>
+                    <Track.IncreaseRepeatButton>
+                        <RepeatButton Command="ScrollBar.PageDownCommand"
+                                      Style="{StaticResource ScrollBarPageButton}" />
+                    </Track.IncreaseRepeatButton>
+                </Track>
+            </Border>
+            <WrapPanel ItemHeight="34"
+                       ItemWidth="34"
+                       Width="36"
+                       Grid.Column="0"
+                       x:Name="panelHoriButtons"
+                       VerticalAlignment="Top"
+                       MinWidth="12">
+                <WrapPanel.Resources>
+                    <Style BasedOn="{StaticResource {x:Type RepeatButton}}"
+                           TargetType="{x:Type RepeatButton}">
+                        <Setter Property="Width"
+                                Value="32" />
+                        <Setter Property="Height"
+                                Value="32" />
+                        <Setter Property="Margin"
+                                Value="1" />
+                    </Style>
+                </WrapPanel.Resources>
+                <RepeatButton Grid.Row="0"
+                              Command="ScrollBar.ScrollToTopCommand"
+                              x:Name="btn">
+                    <Border>
+                        <Border.Background>
+                            <DrawingBrush>
+                                <DrawingBrush.Drawing>
+                                    <DrawingGroup>
+                                        <DrawingGroup.Children>
+                                            <GeometryDrawing Brush="#00FFFFFF"
+                                                             Geometry="F1 M 3.80973e-006,0L 100,0L 100,100L 3.80973e-006,100L 3.80973e-006,0 Z " />
+                                            <GeometryDrawing Brush="{DynamicResource PrimaryForegroundBrush}"
+                                                             Geometry="F1 M 14.6447,77.6777L 50,42.3223L 85.3553,77.6777L 14.6447,77.6777 Z " />
+                                            <GeometryDrawing Brush="{DynamicResource PrimaryForegroundBrush}"
+                                                             Geometry="F1 M 14.6759,32.3223L 85.3553,32.3223L 85.3553,22.3223L 14.6759,22.3223L 14.6759,32.3223 Z " />
+                                        </DrawingGroup.Children>
+                                    </DrawingGroup>
+                                </DrawingBrush.Drawing>
+                            </DrawingBrush>
+                        </Border.Background>
+                    </Border>
+                </RepeatButton>
+                <RepeatButton Grid.Row="1"
+                              Command="ScrollBar.PageUpCommand">
+                    <Border>
+                        <Border.Background>
+                            <DrawingBrush>
+                                <DrawingBrush.Drawing>
+                                    <DrawingGroup>
+                                        <DrawingGroup.Children>
+                                            <GeometryDrawing Brush="#00FFFFFF"
+                                                             Geometry="F1 M 3.80973e-006,0L 100,0L 100,100L 3.80973e-006,100L 3.80973e-006,0 Z " />
+                                            <GeometryDrawing Brush="{DynamicResource PrimaryForegroundBrush}"
+                                                             Geometry="F1 M 14.6447,90.3553L 50,55L 85.3553,90.3553L 14.6447,90.3553 Z " />
+                                            <GeometryDrawing Brush="{DynamicResource PrimaryForegroundBrush}"
+                                                             Geometry="F1 M 14.6447,45L 50,9.64466L 85.3553,45L 14.6447,45 Z " />
+                                        </DrawingGroup.Children>
+                                    </DrawingGroup>
+                                </DrawingBrush.Drawing>
+                            </DrawingBrush>
+                        </Border.Background>
+                    </Border>
+                </RepeatButton>
+                <RepeatButton Grid.Row="2"
+                              Command="ScrollBar.LineUpCommand">
+                    <Border>
+                        <Border.Background>
+                            <DrawingBrush>
+                                <DrawingBrush.Drawing>
+                                    <DrawingGroup>
+                                        <DrawingGroup.Children>
+                                            <GeometryDrawing Brush="#00FFFFFF"
+                                                             Geometry="F1 M 3.80973e-006,0L 100,0L 100,100L 3.80973e-006,100L 3.80973e-006,0 Z " />
+                                            <GeometryDrawing Brush="{DynamicResource PrimaryForegroundBrush}"
+                                                             Geometry="F1 M 14.6447,67.6777L 50,32.3223L 85.3553,67.6777L 14.6447,67.6777 Z " />
+                                        </DrawingGroup.Children>
+                                    </DrawingGroup>
+                                </DrawingBrush.Drawing>
+                            </DrawingBrush>
+                        </Border.Background>
+                    </Border>
+                </RepeatButton>
+                <RepeatButton Grid.Row="4"
+                              Command="ScrollBar.LineDownCommand">
+                    <Border>
+                        <Border.Background>
+                            <DrawingBrush>
+                                <DrawingBrush.Drawing>
+                                    <DrawingGroup>
+                                        <DrawingGroup.Children>
+                                            <GeometryDrawing Brush="#00FFFFFF"
+                                                             Geometry="F1 M 1.26908e-006,0L 100,0L 100,100L 1.26908e-006,100L 1.26908e-006,0 Z " />
+                                            <GeometryDrawing Brush="{DynamicResource PrimaryForegroundBrush}"
+                                                             Geometry="F1 M 85.3553,32.3223L 50,67.6777L 14.6447,32.3223L 85.3553,32.3223 Z " />
+                                        </DrawingGroup.Children>
+                                    </DrawingGroup>
+                                </DrawingBrush.Drawing>
+                            </DrawingBrush>
+                        </Border.Background>
+                    </Border>
+                </RepeatButton>
+                <RepeatButton Grid.Row="5"
+                              Command="ScrollBar.PageDownCommand">
+                    <Border>
+                        <Border.Background>
+                            <DrawingBrush>
+                                <DrawingBrush.Drawing>
+                                    <DrawingGroup>
+                                        <DrawingGroup.Children>
+                                            <GeometryDrawing Brush="#00FFFFFF"
+                                                             Geometry="F1 M 1.26908e-006,0L 100,0L 100,100L 1.26908e-006,100L 1.26908e-006,0 Z " />
+                                            <GeometryDrawing Brush="{DynamicResource PrimaryForegroundBrush}"
+                                                             Geometry="F1 M 85.3553,55L 50,90.3553L 14.6447,55L 85.3553,55 Z " />
+                                            <GeometryDrawing Brush="{DynamicResource PrimaryForegroundBrush}"
+                                                             Geometry="F1 M 85.3553,9.64465L 50,45L 14.6447,9.64465L 85.3553,9.64465 Z " />
+                                        </DrawingGroup.Children>
+                                    </DrawingGroup>
+                                </DrawingBrush.Drawing>
+                            </DrawingBrush>
+                        </Border.Background>
+                    </Border>
+                </RepeatButton>
+                <RepeatButton Grid.Row="6"
+                              Command="ScrollBar.ScrollToBottomCommand">
+                    <Border>
+                        <Border.Background>
+                            <DrawingBrush>
+                                <DrawingBrush.Drawing>
+                                    <DrawingGroup>
+                                        <DrawingGroup.Children>
+                                            <GeometryDrawing Brush="#00FFFFFF"
+                                                             Geometry="F1 M 1.26908e-006,0L 100,0L 100,100L 1.26908e-006,100L 1.26908e-006,0 Z " />
+                                            <GeometryDrawing Brush="{DynamicResource PrimaryForegroundBrush}"
+                                                             Geometry="F1 M 85.3553,22.3103L 50,57.6657L 14.6447,22.3103L 85.3553,22.3103 Z " />
+                                            <GeometryDrawing Brush="{DynamicResource PrimaryForegroundBrush}"
+                                                             Geometry="F1 M 14.6687,67.6657L 85.3553,67.6657L 85.3553,77.6897L 14.6687,77.6897L 14.6687,67.6657 Z " />
+                                        </DrawingGroup.Children>
+                                    </DrawingGroup>
+                                </DrawingBrush.Drawing>
+                            </DrawingBrush>
+                        </Border.Background>
+                    </Border>
+                </RepeatButton>
+            </WrapPanel>
+        </Grid>
+    </ControlTemplate>
+    <ControlTemplate x:Key="HorizontalScrollBar"
+                     TargetType="{x:Type ScrollBar}">
+        <Grid Height="24">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition MaxWidth="24" />
+                <ColumnDefinition Width="0.00001*" />
+                <ColumnDefinition MaxWidth="24" />
+            </Grid.ColumnDefinitions>
+            <Border Grid.ColumnSpan="3" />
+            <RepeatButton Grid.Column="0"
+                          Width="24"
+                          Height="24"
+                          Command="ScrollBar.LineLeftCommand">
+                <Border>
+                    <Border.Background>
+                        <DrawingBrush>
+                            <DrawingBrush.Drawing>
+                                <DrawingGroup>
+                                    <DrawingGroup.Children>
+                                        <GeometryDrawing Brush="#00FFFFFF"
+                                                         Geometry="M0,0 H100 V100  Z" />
+                                        <GeometryDrawing Brush="{DynamicResource PrimaryForegroundBrush}"
+                                                         Geometry="M10,50 L90,90 V10  Z" />
+                                        </DrawingGroup.Children>
+                                </DrawingGroup>
+                            </DrawingBrush.Drawing>
+                        </DrawingBrush>
+                    </Border.Background>
+                </Border>
+            </RepeatButton>
+            <Track Name="PART_Track"
+                   Grid.Column="1"
+                   IsDirectionReversed="False">
+                <Track.DecreaseRepeatButton>
+                    <RepeatButton Style="{StaticResource ScrollBarPageButton}"
+                                  Command="ScrollBar.PageLeftCommand" />
+                </Track.DecreaseRepeatButton>
+                <Track.Thumb>
+                    <Thumb Margin="0,1,0,1" />
+                </Track.Thumb>
+                <Track.IncreaseRepeatButton>
+                    <RepeatButton Style="{StaticResource ScrollBarPageButton}"
+                                  Command="ScrollBar.PageRightCommand" />
+                </Track.IncreaseRepeatButton>
+            </Track>
+            <RepeatButton Grid.Column="3"
+                          Width="24"
+                          Height="24"
+                          Command="ScrollBar.LineRightCommand">
+                <Border>
+                    <Border.Background>
+                        <DrawingBrush>
+                            <DrawingBrush.Drawing>
+                                <DrawingGroup>
+                                    <DrawingGroup.Children>
+                                        <GeometryDrawing Brush="#00FFFFFF"
+                                                         Geometry="M0,0 H100 V100  Z" />
+                                        <GeometryDrawing Brush="{DynamicResource PrimaryForegroundBrush}"
+                                                         Geometry="M90,50 L10,90 V10  Z" />
+                                    </DrawingGroup.Children>
+                                </DrawingGroup>
+                            </DrawingBrush.Drawing>
+                        </DrawingBrush>
+                    </Border.Background>
+                </Border>
+            </RepeatButton>
+        </Grid>
+    </ControlTemplate>
+    <Style x:Key="ButtonScrollbar"
+           TargetType="{x:Type ScrollBar}">
+        <Setter Property="SnapsToDevicePixels"
+                Value="True" />
+        <Setter Property="OverridesDefaultStyle"
+                Value="true" />
+        <Style.Triggers>
+            <Trigger Property="Orientation"
+                     Value="Horizontal">
+                <!--                <Setter Property="Width"-->
+                <!--                        Value="Auto" />-->
+                <Setter Property="Height"
+                        Value="24" />
+                <Setter Property="Template"
+                        Value="{StaticResource HorizontalScrollBar}" />
+            </Trigger>
+            <Trigger Property="Orientation"
+                     Value="Vertical">
+                <!--                <Setter Property="Width"-->
+                <!--                        Value="36" />-->
+                <!--                <Setter Property="Height"-->
+                <!--                        Value="Auto" />-->
+                <Setter Property="Template"
+                        Value="{StaticResource VerticalScrollBar}" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+</ResourceDictionary>

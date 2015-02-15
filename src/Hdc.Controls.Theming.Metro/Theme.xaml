@@ -1,0 +1,25 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:System="clr-namespace:System;assembly=mscorlib">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/Hdc.Controls.Theming.Metro;component/SystemResources.xaml" />
+        <ResourceDictionary Source="/Hdc.Controls.Theming.Metro;component/HdcLayout.xaml" />
+        <ResourceDictionary Source="/Hdc.Controls.Theming.Metro;component/HdcFonts.xaml" />
+        <ResourceDictionary Source="/Hdc.Controls.Theming.Metro;component/HdcBrushes.xaml" />
+
+        <ResourceDictionary Source="/Hdc.Controls.Theming.Metro;component/Styles/Button/ButtonStyle.xaml" />
+        <ResourceDictionary Source="/Hdc.Controls.Theming.Metro;component/Styles/GroupBox/DialogGroupBoxStyle.xaml" />
+        <ResourceDictionary Source="/Hdc.Controls.Theming.Metro;component/Styles/HeaderedContentControl/HeaderedContentControlStyle.xaml" />
+        <ResourceDictionary Source="/Hdc.Controls.Theming.Metro;component/Styles/ProgressBar/ProgressBarStyle.xaml" />
+        <ResourceDictionary Source="/Hdc.Controls.Theming.Metro;component/Styles/Button/RadioButtonStyle.xaml" />
+        
+        <ResourceDictionary Source="/Hdc.Controls.Theming.Metro;component/Controls/SwitchButtonStyle.xaml" />
+        <ResourceDictionary Source="/Hdc.Controls.Theming.Metro;component/Controls/ValueIndicatorStyle.xaml" />
+        <ResourceDictionary Source="/Hdc.Controls.Theming.Metro;component/Controls/PressUnitMonitorStyle.xaml" />
+        <ResourceDictionary Source="/Hdc.Controls.Theming.Metro;component/Controls/DimensionCoordinateChartStyle.xaml" />
+        <ResourceDictionary Source="/Hdc.Controls.Theming.Metro;component/Controls/NumberpadZeroDotStyle.xaml" />
+        <ResourceDictionary Source="/Hdc.Controls.Theming.Metro;component/Controls/NumberPadDoubleValueStyle.xaml" />
+        <ResourceDictionary Source="/Hdc.Controls.Theming.Metro;component/Controls/NumericValueEditor.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+</ResourceDictionary>

@@ -1,0 +1,23 @@
+﻿<UserControl x:Class="ODM.Presentation.Views.InfoBarView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             mc:Ignorable="d"
+             d:DesignHeight="300"
+             d:DesignWidth="300"
+             xmlns:hdc="http://schemas.hdcrd.com/xaml">
+    <Grid>
+        <StackPanel TextElement.FontSize="{DynamicResource {x:Static hdc:HdcFonts.FontSizeExtraLargeKey}}"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Margin="{DynamicResource {x:Static hdc:HdcLayout.MarginKey}}">
+            <TextBlock Text="{Binding Date, StringFormat={}{0:yyyy-MM-dd}}"
+                       Margin="{DynamicResource {x:Static hdc:HdcLayout.MarginKey}}"></TextBlock>
+            <TextBlock Text="{Binding DayOfWeek}"
+                       Margin="{DynamicResource {x:Static hdc:HdcLayout.MarginKey}}"></TextBlock>
+            <TextBlock Text="{Binding TimeOfDay, StringFormat={}{0:hh\\:mm\\:ss}}"
+                       Margin="{DynamicResource {x:Static hdc:HdcLayout.MarginKey}}"></TextBlock>
+        </StackPanel>
+    </Grid>
+</UserControl>

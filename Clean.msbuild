@@ -1,0 +1,46 @@
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="Variable.msbuild"/>
+  <ItemGroup>
+  </ItemGroup>
+  <UsingTask TaskName="MSBuild.Community.Tasks.DeleteTree" AssemblyFile="sln\.build\MSBuild.Community.Tasks.dll" />
+  <Target Name="Clean">
+    <Message Text="Clean Start..."></Message>
+    <!--
+    <MSBuild Projects="@(Solutions)"
+             Targets="Clean"
+             StopOnFirstFailure="false"
+             ContinueOnError="true"
+             Properties="Configuration=Release">  </MSBuild>
+    <MSBuild Projects="@(Solutions)"
+             Targets="Clean"
+             StopOnFirstFailure="false"
+             ContinueOnError="true"
+             Properties="Configuration=Debug"> </MSBuild>
+    <MSBuild Projects="@(Projects)"
+             Targets="Clean"
+             StopOnFirstFailure="false"
+             ContinueOnError="true"
+             Properties="Configuration=Release">  </MSBuild>
+    <MSBuild Projects="@(Projects)"
+             Targets="Clean"
+             StopOnFirstFailure="false"
+             ContinueOnError="true"
+             Properties="Configuration=Debug"> </MSBuild>
+	<Message Text="Clean Done"></Message>
+	-->
+	
+    <Delete Files="@(FilesToClean)"/>
+          
+	<Message Text="&#x0D; &#x0A;DirectoriesToClean:" />
+	<Message Text="&#x0D; &#x0A;@(DirectoriesToClean->'%(Identity)','&#x0D; &#x0A;')&#x0D;&#x0A;"></Message>
+	<MSBuild.Community.Tasks.DeleteTree Directories="@(DirectoriesToClean)" />
+	
+	<Message Text="&#x0D; &#x0A;DirectoriesToRecursionClean:" />
+	<Message Text="&#x0D; &#x0A;@(DirectoriesToRecursionClean->'%(Identity)','&#x0D; &#x0A;')&#x0D;&#x0A;"></Message>
+	<!--<MSBuild.Community.Tasks.DeleteTree Directories="@(DirectoriesToRecursionClean)" Recursive="true"/>-->
+	<MSBuild.Community.Tasks.DeleteTree Directories="@(DirectoriesToRecursionClean->'**\%(Identity)')" />
+	
+  </Target>
+
+
+</Project>

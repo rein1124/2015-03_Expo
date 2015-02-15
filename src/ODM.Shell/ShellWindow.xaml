@@ -1,0 +1,19 @@
+﻿<Window x:Class="ODM.Shell.ShellWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:ODM="clr-namespace:Shared"
+        xmlns:regions="http://www.codeplex.com/CompositeWPF"
+        Title="MainWindow"
+        Height="1080"
+        MaxHeight="1080"
+        Width="1920"
+        Left="0"
+        Top="0"
+        Topmost="False"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        WindowState="Maximized">
+    <Grid>
+        <ContentControl regions:RegionManager.RegionName="{x:Static ODM:RegionNames.MainScreen}"></ContentControl>
+    </Grid>
+</Window>

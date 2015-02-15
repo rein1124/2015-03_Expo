@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hdevelop file_version="1.0" halcon_version="11.0.2.1" cs="912374095">
+<procedure name="main">
+<interface/>
+<body>
+<l>read_image (Image, 'D:/@/Vins.Phone/sample image/ToB/Samsung_S1404/2014-12-12_16.18.27_X6144.Y1024.W1024.H1024.tif')</l>
+<l>dev_set_color ('red')</l>
+<c>*draw_rake (Regions, 3600, 30, 60, 30, Row1, Column1, Row2, Column2)</c>
+<c></c>
+<l>RakeEdgeLine (Image, 30, 60, 30, 1.5, 15, 'positive', 'first', Row1, Column1, Row2, Column2, BeginRow, BeginCol, EndRow, EndCol)</l>
+<l>*RakeEdgeLine (Image, 30, 30, 30, 1, 25, 'negative', 'first', Row1, Column1, Row2, Column2, BeginRow, BeginCol, EndRow, EndCol)</l>
+<c></c>
+<l>dev_set_color ('green')</l>
+<l>dev_display (Image)</l>
+<l>disp_line (3600, BeginRow, BeginCol, EndRow, EndCol)</l>
+<l>stop()</l>
+</body>
+<docu id="main">
+<parameters/>
+</docu>
+</procedure>
+<procedure name="RakeEdgeLine">
+<interface>
+<io>
+<par name="Image"/>
+</io>
+<ic>
+<par name="Elements"/>
+<par name="DetectHeight"/>
+<par name="DetectWidth"/>
+<par name="Sigma"/>
+<par name="Threshold"/>
+<par name="Transition"/>
+<par name="Select"/>
+<par name="Row1"/>
+<par name="Column1"/>
+<par name="Row2"/>
+<par name="Column2"/>
+</ic>
+<oc>
+<par name="BeginRow"/>
+<par name="BeginCol"/>
+<par name="EndRow"/>
+<par name="EndCol"/>
+</oc>
+</interface>
+<body>
+<c></c>
+<l>rake (Image, Regions, Elements, DetectHeight, DetectWidth, Sigma, Threshold, Transition, Select, Row1, Column1, Row2, Column2, BeginRow, BeginCol)</l>
+<l>pts_to_best_line (Line, BeginRow, BeginCol, 2, BeginRow, BeginCol, EndRow, EndCol)</l>
+<l>return ()</l>
+</body>
+<docu id="RakeEdgeLine">
+<parameters>
+<parameter id="BeginCol">
+<description lang="zh_CN">线起点列坐标</description>
+<sem_type>real</sem_type>
+<type_list>
+<item>real</item>
+</type_list>
+</parameter>
+<parameter id="BeginRow">
+<description lang="zh_CN">线起点行坐标</description>
+<sem_type>real</sem_type>
+<type_list>
+<item>real</item>
+</type_list>
+</parameter>
+<parameter id="Column1">
+<description lang="zh_CN">检测区域起点的x值</description>
+<sem_type>real</sem_type>
+<type_list>
+<item>real</item>
+</type_list>
+</parameter>
+<parameter id="Column2">
+<description lang="zh_CN">检测区域终点的x值</description>
+<sem_type>real</sem_type>
+<type_list>
+<item>real</item>
+</type_list>
+</parameter>
+<parameter id="DetectHeight">
+<default_value>60</default_value>
+<description lang="zh_CN">卡尺工具的高度</description>
+<sem_type>integer</sem_type>
+<values>
+<item>30</item>
+<item>60</item>
+<item>90</item>
+<item>120</item>
+</values>
+</parameter>
+<parameter id="DetectWidth">
+<default_value>15</default_value>
+<description lang="zh_CN">卡尺工具的宽度</description>
+<sem_type>integer</sem_type>
+<values>
+<item>5</item>
+<item>10</item>
+<item>15</item>
+<item>20</item>
+<item>25</item>
+<item>30</item>
+</values>
+</parameter>
+<parameter id="Elements">
+<default_value>30</default_value>
+<description lang="zh_CN">检测边缘点数
+</description>
+<sem_type>number</sem_type>
+<value_max>100000.00</value_max>
+<value_min>1.00</value_min>
+<values>
+<item>1</item>
+<item>5</item>
+<item>10</item>
+<item>20</item>
+<item>30</item>
+</values>
+</parameter>
+<parameter id="EndCol">
+<description lang="zh_CN">线终点列坐标</description>
+</parameter>
+<parameter id="EndRow">
+<description lang="zh_CN">线终点行坐标</description>
+</parameter>
+<parameter id="Image">
+<description lang="zh_CN">输入图像</description>
+<sem_type>image</sem_type>
+</parameter>
+<parameter id="Row1">
+<description lang="zh_CN">检测区域起点的y值</description>
+<sem_type>real</sem_type>
+<type_list>
+<item>real</item>
+</type_list>
+</parameter>
+<parameter id="Row2">
+<description lang="zh_CN">检测区域终点的y值</description>
+<sem_type>real</sem_type>
+<type_list>
+<item>real</item>
+</type_list>
+</parameter>
+<parameter id="Select">
+<default_value>'max'</default_value>
+<description lang="zh_CN">first表示选择第一点 last表示选择最后一点 max表示选择边缘强度最强点</description>
+<sem_type>string</sem_type>
+<type_list>
+<item>string</item>
+</type_list>
+<values>
+<item>'first'</item>
+<item>'last'</item>
+<item>'max'</item>
+</values>
+</parameter>
+<parameter id="Sigma">
+<default_value>1</default_value>
+<description lang="zh_CN">高斯滤波因子</description>
+<sem_type>real</sem_type>
+<values>
+<item>0.5</item>
+<item>1</item>
+<item>1.5</item>
+<item>2</item>
+<item>2.5</item>
+<item>3</item>
+</values>
+</parameter>
+<parameter id="Threshold">
+<default_value>20</default_value>
+<description lang="zh_CN">边缘检测阈值，又叫边缘强度</description>
+<sem_type>real</sem_type>
+<type_list>
+<item>real</item>
+</type_list>
+<values>
+<item>5</item>
+<item>10</item>
+<item>15</item>
+<item>20</item>
+<item>25</item>
+<item>30</item>
+<item>40</item>
+</values>
+</parameter>
+<parameter id="Transition">
+<default_value>'all'</default_value>
+<description lang="zh_CN">极性： positive表示由黑到白 negative表示由白到黑 all表示以上两种方向</description>
+<sem_type>string</sem_type>
+<type_list>
+<item>string</item>
+</type_list>
+<value_list>
+<item>'positive'</item>
+<item>'negative'</item>
+<item>'all'</item>
+</value_list>
+</parameter>
+</parameters>
+</docu>
+</procedure>
+</hdevelop>

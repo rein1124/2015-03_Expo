@@ -1,0 +1,255 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                    xmlns:hdc="http://schemas.hdcrd.com/xaml"
+                    mc:Ignorable="d"
+                    xmlns:local="clr-namespace:Hdc.Controls"
+                    xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+                    xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="..\Basic.xaml"></ResourceDictionary>
+        <ResourceDictionary Source="VirtualKeyboardButton.xaml"></ResourceDictionary>
+    </ResourceDictionary.MergedDictionaries>
+    <Style TargetType="{x:Type local:VirtualKeyboard}">
+        <Setter Property="TextElement.Foreground"
+                Value="{DynamicResource PrimaryForegroundBrush}"></Setter>
+        <Setter Property="MinHeight"
+                Value="250" />
+        <Setter Property="MinWidth"
+                Value="600" />
+        <Setter Property="SnapsToDevicePixels"
+                Value="True" />
+        <Setter Property="Background"
+                Value="{DynamicResource {x:Static local:HdcBrushes.ControlBackgroundBrushKey}}"></Setter>
+        <Setter Property="BorderBrush"
+                Value="{DynamicResource {x:Static local:HdcBrushes.ControlBorderBrushKey}}"></Setter>
+        <Setter Property="BorderThickness"
+                Value="{DynamicResource {x:Static local:HdcLayout.BorderThicknessKey}}"></Setter>
+        <Setter Property="Border.CornerRadius"
+                Value="{DynamicResource {x:Static local:HdcLayout.BorderCornerRadiusKey}}"></Setter>
+        <Setter Property="HorizontalAlignment"
+                Value="Center"></Setter>
+        <Setter Property="VerticalAlignment"
+                Value="Center"></Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type local:VirtualKeyboard}">
+                    <Grid Margin="16,0">
+                        <Border Background="Transparent"
+                                BorderBrush="Transparent"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                CornerRadius="{TemplateBinding Border.CornerRadius}">
+                            <Border.BitmapEffect>
+                                <DropShadowBitmapEffect Color="Black"
+                                                        Direction="315"
+                                                        ShadowDepth="5"
+                                                        Softness="0.5"
+                                                        Opacity="0.5"></DropShadowBitmapEffect>
+                            </Border.BitmapEffect>
+                        </Border>
+                        <Border Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                CornerRadius="{TemplateBinding Border.CornerRadius}">
+                            <StackPanel Width="840"
+                                        Margin="8">
+                                <Grid DockPanel.Dock="Top"
+                                      Margin="-4,-4,-4,4">
+                                    <DockPanel>
+                                        <Button DockPanel.Dock="Right"
+                                                Style="{DynamicResource NoneBorderButtonStyle}"
+                                                Command="{Binding CancelCommand}"
+                                                Width="{DynamicResource {x:Static local:HdcLayout.ButtonSideLengthKey}}"
+                                                Height="{DynamicResource {x:Static local:HdcLayout.ButtonSideLengthKey}}">
+                                            <i:Interaction.Triggers>
+                                                <i:EventTrigger EventName="Click">
+                                                    <ei:CallMethodAction TargetObject="{Binding RelativeSource={RelativeSource TemplatedParent}}"
+                                                                         MethodName="Cancel" />
+                                                </i:EventTrigger>
+                                            </i:Interaction.Triggers>
+                                            <Border>
+                                                <TextBlock FontSize="20"
+                                                           Text="╳"
+                                                           HorizontalAlignment="Center"
+                                                           VerticalAlignment="Center"></TextBlock>
+                                            </Border>
+                                        </Button>
+                                        <Border>
+                                            <TextBlock Text="{TemplateBinding Title}"
+                                                       FontSize="20"
+                                                       TextWrapping="Wrap"
+                                                       HorizontalAlignment="Center"
+                                                       VerticalAlignment="Center" />
+                                        </Border>
+                                    </DockPanel>
+                                </Grid>
+                                <Grid DockPanel.Dock="Top"
+                                      Height="60"
+                                      Margin="2"
+                                      d:IsLocked="True">
+                                    <TextBox x:Name="PART_TEXTBOX_INPUT"
+                                             FontSize="30"
+                                             VerticalContentAlignment="Center"
+                                             HorizontalAlignment="Stretch"
+                                             VerticalAlignment="Stretch"
+                                             Foreground="Black"
+                                             Background="White" />
+                                </Grid>
+                                <Grid DockPanel.Dock="Bottom"
+                                      DataContext="{Binding RelativeSource={RelativeSource TemplatedParent}}">
+                                    <UniformGrid Height="240"
+                                                 Rows="4"
+                                                 TextElement.FontSize="20">
+                                        <StackPanel Orientation="Horizontal">
+                                            <Button Style="{StaticResourceExtension StandardVirtualKeyboardFunctionKeyButton}"
+                                                    CommandParameter="{Binding [Escape]}"
+                                                    Background="LightPink"></Button>
+                                            <Button Style="{StaticResourceExtension StandardVirtualKeyboardLetterKeyButton}"
+                                                    CommandParameter="{Binding [D1]}"></Button>
+                                            <Button Style="{StaticResourceExtension StandardVirtualKeyboardLetterKeyButton}"
+                                                    CommandParameter="{Binding [D2]}"></Button>
+                                            <Button Style="{StaticResourceExtension StandardVirtualKeyboardLetterKeyButton}"
+                                                    CommandParameter="{Binding [D3]}"></Button>
+                                            <Button Style="{StaticResourceExtension StandardVirtualKeyboardLetterKeyButton}"
+                                                    CommandParameter="{Binding [D4]}"></Button>
+                                            <Button Style="{StaticResourceExtension StandardVirtualKeyboardLetterKeyButton}"
+                                                    CommandParameter="{Binding [D5]}"></Button>
+                                            <Button Style="{StaticResourceExtension StandardVirtualKeyboardLetterKeyButton}"
+                                                    CommandParameter="{Binding [D6]}"></Button>
+                                            <Button Style="{StaticResourceExtension StandardVirtualKeyboardLetterKeyButton}"
+                                                    CommandParameter="{Binding [D7]}"></Button>
+                                            <Button Style="{StaticResourceExtension StandardVirtualKeyboardLetterKeyButton}"
+                                                    CommandParameter="{Binding [D8]}"></Button>
+                                            <Button Style="{StaticResourceExtension StandardVirtualKeyboardLetterKeyButton}"
+                                                    CommandParameter="{Binding [D9]}"></Button>
+                                            <Button Style="{StaticResourceExtension StandardVirtualKeyboardLetterKeyButton}"
+                                                    CommandParameter="{Binding [D0]}"></Button>
+                                            <Button Style="{StaticResourceExtension StandardVirtualKeyboardLetterKeyButton}"
+                                                    CommandParameter="{Binding [Subtract]}"></Button>
+                                            <Button Style="{StaticResourceExtension StandardVirtualKeyboardLetterKeyButton}"
+                                                    CommandParameter="{Binding [Add]}"></Button>
+                                            <RepeatButton Style="{StaticResourceExtension StandardVirtualKeyboardFunctionKeyButton}"
+                                                          CommandParameter="{Binding [Back]}"></RepeatButton>
+                                        </StackPanel>
+                                        <StackPanel  Orientation="Horizontal">
+                                            <Button Style="{StaticResourceExtension StandardVirtualKeyboardFunctionKeyButton}"
+                                                    CommandParameter="{Binding [Tab]}"></Button>
+                                            <Button Style="{StaticResourceExtension StandardVirtualKeyboardLetterKeyButton}"
+                                                    CommandParameter="{Binding [Q]}"></Button>
+                                            <Button Style="{StaticResourceExtension StandardVirtualKeyboardLetterKeyButton}"
+                                                    CommandParameter="{Binding [W]}"></Button>
+                                            <Button Style="{StaticResourceExtension StandardVirtualKeyboardLetterKeyButton}"
+                                                    CommandParameter="{Binding [E]}"></Button>
+                                            <Button Style="{StaticResourceExtension StandardVirtualKeyboardLetterKeyButton}"
+                                                    CommandParameter="{Binding [R]}"></Button>
+                                            <Button Style="{StaticResourceExtension StandardVirtualKeyboardLetterKeyButton}"
+                                                    CommandParameter="{Binding [T]}"></Button>
+                                            <Button Style="{StaticResourceExtension StandardVirtualKeyboardLetterKeyButton}"
+                                                    CommandParameter="{Binding [Y]}"></Button>
+                                            <Button Style="{StaticResourceExtension StandardVirtualKeyboardLetterKeyButton}"
+                                                    CommandParameter="{Binding [U]}"></Button>
+                                            <Button Style="{StaticResourceExtension StandardVirtualKeyboardLetterKeyButton}"
+                                                    CommandParameter="{Binding [I]}"></Button>
+                                            <Button Style="{StaticResourceExtension StandardVirtualKeyboardLetterKeyButton}"
+                                                    CommandParameter="{Binding [O]}"></Button>
+                                            <Button Style="{StaticResourceExtension StandardVirtualKeyboardLetterKeyButton}"
+                                                    CommandParameter="{Binding [P]}"></Button>
+                                            <Button Style="{StaticResourceExtension StandardVirtualKeyboardLetterKeyButton}"
+                                                    CommandParameter="{Binding [OemOpenBrackets]}"></Button>
+                                            <Button Style="{StaticResourceExtension StandardVirtualKeyboardLetterKeyButton}"
+                                                    CommandParameter="{Binding [OemCloseBrackets]}"></Button>
+                                            <Button Style="{StaticResourceExtension StandardVirtualKeyboardLetterKeyButton}"
+                                                    CommandParameter="{Binding [OemBackslash]}"></Button>
+                                        </StackPanel>
+                                        <StackPanel  Orientation="Horizontal">
+                                            <Button Style="{StaticResourceExtension StandardVirtualKeyboardStickyKeyButton}"
+                                                    CommandParameter="{Binding [CapsLock]}" Width="86">
+<!--                                                <Button.Width>-->
+<!--                                                    <local:MathExtension F1="56"-->
+<!--                                                                         F2="1.5"-->
+<!--                                                                         Operator="*"></local:MathExtension>-->
+<!--                                                </Button.Width>-->
+                                            </Button>
+                                            <Button Style="{StaticResourceExtension StandardVirtualKeyboardLetterKeyButton}"
+                                                    CommandParameter="{Binding [A]}"></Button>
+                                            <Button Style="{StaticResourceExtension StandardVirtualKeyboardLetterKeyButton}"
+                                                    CommandParameter="{Binding [S]}"></Button>
+                                            <Button Style="{StaticResourceExtension StandardVirtualKeyboardLetterKeyButton}"
+                                                    CommandParameter="{Binding [D]}"></Button>
+                                            <Button Style="{StaticResourceExtension StandardVirtualKeyboardLetterKeyButton}"
+                                                    CommandParameter="{Binding [F]}"></Button>
+                                            <Button Style="{StaticResourceExtension StandardVirtualKeyboardLetterKeyButton}"
+                                                    CommandParameter="{Binding [G]}"></Button>
+                                            <Button Style="{StaticResourceExtension StandardVirtualKeyboardLetterKeyButton}"
+                                                    CommandParameter="{Binding [H]}"></Button>
+                                            <Button Style="{StaticResourceExtension StandardVirtualKeyboardLetterKeyButton}"
+                                                    CommandParameter="{Binding [J]}"></Button>
+                                            <Button Style="{StaticResourceExtension StandardVirtualKeyboardLetterKeyButton}"
+                                                    CommandParameter="{Binding [K]}"></Button>
+                                            <Button Style="{StaticResourceExtension StandardVirtualKeyboardLetterKeyButton}"
+                                                    CommandParameter="{Binding [L]}"></Button>
+                                            <Button Style="{StaticResourceExtension StandardVirtualKeyboardLetterKeyButton}"
+                                                    CommandParameter="{Binding [OemSemicolon]}"></Button>
+                                            <Button Style="{StaticResourceExtension StandardVirtualKeyboardLetterKeyButton}"
+                                                    CommandParameter="{Binding [OemQuotes]}"></Button>
+<!--                                            <FrameworkElement Width="4"></FrameworkElement>-->
+                                            <Button Style="{StaticResourceExtension StandardVirtualKeyboardFunctionKeyButton}"
+                                                    CommandParameter="{Binding [Enter]}"
+                                                    Background="LightGreen" Width="86">
+<!--                                                <Button.Width>-->
+<!--                                                    <local:MathExtension F1="56"-->
+<!--                                                                         F2="1.5"-->
+<!--                                                                         Operator="*"></local:MathExtension>-->
+<!--                                                </Button.Width>-->
+                                            </Button>
+                                        </StackPanel>
+                                        <StackPanel  Orientation="Horizontal">
+                                            <Button Style="{StaticResourceExtension StandardVirtualKeyboardStickyKeyButton}"
+                                                    CommandParameter="{Binding [LeftShift]}" Width="116">
+<!--                                                <Button.Width>-->
+<!--                                                    <local:MathExtension F1="56"-->
+<!--                                                                         F2="2"-->
+<!--                                                                         Operator="*"></local:MathExtension>-->
+<!--                                                </Button.Width>-->
+                                            </Button>
+                                            <Button Style="{StaticResourceExtension StandardVirtualKeyboardLetterKeyButton}"
+                                                    CommandParameter="{Binding [Z]}"></Button>
+                                            <Button Style="{StaticResourceExtension StandardVirtualKeyboardLetterKeyButton}"
+                                                    CommandParameter="{Binding [X]}"></Button>
+                                            <Button Style="{StaticResourceExtension StandardVirtualKeyboardLetterKeyButton}"
+                                                    CommandParameter="{Binding [C]}"></Button>
+                                            <Button Style="{StaticResourceExtension StandardVirtualKeyboardLetterKeyButton}"
+                                                    CommandParameter="{Binding [V]}"></Button>
+                                            <Button Style="{StaticResourceExtension StandardVirtualKeyboardLetterKeyButton}"
+                                                    CommandParameter="{Binding [B]}"></Button>
+                                            <Button Style="{StaticResourceExtension StandardVirtualKeyboardLetterKeyButton}"
+                                                    CommandParameter="{Binding [N]}"></Button>
+                                            <Button Style="{StaticResourceExtension StandardVirtualKeyboardLetterKeyButton}"
+                                                    CommandParameter="{Binding [M]}"></Button>
+                                            <Button Style="{StaticResourceExtension StandardVirtualKeyboardLetterKeyButton}"
+                                                    CommandParameter="{Binding [OemComma]}"></Button>
+                                            <Button Style="{StaticResourceExtension StandardVirtualKeyboardLetterKeyButton}"
+                                                    CommandParameter="{Binding [Decimal]}"></Button>
+                                            <Button Style="{StaticResourceExtension StandardVirtualKeyboardLetterKeyButton}"
+                                                    CommandParameter="{Binding [Divide]}"></Button>
+                                            <RepeatButton Style="{StaticResourceExtension StandardVirtualKeyboardFunctionKeyButton}"
+                                                          CommandParameter="{Binding [Space]}"
+                                                          Width="116">
+<!--                                                <RepeatButton.Width>-->
+<!--                                                    <local:MathExtension F1="56"-->
+<!--                                                                         F2="2"-->
+<!--                                                                         Operator="*"></local:MathExtension>-->
+<!--                                                </RepeatButton.Width>-->
+                                            </RepeatButton>
+                                        </StackPanel>
+                                    </UniformGrid>
+                                </Grid>
+                            </StackPanel>
+                        </Border>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

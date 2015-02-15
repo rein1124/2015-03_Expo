@@ -1,0 +1,874 @@
+﻿<UserControl x:Class="ODM.Presentation.Views.TestManagerView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             mc:Ignorable="d"
+             d:DesignHeight="1080"
+             d:DesignWidth="1920"
+             xmlns:hdc="http://schemas.hdcrd.com/xaml"
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+             xmlns:odm="clr-namespace:Shared"
+             xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions"
+             Background="Black">
+    <DockPanel TextElement.FontSize="{DynamicResource {x:Static hdc:HdcFonts.FontSizeLargeKey}}"
+               Margin="40">
+        <StackPanel HorizontalAlignment="Left"
+                    DockPanel.Dock="Bottom">
+            <Button Width="{DynamicResource {x:Static hdc:HdcLayout.ButtonSideLengthLargeKey}}"
+                    Height="{DynamicResource {x:Static hdc:HdcLayout.ButtonSideLengthLargeKey}}"
+                    Margin="{DynamicResource {x:Static hdc:HdcLayout.MarginLargeKey}}"
+                    Style="{DynamicResource EllipseButtonStyle}"
+                    HorizontalContentAlignment="Stretch"
+                    VerticalContentAlignment="Stretch">
+                <i:Interaction.Behaviors>
+                    <hdc:GoBackNavigateBehavior RegionName="{x:Static odm:RegionNames.MainScreen_NavigationRegion}" />
+                </i:Interaction.Behaviors>
+                <Border Background="{hdc:DrawingBrushExtension N030}"></Border>
+            </Button>
+        </StackPanel>
+        <UniformGrid Columns="3">
+            <StackPanel Background="Silver"
+                        Margin="{DynamicResource {x:Static hdc:HdcLayout.MarginLargeKey}}">
+                <TextBlock Text="单动"
+                           FontSize="{DynamicResource {x:Static hdc:HdcFonts.FontSizeExtraLargeKey}}"
+                           Margin="{DynamicResource {x:Static hdc:HdcLayout.MarginExtraLargeKey}}"></TextBlock>
+                <StackPanel Orientation="Horizontal">
+                    <Border Width="{DynamicResource {x:Static hdc:HdcLayout.ButtonSideLengthLargeM2Key}}"
+                            Height="{DynamicResource {x:Static hdc:HdcLayout.ButtonSideLengthLargeKey}}"
+                            Margin="{DynamicResource {x:Static hdc:HdcLayout.MarginLargeKey}}">
+                        <TextBlock Text="X轴单动"
+                                   VerticalAlignment="Center"
+                                   HorizontalAlignment="Right"></TextBlock>
+                    </Border>
+                    <Border Width="{DynamicResource {x:Static hdc:HdcLayout.ButtonSideLengthLargeM2Key}}"
+                            Height="{DynamicResource {x:Static hdc:HdcLayout.ButtonSideLengthLargeKey}}"
+                            Margin="{DynamicResource {x:Static hdc:HdcLayout.MarginLargeKey}}"
+                            BorderBrush="Gray"
+                            BorderThickness="{DynamicResource {x:Static hdc:HdcLayout.BorderThicknessKey}}"
+                            Background="#FFEEEEEE">
+                        <TextBlock Text="{Binding Machine.XAxisPosition}"
+                                   Margin="{DynamicResource {x:Static hdc:HdcLayout.MarginLargeKey}}"
+                                   TextAlignment="Right"
+                                   FontSize="{DynamicResource {x:Static hdc:HdcFonts.FontSizeExtraLargeKey}}"
+                                   VerticalAlignment="Center"></TextBlock>
+                    </Border>
+                    <Button Width="{DynamicResource {x:Static hdc:HdcLayout.ButtonSideLengthLargeKey}}"
+                            Height="{DynamicResource {x:Static hdc:HdcLayout.ButtonSideLengthLargeKey}}"
+                            Margin="{DynamicResource {x:Static hdc:HdcLayout.MarginLargeKey}}"
+                            Style="{DynamicResource EllipseButtonStyle}"
+                            HorizontalContentAlignment="Stretch"
+                            VerticalContentAlignment="Stretch">
+                        <i:Interaction.Triggers>
+                            <i:EventTrigger EventName="PreviewMouseDown">
+                                <i:InvokeCommandAction Command="{Binding Machine.XAxisForwardJogOperation.BeginCommand}" />
+                            </i:EventTrigger>
+                            <i:EventTrigger EventName="PreviewMouseUp">
+                                <i:InvokeCommandAction Command="{Binding Machine.XAxisForwardJogOperation.EndCommand}" />
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
+                        <Border Background="{hdc:DrawingBrushExtension N003}"></Border>
+                    </Button>
+                    <Button Width="{DynamicResource {x:Static hdc:HdcLayout.ButtonSideLengthLargeKey}}"
+                            Height="{DynamicResource {x:Static hdc:HdcLayout.ButtonSideLengthLargeKey}}"
+                            Margin="{DynamicResource {x:Static hdc:HdcLayout.MarginLargeKey}}"
+                            Style="{DynamicResource EllipseButtonStyle}"
+                            HorizontalContentAlignment="Stretch"
+                            VerticalContentAlignment="Stretch">
+                        <i:Interaction.Triggers>
+                            <i:EventTrigger EventName="PreviewMouseDown">
+                                <i:InvokeCommandAction Command="{Binding XAxisBackwardJogOperation.BeginCommand}" />
+                            </i:EventTrigger>
+                            <i:EventTrigger EventName="PreviewMouseUp">
+                                <i:InvokeCommandAction Command="{Binding XAxisBackwardJogOperation.EndCommand}" />
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
+                        <Border Background="{hdc:DrawingBrushExtension N004}"></Border>
+                    </Button>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Border Width="{DynamicResource {x:Static hdc:HdcLayout.ButtonSideLengthLargeM2Key}}"
+                            Height="{DynamicResource {x:Static hdc:HdcLayout.ButtonSideLengthLargeKey}}"
+                            Margin="{DynamicResource {x:Static hdc:HdcLayout.MarginLargeKey}}">
+                        <TextBlock Text="Y轴单动"
+                                   VerticalAlignment="Center"
+                                   HorizontalAlignment="Right"></TextBlock>
+                    </Border>
+                    <Border Width="{DynamicResource {x:Static hdc:HdcLayout.ButtonSideLengthLargeM2Key}}"
+                            Height="{DynamicResource {x:Static hdc:HdcLayout.ButtonSideLengthLargeKey}}"
+                            Margin="{DynamicResource {x:Static hdc:HdcLayout.MarginLargeKey}}"
+                            BorderBrush="Gray"
+                            BorderThickness="{DynamicResource {x:Static hdc:HdcLayout.BorderThicknessKey}}"
+                            Background="#FFEEEEEE">
+                        <TextBlock Text="{Binding Machine.YAxisPosition}"
+                                   Margin="{DynamicResource {x:Static hdc:HdcLayout.MarginLargeKey}}"
+                                   TextAlignment="Right"
+                                   FontSize="{DynamicResource {x:Static hdc:HdcFonts.FontSizeExtraLargeKey}}"
+                                   VerticalAlignment="Center"></TextBlock>
+                    </Border>
+                    <Button Width="{DynamicResource {x:Static hdc:HdcLayout.ButtonSideLengthLargeKey}}"
+                            Height="{DynamicResource {x:Static hdc:HdcLayout.ButtonSideLengthLargeKey}}"
+                            Margin="{DynamicResource {x:Static hdc:HdcLayout.MarginLargeKey}}"
+                            Style="{DynamicResource EllipseButtonStyle}"
+                            HorizontalContentAlignment="Stretch"
+                            VerticalContentAlignment="Stretch">
+                        <i:Interaction.Triggers>
+                            <i:EventTrigger EventName="PreviewMouseDown">
+                                <i:InvokeCommandAction Command="{Binding Machine.YAxisForwardJogOperation.BeginCommand}" />
+                            </i:EventTrigger>
+                            <i:EventTrigger EventName="PreviewMouseUp">
+                                <i:InvokeCommandAction Command="{Binding Machine.YAxisForwardJogOperation.EndCommand}" />
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
+                        <Border Background="{hdc:DrawingBrushExtension N003}"></Border>
+                    </Button>
+                    <Button Width="{DynamicResource {x:Static hdc:HdcLayout.ButtonSideLengthLargeKey}}"
+                            Height="{DynamicResource {x:Static hdc:HdcLayout.ButtonSideLengthLargeKey}}"
+                            Margin="{DynamicResource {x:Static hdc:HdcLayout.MarginLargeKey}}"
+                            Style="{DynamicResource EllipseButtonStyle}"
+                            HorizontalContentAlignment="Stretch"
+                            VerticalContentAlignment="Stretch">
+                        <i:Interaction.Triggers>
+                            <i:EventTrigger EventName="PreviewMouseDown">
+                                <i:InvokeCommandAction Command="{Binding Machine.YAxisBackwardJogOperation.BeginCommand}" />
+                            </i:EventTrigger>
+                            <i:EventTrigger EventName="PreviewMouseUp">
+                                <i:InvokeCommandAction Command="{Binding Machine.YAxisBackwardJogOperation.EndCommand}" />
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
+                        <Border Background="{hdc:DrawingBrushExtension N004}"></Border>
+                    </Button>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Border Width="{DynamicResource {x:Static hdc:HdcLayout.ButtonSideLengthLargeM2Key}}"
+                            Height="{DynamicResource {x:Static hdc:HdcLayout.ButtonSideLengthLargeKey}}"
+                            Margin="{DynamicResource {x:Static hdc:HdcLayout.MarginLargeKey}}">
+                        <TextBlock Text="Z轴单动"
+                                   VerticalAlignment="Center"
+                                   HorizontalAlignment="Right"></TextBlock>
+                    </Border>
+                    <Border Width="{DynamicResource {x:Static hdc:HdcLayout.ButtonSideLengthLargeM2Key}}"
+                            Height="{DynamicResource {x:Static hdc:HdcLayout.ButtonSideLengthLargeKey}}"
+                            Margin="{DynamicResource {x:Static hdc:HdcLayout.MarginLargeKey}}"
+                            BorderBrush="Gray"
+                            BorderThickness="{DynamicResource {x:Static hdc:HdcLayout.BorderThicknessKey}}"
+                            Background="#FFEEEEEE">
+                        <TextBlock Text="{Binding Machine.ZAxisPosition}"
+                                   Margin="{DynamicResource {x:Static hdc:HdcLayout.MarginLargeKey}}"
+                                   TextAlignment="Right"
+                                   FontSize="{DynamicResource {x:Static hdc:HdcFonts.FontSizeExtraLargeKey}}"
+                                   VerticalAlignment="Center"></TextBlock>
+                    </Border>
+                    <Button Width="{DynamicResource {x:Static hdc:HdcLayout.ButtonSideLengthLargeKey}}"
+                            Height="{DynamicResource {x:Static hdc:HdcLayout.ButtonSideLengthLargeKey}}"
+                            Margin="{DynamicResource {x:Static hdc:HdcLayout.MarginLargeKey}}"
+                            Style="{DynamicResource EllipseButtonStyle}"
+                            HorizontalContentAlignment="Stretch"
+                            VerticalContentAlignment="Stretch">
+                        <i:Interaction.Triggers>
+                            <i:EventTrigger EventName="PreviewMouseDown">
+                                <i:InvokeCommandAction Command="{Binding Machine.ZAxisForwardJogOperation.BeginCommand}" />
+                            </i:EventTrigger>
+                            <i:EventTrigger EventName="PreviewMouseUp">
+                                <i:InvokeCommandAction Command="{Binding Machine.ZAxisForwardJogOperation.EndCommand}" />
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
+                        <Border Background="{hdc:DrawingBrushExtension N003}"></Border>
+                    </Button>
+                    <Button Width="{DynamicResource {x:Static hdc:HdcLayout.ButtonSideLengthLargeKey}}"
+                            Height="{DynamicResource {x:Static hdc:HdcLayout.ButtonSideLengthLargeKey}}"
+                            Margin="{DynamicResource {x:Static hdc:HdcLayout.MarginLargeKey}}"
+                            Style="{DynamicResource EllipseButtonStyle}"
+                            HorizontalContentAlignment="Stretch"
+                            VerticalContentAlignment="Stretch">
+                        <i:Interaction.Triggers>
+                            <i:EventTrigger EventName="PreviewMouseDown">
+                                <i:InvokeCommandAction Command="{Binding Machine.ZAxisBackwardJogOperation.BeginCommand}" />
+                            </i:EventTrigger>
+                            <i:EventTrigger EventName="PreviewMouseUp">
+                                <i:InvokeCommandAction Command="{Binding Machine.ZAxisBackwardJogOperation.EndCommand}" />
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
+                        <Border Background="{hdc:DrawingBrushExtension N004}"></Border>
+                    </Button>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal">
+                    <Border Width="{DynamicResource {x:Static hdc:HdcLayout.ButtonSideLengthLargeM2Key}}"
+                            Height="{DynamicResource {x:Static hdc:HdcLayout.ButtonSideLengthLargeKey}}"
+                            Margin="{DynamicResource {x:Static hdc:HdcLayout.MarginLargeKey}}">
+                        <TextBlock Text="Z2轴单动"
+                                   VerticalAlignment="Center"
+                                   HorizontalAlignment="Right"></TextBlock>
+                    </Border>
+                    <Border Width="{DynamicResource {x:Static hdc:HdcLayout.ButtonSideLengthLargeM2Key}}"
+                            Height="{DynamicResource {x:Static hdc:HdcLayout.ButtonSideLengthLargeKey}}"
+                            Margin="{DynamicResource {x:Static hdc:HdcLayout.MarginLargeKey}}"
+                            BorderBrush="Gray"
+                            BorderThickness="{DynamicResource {x:Static hdc:HdcLayout.BorderThicknessKey}}"
+                            Background="#FFEEEEEE">
+                        <TextBlock Text="{Binding Machine.Z2AxisPosition}"
+                                   Margin="{DynamicResource {x:Static hdc:HdcLayout.MarginLargeKey}}"
+                                   TextAlignment="Right"
+                                   FontSize="{DynamicResource {x:Static hdc:HdcFonts.FontSizeExtraLargeKey}}"
+                                   VerticalAlignment="Center"></TextBlock>
+                    </Border>
+                    <Button Width="{DynamicResource {x:Static hdc:HdcLayout.ButtonSideLengthLargeKey}}"
+                            Height="{DynamicResource {x:Static hdc:HdcLayout.ButtonSideLengthLargeKey}}"
+                            Margin="{DynamicResource {x:Static hdc:HdcLayout.MarginLargeKey}}"
+                            Style="{DynamicResource EllipseButtonStyle}"
+                            HorizontalContentAlignment="Stretch"
+                            VerticalContentAlignment="Stretch">
+                        <i:Interaction.Triggers>
+                            <i:EventTrigger EventName="PreviewMouseDown">
+                                <i:InvokeCommandAction Command="{Binding Machine.Z2AxisForwardJogOperation.BeginCommand}" />
+                            </i:EventTrigger>
+                            <i:EventTrigger EventName="PreviewMouseUp">
+                                <i:InvokeCommandAction Command="{Binding Machine.Z2AxisForwardJogOperation.EndCommand}" />
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
+                        <Border Background="{hdc:DrawingBrushExtension N003}"></Border>
+                    </Button>
+                    <Button Width="{DynamicResource {x:Static hdc:HdcLayout.ButtonSideLengthLargeKey}}"
+                            Height="{DynamicResource {x:Static hdc:HdcLayout.ButtonSideLengthLargeKey}}"
+                            Margin="{DynamicResource {x:Static hdc:HdcLayout.MarginLargeKey}}"
+                            Style="{DynamicResource EllipseButtonStyle}"
+                            HorizontalContentAlignment="Stretch"
+                            VerticalContentAlignment="Stretch">
+                        <i:Interaction.Triggers>
+                            <i:EventTrigger EventName="PreviewMouseDown">
+                                <i:InvokeCommandAction Command="{Binding Machine.Z2AxisBackwardJogOperation.BeginCommand}" />
+                            </i:EventTrigger>
+                            <i:EventTrigger EventName="PreviewMouseUp">
+                                <i:InvokeCommandAction Command="{Binding Machine.Z2AxisBackwardJogOperation.EndCommand}" />
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
+                        <Border Background="{hdc:DrawingBrushExtension N004}"></Border>
+                    </Button>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Border Width="{DynamicResource {x:Static hdc:HdcLayout.ButtonSideLengthLargeM2Key}}"
+                            Height="{DynamicResource {x:Static hdc:HdcLayout.ButtonSideLengthLargeKey}}"
+                            Margin="{DynamicResource {x:Static hdc:HdcLayout.MarginLargeKey}}">
+                        <TextBlock Text="转台单动"
+                                   VerticalAlignment="Center"
+                                   HorizontalAlignment="Right" />
+                    </Border>
+                    <Border Width="{DynamicResource {x:Static hdc:HdcLayout.ButtonSideLengthLargeM2Key}}"
+                            Height="{DynamicResource {x:Static hdc:HdcLayout.ButtonSideLengthLargeKey}}"
+                            Margin="{DynamicResource {x:Static hdc:HdcLayout.MarginLargeKey}}"
+                            BorderBrush="Gray"
+                            BorderThickness="{DynamicResource {x:Static hdc:HdcLayout.BorderThicknessKey}}"
+                            Background="#FFEEEEEE">
+                        <TextBlock Text="{Binding Machine.TurntablePosition}"
+                                   Margin="{DynamicResource {x:Static hdc:HdcLayout.MarginLargeKey}}"
+                                   TextAlignment="Right"
+                                   FontSize="{DynamicResource {x:Static hdc:HdcFonts.FontSizeExtraLargeKey}}"
+                                   VerticalAlignment="Center" />
+                    </Border>
+                    <Button Width="{DynamicResource {x:Static hdc:HdcLayout.ButtonSideLengthLargeKey}}"
+                            Height="{DynamicResource {x:Static hdc:HdcLayout.ButtonSideLengthLargeKey}}"
+                            Margin="{DynamicResource {x:Static hdc:HdcLayout.MarginLargeKey}}"
+                            Style="{DynamicResource EllipseButtonStyle}"
+                            HorizontalContentAlignment="Stretch"
+                            VerticalContentAlignment="Stretch">
+                        <i:Interaction.Triggers>
+                            <i:EventTrigger EventName="PreviewMouseDown">
+                                <i:InvokeCommandAction Command="{Binding Machine.TurntableForwardJogOperation.BeginCommand}" />
+                            </i:EventTrigger>
+                            <i:EventTrigger EventName="PreviewMouseUp">
+                                <i:InvokeCommandAction Command="{Binding Machine.TurntableForwardJogOperation.EndCommand}" />
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
+                        <Border Background="{hdc:DrawingBrush N003}" />
+                    </Button>
+                    <Button Width="{DynamicResource {x:Static hdc:HdcLayout.ButtonSideLengthLargeKey}}"
+                            Height="{DynamicResource {x:Static hdc:HdcLayout.ButtonSideLengthLargeKey}}"
+                            Margin="{DynamicResource {x:Static hdc:HdcLayout.MarginLargeKey}}"
+                            Style="{DynamicResource EllipseButtonStyle}"
+                            HorizontalContentAlignment="Stretch"
+                            VerticalContentAlignment="Stretch">
+                        <i:Interaction.Triggers>
+                            <i:EventTrigger EventName="PreviewMouseDown">
+                                <i:InvokeCommandAction Command="{Binding Machine.TurntableBackwardJogOperation.BeginCommand}" />
+                            </i:EventTrigger>
+                            <i:EventTrigger EventName="PreviewMouseUp">
+                                <i:InvokeCommandAction Command="{Binding Machine.TurntableBackwardJogOperation.EndCommand}" />
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
+                        <Border Background="{hdc:DrawingBrush N004}" />
+                    </Button>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Border Width="{DynamicResource {x:Static hdc:HdcLayout.ButtonSideLengthLargeM2Key}}"
+                            Height="{DynamicResource {x:Static hdc:HdcLayout.ButtonSideLengthLargeKey}}"
+                            Margin="{DynamicResource {x:Static hdc:HdcLayout.MarginLargeKey}}">
+                        <TextBlock Text="旋转电机单动"
+                                   VerticalAlignment="Center"
+                                   HorizontalAlignment="Right" />
+                    </Border>
+                    <Border Width="{DynamicResource {x:Static hdc:HdcLayout.ButtonSideLengthLargeM2Key}}"
+                            Height="{DynamicResource {x:Static hdc:HdcLayout.ButtonSideLengthLargeKey}}"
+                            Margin="{DynamicResource {x:Static hdc:HdcLayout.MarginLargeKey}}"
+                            BorderBrush="Gray"
+                            BorderThickness="{DynamicResource {x:Static hdc:HdcLayout.BorderThicknessKey}}"
+                            Background="#FFEEEEEE">
+                        <TextBlock Text="{Binding Machine.RotatePosition}"
+                                   Margin="{DynamicResource {x:Static hdc:HdcLayout.MarginLargeKey}}"
+                                   TextAlignment="Right"
+                                   FontSize="{DynamicResource {x:Static hdc:HdcFonts.FontSizeExtraLargeKey}}"
+                                   VerticalAlignment="Center" />
+                    </Border>
+                    <Button Width="{DynamicResource {x:Static hdc:HdcLayout.ButtonSideLengthLargeKey}}"
+                            Height="{DynamicResource {x:Static hdc:HdcLayout.ButtonSideLengthLargeKey}}"
+                            Margin="{DynamicResource {x:Static hdc:HdcLayout.MarginLargeKey}}"
+                            Style="{DynamicResource EllipseButtonStyle}"
+                            HorizontalContentAlignment="Stretch"
+                            VerticalContentAlignment="Stretch">
+                        <i:Interaction.Triggers>
+                            <i:EventTrigger EventName="PreviewMouseDown">
+                                <i:InvokeCommandAction Command="{Binding Machine.RotateForwardJogOperation.BeginCommand}" />
+                            </i:EventTrigger>
+                            <i:EventTrigger EventName="PreviewMouseUp">
+                                <i:InvokeCommandAction Command="{Binding Machine.RotateForwardJogOperation.EndCommand}" />
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
+                        <Border Background="{hdc:DrawingBrush N003}" />
+                    </Button>
+                    <Button Width="{DynamicResource {x:Static hdc:HdcLayout.ButtonSideLengthLargeKey}}"
+                            Height="{DynamicResource {x:Static hdc:HdcLayout.ButtonSideLengthLargeKey}}"
+                            Margin="{DynamicResource {x:Static hdc:HdcLayout.MarginLargeKey}}"
+                            Style="{DynamicResource EllipseButtonStyle}"
+                            HorizontalContentAlignment="Stretch"
+                            VerticalContentAlignment="Stretch">
+                        <i:Interaction.Triggers>
+                            <i:EventTrigger EventName="PreviewMouseDown">
+                                <i:InvokeCommandAction Command="{Binding Machine.RotateBackwardJogOperation.BeginCommand}" />
+                            </i:EventTrigger>
+                            <i:EventTrigger EventName="PreviewMouseUp">
+                                <i:InvokeCommandAction Command="{Binding Machine.RotateBackwardJogOperation.EndCommand}" />
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
+                        <Border Background="{hdc:DrawingBrush N004}" />
+                    </Button>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel Background="Silver"
+                        Margin="{DynamicResource {x:Static hdc:HdcLayout.MarginLargeKey}}">
+                <TextBlock Text="采集图像"
+                           FontSize="{DynamicResource {x:Static hdc:HdcFonts.FontSizeExtraLargeKey}}"
+                           Margin="{DynamicResource {x:Static hdc:HdcLayout.MarginExtraLargeKey}}"></TextBlock>
+                <StackPanel Orientation="Horizontal">
+                    <Border Width="{DynamicResource {x:Static hdc:HdcLayout.ButtonSideLengthLargeM2Key}}"
+                            Height="{DynamicResource {x:Static hdc:HdcLayout.ButtonSideLengthLargeKey}}"
+                            Margin="{DynamicResource {x:Static hdc:HdcLayout.MarginLargeKey}}">
+                        <TextBlock Text="Z2轴上下"
+                                   VerticalAlignment="Center"
+                                   HorizontalAlignment="Right"></TextBlock>
+                    </Border>
+                    <Button Width="{DynamicResource {x:Static hdc:HdcLayout.ButtonSideLengthLargeKey}}"
+                            Height="{DynamicResource {x:Static hdc:HdcLayout.ButtonSideLengthLargeKey}}"
+                            Margin="{DynamicResource {x:Static hdc:HdcLayout.MarginLargeKey}}"
+                            Style="{DynamicResource EllipseButtonStyle}"
+                            HorizontalContentAlignment="Stretch"
+                            VerticalContentAlignment="Stretch">
+                        <i:Interaction.Triggers>
+                            <!--                            <i:EventTrigger EventName="PreviewMouseDown">-->
+                            <!--                                <i:InvokeCommandAction Command="{Binding Machine.TestME_Z2AxisDownCommand}" />-->
+                            <!--                            </i:EventTrigger>-->
+                            <i:EventTrigger EventName="PreviewMouseUp">
+                                <i:InvokeCommandAction Command="{Binding Machine.Z2AxisUpCommandExecutor.CommitCommand}" />
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
+                        <Border Background="{hdc:DrawingBrushExtension N006}"></Border>
+                    </Button>
+                    <Button Width="{DynamicResource {x:Static hdc:HdcLayout.ButtonSideLengthLargeKey}}"
+                            Height="{DynamicResource {x:Static hdc:HdcLayout.ButtonSideLengthLargeKey}}"
+                            Margin="{DynamicResource {x:Static hdc:HdcLayout.MarginLargeKey}}"
+                            Style="{DynamicResource EllipseButtonStyle}"
+                            HorizontalContentAlignment="Stretch"
+                            VerticalContentAlignment="Stretch">
+                        <i:Interaction.Triggers>
+                            <!--                            <i:EventTrigger EventName="PreviewMouseDown">-->
+                            <!--                                <i:InvokeCommandAction Command="{Binding Machine.TestME_Z2AxisDownCommand}" />-->
+                            <!--                            </i:EventTrigger>-->
+                            <i:EventTrigger EventName="PreviewMouseUp">
+                                <i:InvokeCommandAction Command="{Binding Machine.Z2AxisDownCommandExecutor.CommitCommand}" />
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
+                        <Border Background="{hdc:DrawingBrushExtension N005}"></Border>
+                    </Button>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Border Width="{DynamicResource {x:Static hdc:HdcLayout.ButtonSideLengthLargeM2Key}}"
+                            Height="{DynamicResource {x:Static hdc:HdcLayout.ButtonSideLengthLargeKey}}"
+                            Margin="{DynamicResource {x:Static hdc:HdcLayout.MarginLargeKey}}">
+                        <TextBlock Text="步进电机旋转"
+                                   VerticalAlignment="Center"
+                                   HorizontalAlignment="Right"></TextBlock>
+                    </Border>
+                    <Button Width="{DynamicResource {x:Static hdc:HdcLayout.ButtonSideLengthLargeKey}}"
+                            Height="{DynamicResource {x:Static hdc:HdcLayout.ButtonSideLengthLargeKey}}"
+                            Margin="{DynamicResource {x:Static hdc:HdcLayout.MarginLargeKey}}"
+                            Style="{DynamicResource EllipseButtonStyle}"
+                            HorizontalContentAlignment="Stretch"
+                            VerticalContentAlignment="Stretch">
+                        <i:Interaction.Triggers>
+                            <!--                            <i:EventTrigger EventName="PreviewMouseDown">-->
+                            <!--                                <i:InvokeCommandAction Command="{Binding Machine.TestME_Z2AxisDownCommand}" />-->
+                            <!--                            </i:EventTrigger>-->
+                            <i:EventTrigger EventName="PreviewMouseUp">
+                                <i:InvokeCommandAction Command="{Binding Machine.GrabStepperMotorRunOperation.BeginCommand}" />
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
+                        <Border Background="{hdc:DrawingBrushExtension N017}"></Border>
+                    </Button>
+                    <Button Width="{DynamicResource {x:Static hdc:HdcLayout.ButtonSideLengthLargeKey}}"
+                            Height="{DynamicResource {x:Static hdc:HdcLayout.ButtonSideLengthLargeKey}}"
+                            Margin="{DynamicResource {x:Static hdc:HdcLayout.MarginLargeKey}}"
+                            Style="{DynamicResource EllipseButtonStyle}"
+                            HorizontalContentAlignment="Stretch"
+                            VerticalContentAlignment="Stretch">
+                        <i:Interaction.Triggers>
+                            <!--                            <i:EventTrigger EventName="PreviewMouseDown">-->
+                            <!--                                <i:InvokeCommandAction Command="{Binding XAxisBackwardJogOperation.BeginCommand}" />-->
+                            <!--                            </i:EventTrigger>-->
+                            <i:EventTrigger EventName="PreviewMouseUp">
+                                <i:InvokeCommandAction Command="{Binding Machine.GrabStepperMotorRunOperation.EndCommand}" />
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
+                        <Border Background="{hdc:DrawingBrushExtension N016}"></Border>
+                    </Button>
+                    <Border Width="{DynamicResource {x:Static hdc:HdcLayout.ButtonSideLengthLargeKey}}"
+                            Height="{DynamicResource {x:Static hdc:HdcLayout.ButtonSideLengthLargeKey}}"
+                            Margin="{DynamicResource {x:Static hdc:HdcLayout.MarginLargeKey}}"
+                            BorderBrush="Gray"
+                            BorderThickness="2"
+                            Background="Silver">
+                        <TextBlock TextElement.FontSize="{DynamicResource {x:Static hdc:HdcFonts.FontSizeExtraLargeKey}}"
+                                   VerticalAlignment="Center"
+                                   HorizontalAlignment="Center">
+                            <TextBlock.Style>
+                                <Style TargetType="TextBlock">
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding Machine.TestME_GrabStepperMotorRun}"
+                                                     Value="True">
+                                            <DataTrigger.Setters>
+                                                <Setter Property="Text"
+                                                        Value="ON"></Setter>
+                                                <Setter Property="Foreground"
+                                                        Value="Green"></Setter>
+                                            </DataTrigger.Setters>
+                                        </DataTrigger>
+                                        <DataTrigger Binding="{Binding Machine.TestME_GrabStepperMotorRun}"
+                                                     Value="False">
+                                            <DataTrigger.Setters>
+                                                <Setter Property="Text"
+                                                        Value="OFF"></Setter>
+                                                <Setter Property="Foreground"
+                                                        Value="Blue"></Setter>
+                                            </DataTrigger.Setters>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </TextBlock.Style>
+                        </TextBlock>
+                    </Border>
+                </StackPanel>
+
+
+                <StackPanel Orientation="Horizontal">
+                    <Border Width="{DynamicResource {x:Static hdc:HdcLayout.ButtonSideLengthLargeM2Key}}"
+                            Height="{DynamicResource {x:Static hdc:HdcLayout.ButtonSideLengthLargeKey}}"
+                            Margin="{DynamicResource {x:Static hdc:HdcLayout.MarginLargeKey}}">
+                        <TextBlock Text="Debug Mode"
+                                   VerticalAlignment="Center"
+                                   HorizontalAlignment="Right"></TextBlock>
+                    </Border>
+                    <Button Width="{DynamicResource {x:Static hdc:HdcLayout.ButtonSideLengthLargeKey}}"
+                            Height="{DynamicResource {x:Static hdc:HdcLayout.ButtonSideLengthLargeKey}}"
+                            Margin="{DynamicResource {x:Static hdc:HdcLayout.MarginLargeKey}}"
+                            Style="{DynamicResource EllipseButtonStyle}"
+                            HorizontalContentAlignment="Stretch"
+                            VerticalContentAlignment="Stretch">
+                        <i:Interaction.Triggers>
+                            <!--                            <i:EventTrigger EventName="PreviewMouseDown">-->
+                            <!--                                <i:InvokeCommandAction Command="{Binding Machine.TestME_Z2AxisDownCommand}" />-->
+                            <!--                            </i:EventTrigger>-->
+                            <i:EventTrigger EventName="PreviewMouseUp">
+                                <i:InvokeCommandAction Command="{Binding Machine.DebugModeOnOperation.BeginCommand}" />
+                                <i:InvokeCommandAction Command="{Binding Machine.DebugModeOffOperation.EndCommand}" />
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
+                        <TextBlock VerticalAlignment="Center"
+                                   HorizontalAlignment="Center">On</TextBlock>
+                    </Button>
+                    <Button Width="{DynamicResource {x:Static hdc:HdcLayout.ButtonSideLengthLargeKey}}"
+                            Height="{DynamicResource {x:Static hdc:HdcLayout.ButtonSideLengthLargeKey}}"
+                            Margin="{DynamicResource {x:Static hdc:HdcLayout.MarginLargeKey}}"
+                            Style="{DynamicResource EllipseButtonStyle}"
+                            HorizontalContentAlignment="Stretch"
+                            VerticalContentAlignment="Stretch">
+                        <i:Interaction.Triggers>
+                            <!--                            <i:EventTrigger EventName="PreviewMouseDown">-->
+                            <!--                                <i:InvokeCommandAction Command="{Binding XAxisBackwardJogOperation.BeginCommand}" />-->
+                            <!--                            </i:EventTrigger>-->
+                            <i:EventTrigger EventName="PreviewMouseUp">
+                                <i:InvokeCommandAction Command="{Binding Machine.DebugModeOffOperation.BeginCommand}" />
+                                <i:InvokeCommandAction Command="{Binding Machine.DebugModeOnOperation.EndCommand}" />
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
+                        <TextBlock VerticalAlignment="Center"
+                                   HorizontalAlignment="Center">Off</TextBlock>
+                    </Button>
+                    <Border Width="{DynamicResource {x:Static hdc:HdcLayout.ButtonSideLengthLargeKey}}"
+                            Height="{DynamicResource {x:Static hdc:HdcLayout.ButtonSideLengthLargeKey}}"
+                            Margin="{DynamicResource {x:Static hdc:HdcLayout.MarginLargeKey}}"
+                            BorderBrush="Gray"
+                            BorderThickness="2"
+                            Background="Silver">
+                        <TextBlock TextElement.FontSize="{DynamicResource {x:Static hdc:HdcFonts.FontSizeExtraLargeKey}}"
+                                   VerticalAlignment="Center"
+                                   HorizontalAlignment="Center">
+                            <TextBlock.Style>
+                                <Style TargetType="TextBlock">
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding Machine.TestME_DebugModeOn}"
+                                                     Value="True">
+                                            <DataTrigger.Setters>
+                                                <Setter Property="Text"
+                                                        Value="ON"></Setter>
+                                                <Setter Property="Foreground"
+                                                        Value="Green"></Setter>
+                                            </DataTrigger.Setters>
+                                        </DataTrigger>
+                                        <DataTrigger Binding="{Binding Machine.TestME_DebugModeOn}"
+                                                     Value="False">
+                                            <DataTrigger.Setters>
+                                                <Setter Property="Text"
+                                                        Value="OFF"></Setter>
+                                                <Setter Property="Foreground"
+                                                        Value="Blue"></Setter>
+                                            </DataTrigger.Setters>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </TextBlock.Style>
+                        </TextBlock>
+                    </Border>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal">
+                    <Border Width="{DynamicResource {x:Static hdc:HdcLayout.ButtonSideLengthLargeM2Key}}"
+                            Height="{DynamicResource {x:Static hdc:HdcLayout.ButtonSideLengthLargeKey}}"
+                            Margin="{DynamicResource {x:Static hdc:HdcLayout.MarginLargeKey}}">
+                        <TextBlock Text="Start Stop"
+                                   VerticalAlignment="Center"
+                                   HorizontalAlignment="Right"></TextBlock>
+                    </Border>
+                    <Button Width="{DynamicResource {x:Static hdc:HdcLayout.ButtonSideLengthLargeKey}}"
+                            Height="{DynamicResource {x:Static hdc:HdcLayout.ButtonSideLengthLargeKey}}"
+                            Margin="{DynamicResource {x:Static hdc:HdcLayout.MarginLargeKey}}"
+                            Style="{DynamicResource EllipseButtonStyle}"
+                            HorizontalContentAlignment="Stretch"
+                            VerticalContentAlignment="Stretch">
+                        <i:Interaction.Triggers>
+                            <!--                            <i:EventTrigger EventName="PreviewMouseDown">-->
+                            <!--                                <i:InvokeCommandAction Command="{Binding Machine.TestME_Z2AxisDownCommand}" />-->
+                            <!--                            </i:EventTrigger>-->
+                            <i:EventTrigger EventName="PreviewMouseUp">
+                                <i:InvokeCommandAction Command="{Binding Machine.StartRunningCommandExecutor.CommitCommand}" />
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
+                        <Border Background="{hdc:DrawingBrushExtension N017}"></Border>
+                    </Button>
+                    <Button Width="{DynamicResource {x:Static hdc:HdcLayout.ButtonSideLengthLargeKey}}"
+                            Height="{DynamicResource {x:Static hdc:HdcLayout.ButtonSideLengthLargeKey}}"
+                            Margin="{DynamicResource {x:Static hdc:HdcLayout.MarginLargeKey}}"
+                            Style="{DynamicResource EllipseButtonStyle}"
+                            HorizontalContentAlignment="Stretch"
+                            VerticalContentAlignment="Stretch">
+                        <i:Interaction.Triggers>
+                            <!--                            <i:EventTrigger EventName="PreviewMouseDown">-->
+                            <!--                                <i:InvokeCommandAction Command="{Binding XAxisBackwardJogOperation.BeginCommand}" />-->
+                            <!--                            </i:EventTrigger>-->
+                            <i:EventTrigger EventName="PreviewMouseUp">
+                                <i:InvokeCommandAction Command="{Binding Machine.StopRunningCommandExecutor.CommitCommand}" />
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
+                        <Border Background="{hdc:DrawingBrushExtension N016}"></Border>
+                    </Button>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal">
+                    <Border Width="{DynamicResource {x:Static hdc:HdcLayout.ButtonSideLengthLargeM2Key}}"
+                            Height="{DynamicResource {x:Static hdc:HdcLayout.ButtonSideLengthLargeKey}}"
+                            Margin="{DynamicResource {x:Static hdc:HdcLayout.MarginLargeKey}}">
+                        <TextBlock Text="全部采集模式"
+                                   VerticalAlignment="Center"
+                                   HorizontalAlignment="Right"></TextBlock>
+                    </Border>
+                    <Button Width="{DynamicResource {x:Static hdc:HdcLayout.ButtonSideLengthLargeKey}}"
+                            Height="{DynamicResource {x:Static hdc:HdcLayout.ButtonSideLengthLargeKey}}"
+                            Margin="{DynamicResource {x:Static hdc:HdcLayout.MarginLargeKey}}"
+                            Style="{DynamicResource EllipseButtonStyle}"
+                            HorizontalContentAlignment="Stretch"
+                            VerticalContentAlignment="Stretch">
+                        <i:Interaction.Triggers>
+                            <!--                            <i:EventTrigger EventName="PreviewMouseDown">-->
+                            <!--                                <i:InvokeCommandAction Command="{Binding Machine.TestME_Z2AxisDownCommand}" />-->
+                            <!--                            </i:EventTrigger>-->
+                            <i:EventTrigger EventName="PreviewMouseUp">
+                                <i:InvokeCommandAction Command="{Binding Machine.SwitchToGrabModeOperation.BeginCommand}" />
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
+                        <Border Background="{hdc:DrawingBrushExtension N017}"></Border>
+                    </Button>
+                    <Button Width="{DynamicResource {x:Static hdc:HdcLayout.ButtonSideLengthLargeKey}}"
+                            Height="{DynamicResource {x:Static hdc:HdcLayout.ButtonSideLengthLargeKey}}"
+                            Margin="{DynamicResource {x:Static hdc:HdcLayout.MarginLargeKey}}"
+                            Style="{DynamicResource EllipseButtonStyle}"
+                            HorizontalContentAlignment="Stretch"
+                            VerticalContentAlignment="Stretch">
+                        <i:Interaction.Triggers>
+                            <!--                            <i:EventTrigger EventName="PreviewMouseDown">-->
+                            <!--                                <i:InvokeCommandAction Command="{Binding XAxisBackwardJogOperation.BeginCommand}" />-->
+                            <!--                            </i:EventTrigger>-->
+                            <i:EventTrigger EventName="PreviewMouseUp">
+                                <i:InvokeCommandAction Command="{Binding Machine.SwitchToGrabModeOperation.EndCommand}" />
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
+                        <Border Background="{hdc:DrawingBrushExtension N016}"></Border>
+                    </Button>
+                    <Border Width="{DynamicResource {x:Static hdc:HdcLayout.ButtonSideLengthLargeKey}}"
+                            Height="{DynamicResource {x:Static hdc:HdcLayout.ButtonSideLengthLargeKey}}"
+                            Margin="{DynamicResource {x:Static hdc:HdcLayout.MarginLargeKey}}"
+                            BorderBrush="Gray"
+                            BorderThickness="2"
+                            Background="Silver">
+                        <TextBlock TextElement.FontSize="{DynamicResource {x:Static hdc:HdcFonts.FontSizeExtraLargeKey}}"
+                                   VerticalAlignment="Center"
+                                   HorizontalAlignment="Center">
+                            <TextBlock.Style>
+                                <Style TargetType="TextBlock">
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding Machine.TestME_SwitchToGrabMode}"
+                                                     Value="True">
+                                            <DataTrigger.Setters>
+                                                <Setter Property="Text"
+                                                        Value="ON"></Setter>
+                                                <Setter Property="Foreground"
+                                                        Value="Green"></Setter>
+                                            </DataTrigger.Setters>
+                                        </DataTrigger>
+                                        <DataTrigger Binding="{Binding Machine.TestME_SwitchToGrabMode}"
+                                                     Value="False">
+                                            <DataTrigger.Setters>
+                                                <Setter Property="Text"
+                                                        Value="OFF"></Setter>
+                                                <Setter Property="Foreground"
+                                                        Value="Blue"></Setter>
+                                            </DataTrigger.Setters>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </TextBlock.Style>
+                        </TextBlock>
+                    </Border>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Border Width="{DynamicResource {x:Static hdc:HdcLayout.ButtonSideLengthLargeM2Key}}"
+                            Height="{DynamicResource {x:Static hdc:HdcLayout.ButtonSideLengthLargeKey}}"
+                            Margin="{DynamicResource {x:Static hdc:HdcLayout.MarginLargeKey}}">
+                        <TextBlock Text="强制料盘到位"
+                                   VerticalAlignment="Center"
+                                   HorizontalAlignment="Right"></TextBlock>
+                    </Border>
+                    <Button Width="{DynamicResource {x:Static hdc:HdcLayout.ButtonSideLengthLargeKey}}"
+                            Height="{DynamicResource {x:Static hdc:HdcLayout.ButtonSideLengthLargeKey}}"
+                            Margin="{DynamicResource {x:Static hdc:HdcLayout.MarginLargeKey}}"
+                            Style="{DynamicResource EllipseButtonStyle}"
+                            HorizontalContentAlignment="Stretch"
+                            VerticalContentAlignment="Stretch">
+                        <i:Interaction.Triggers>
+                            <!--                            <i:EventTrigger EventName="PreviewMouseDown">-->
+                            <!--                                <i:InvokeCommandAction Command="{Binding Machine.TestME_ForceProductLinePlateReadyOperation.BeginCommand}" />-->
+                            <!--                            </i:EventTrigger>-->
+                            <i:EventTrigger EventName="PreviewMouseUp">
+                                <i:InvokeCommandAction Command="{Binding Machine.ForceProductLinePlateReadyOperation.BeginCommand}" />
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
+                        <Border Background="{hdc:DrawingBrushExtension N017}"></Border>
+                    </Button>
+                    <Button Width="{DynamicResource {x:Static hdc:HdcLayout.ButtonSideLengthLargeKey}}"
+                            Height="{DynamicResource {x:Static hdc:HdcLayout.ButtonSideLengthLargeKey}}"
+                            Margin="{DynamicResource {x:Static hdc:HdcLayout.MarginLargeKey}}"
+                            Style="{DynamicResource EllipseButtonStyle}"
+                            HorizontalContentAlignment="Stretch"
+                            VerticalContentAlignment="Stretch">
+                        <i:Interaction.Triggers>
+                            <!--                            <i:EventTrigger EventName="PreviewMouseDown">-->
+                            <!--                                <i:InvokeCommandAction Command="{Binding XAxisBackwardJogOperation.BeginCommand}" />-->
+                            <!--                            </i:EventTrigger>-->
+                            <i:EventTrigger EventName="PreviewMouseUp">
+                                <i:InvokeCommandAction Command="{Binding Machine.ForceProductLinePlateReadyOperation.EndCommand}" />
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
+                        <Border Background="{hdc:DrawingBrushExtension N016}"></Border>
+                    </Button>
+                    <Border Width="{DynamicResource {x:Static hdc:HdcLayout.ButtonSideLengthLargeKey}}"
+                            Height="{DynamicResource {x:Static hdc:HdcLayout.ButtonSideLengthLargeKey}}"
+                            Margin="{DynamicResource {x:Static hdc:HdcLayout.MarginLargeKey}}"
+                            BorderBrush="Gray"
+                            BorderThickness="2"
+                            Background="Silver">
+                        <TextBlock TextElement.FontSize="{DynamicResource {x:Static hdc:HdcFonts.FontSizeExtraLargeKey}}"
+                                   VerticalAlignment="Center"
+                                   HorizontalAlignment="Center">
+                            <TextBlock.Style>
+                                <Style TargetType="TextBlock">
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding Machine.TestME_ForceProductLinePlateReady}"
+                                                     Value="True">
+                                            <DataTrigger.Setters>
+                                                <Setter Property="Text"
+                                                        Value="ON"></Setter>
+                                                <Setter Property="Foreground"
+                                                        Value="Green"></Setter>
+                                            </DataTrigger.Setters>
+                                        </DataTrigger>
+                                        <DataTrigger Binding="{Binding Machine.TestME_ForceProductLinePlateReady}"
+                                                     Value="False">
+                                            <DataTrigger.Setters>
+                                                <Setter Property="Text"
+                                                        Value="OFF"></Setter>
+                                                <Setter Property="Foreground"
+                                                        Value="Blue"></Setter>
+                                            </DataTrigger.Setters>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </TextBlock.Style>
+                        </TextBlock>
+                    </Border>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Border Width="{DynamicResource {x:Static hdc:HdcLayout.ButtonSideLengthLargeM2Key}}"
+                            Height="{DynamicResource {x:Static hdc:HdcLayout.ButtonSideLengthLargeKey}}"
+                            Margin="{DynamicResource {x:Static hdc:HdcLayout.MarginLargeKey}}">
+                        <TextBlock Text="重置抓鼓位置"
+                                   VerticalAlignment="Center"
+                                   HorizontalAlignment="Right"></TextBlock>
+                    </Border>
+                    <Button Width="{DynamicResource {x:Static hdc:HdcLayout.ButtonSideLengthLargeKey}}"
+                            Height="{DynamicResource {x:Static hdc:HdcLayout.ButtonSideLengthLargeKey}}"
+                            Margin="{DynamicResource {x:Static hdc:HdcLayout.MarginLargeKey}}"
+                            Style="{DynamicResource EllipseButtonStyle}"
+                            HorizontalContentAlignment="Stretch"
+                            VerticalContentAlignment="Stretch">
+                        <i:Interaction.Triggers>
+                            <!--                            <i:EventTrigger EventName="PreviewMouseDown">-->
+                            <!--                                <i:InvokeCommandAction Command="{Binding Machine.TestME_Z2AxisDownCommand}" />-->
+                            <!--                            </i:EventTrigger>-->
+                            <i:EventTrigger EventName="PreviewMouseUp">
+                                <i:InvokeCommandAction Command="{Binding Machine.ResetNextPickupToFirstDrumCommandExecutor.CommitCommand}" />
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
+                        <Border Background="{hdc:DrawingBrushExtension N017}"></Border>
+                    </Button>
+                    <Border Width="{DynamicResource {x:Static hdc:HdcLayout.ButtonSideLengthLargeKey}}"
+                            Height="{DynamicResource {x:Static hdc:HdcLayout.ButtonSideLengthLargeKey}}"
+                            Margin="{DynamicResource {x:Static hdc:HdcLayout.MarginLargeKey}}"
+                            BorderBrush="Gray"
+                            BorderThickness="2"
+                            Background="Silver">
+                        <TextBlock TextElement.FontSize="{DynamicResource {x:Static hdc:HdcFonts.FontSizeExtraLargeKey}}"
+                                   VerticalAlignment="Center"
+                                   HorizontalAlignment="Center"
+                                   Text="{Binding Machine.DrumPlate_NextPickupRowIndex}">
+                        </TextBlock>
+                    </Border>
+                    <Border Width="{DynamicResource {x:Static hdc:HdcLayout.ButtonSideLengthLargeKey}}"
+                            Height="{DynamicResource {x:Static hdc:HdcLayout.ButtonSideLengthLargeKey}}"
+                            Margin="{DynamicResource {x:Static hdc:HdcLayout.MarginLargeKey}}"
+                            BorderBrush="Gray"
+                            BorderThickness="2"
+                            Background="Silver">
+                        <TextBlock TextElement.FontSize="{DynamicResource {x:Static hdc:HdcFonts.FontSizeExtraLargeKey}}"
+                                   VerticalAlignment="Center"
+                                   HorizontalAlignment="Center"
+                                   Text="{Binding Machine.DrumPlate_NextPickupColumnIndex}">
+                        </TextBlock>
+                    </Border>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel Background="Silver"
+                        Margin="{DynamicResource {x:Static hdc:HdcLayout.MarginLargeKey}}">
+                <TextBlock Text="报警列表"
+                           FontSize="{DynamicResource {x:Static hdc:HdcFonts.FontSizeExtraLargeKey}}"
+                           Margin="{DynamicResource {x:Static hdc:HdcLayout.MarginExtraLargeKey}}"></TextBlock>
+                <ScrollViewer HorizontalScrollBarVisibility="Disabled"
+                              VerticalScrollBarVisibility="Visible"
+                              Margin="{DynamicResource {x:Static hdc:HdcLayout.MarginLargeKey}}">
+                    <ItemsControl ItemsSource="{Binding AlarmEntries}"
+                                  x:Name="AlarmEntrisItemsControl"
+                                  ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <Border Width="{DynamicResource {x:Static hdc:HdcLayout.ButtonSideLengthKey}}"
+                                            Height="{DynamicResource {x:Static hdc:HdcLayout.ButtonSideLengthKey}}"
+                                            Margin="{DynamicResource {x:Static hdc:HdcLayout.MarginKey}}"
+                                            BorderBrush="Gray"
+                                            BorderThickness="2"
+                                            Background="Silver">
+                                        <TextBlock TextElement.FontSize="{DynamicResource {x:Static hdc:HdcFonts.FontSizeMediumKey}}"
+                                                   VerticalAlignment="Center"
+                                                   HorizontalAlignment="Center">
+                                            <TextBlock.Style>
+                                                <Style TargetType="TextBlock">
+                                                    <Style.Triggers>
+                                                        <DataTrigger Binding="{Binding PlcValue}"
+                                                                     Value="True">
+                                                            <DataTrigger.Setters>
+                                                                <Setter Property="Text"
+                                                                        Value="ON"></Setter>
+                                                                <Setter Property="Foreground"
+                                                                        Value="Green"></Setter>
+                                                            </DataTrigger.Setters>
+                                                        </DataTrigger>
+                                                        <DataTrigger Binding="{Binding PlcValue}"
+                                                                     Value="False">
+                                                            <DataTrigger.Setters>
+                                                                <Setter Property="Text"
+                                                                        Value="OFF"></Setter>
+                                                                <Setter Property="Foreground"
+                                                                        Value="Blue"></Setter>
+                                                            </DataTrigger.Setters>
+                                                        </DataTrigger>
+                                                    </Style.Triggers>
+                                                </Style>
+                                            </TextBlock.Style>
+                                        </TextBlock>
+                                    </Border>
+                                    <Border Height="{DynamicResource {x:Static hdc:HdcLayout.ButtonSideLengthKey}}"
+                                            Margin="{DynamicResource {x:Static hdc:HdcLayout.MarginKey}}"
+                                            BorderThickness="2">
+                                        <TextBlock Text="{Binding Name}"
+                                                   TextElement.FontSize="{DynamicResource {x:Static hdc:HdcFonts.FontSizeMediumKey}}"
+                                                   Margin="{DynamicResource {x:Static hdc:HdcLayout.MarginKey}}"
+                                                   VerticalAlignment="Center"></TextBlock>
+                                    </Border>
+
+                                </StackPanel>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                        <!--                    <ItemsControl.GroupStyle>-->
+                        <!--                        <StaticResource ResourceKey="ParameterEntriesGroupStyle"></StaticResource>-->
+                        <!--                    </ItemsControl.GroupStyle>-->
+                    </ItemsControl>
+                </ScrollViewer>
+            </StackPanel>
+        </UniformGrid>
+    </DockPanel>
+</UserControl>

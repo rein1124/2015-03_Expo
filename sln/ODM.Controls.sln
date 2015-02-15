@@ -1,0 +1,59 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30723.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{1991DECE-92BB-4567-AD64-14CA40FFB49F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hdc.Toolkit", "..\src\Hdc.Toolkit\Hdc.Toolkit.csproj", "{2AEABE20-5E8F-4310-A228-66BD3D434683}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hdc.Toolkit.Prism", "..\src\Hdc.Toolkit.Prism\Hdc.Toolkit.Prism.csproj", "{AD8670C0-923C-4F6E-B38F-37C81FA163BC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hdc.Controls", "..\src\Hdc.Controls\Hdc.Controls.csproj", "{28619ECB-99C1-463C-9BEB-98EE74D594E7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ODM.Controls", "..\src\ODM.Controls\ODM.Controls.csproj", "{33C9374E-433D-45D9-BD06-FD534B5D70A2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ODM.Controls.Demos", "..\demo\ODM.Controls.Demos\ODM.Controls.Demos.csproj", "{5DEABC4C-E0AD-422C-ABB0-B6106239044A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ODM.Controls.MultiIndicatorDemos", "..\demo\ODM.Controls.MultiIndicatorDemos\ODM.Controls.MultiIndicatorDemos.csproj", "{059DAB53-D2B8-4BA4-BF5B-6B9BDC1FF784}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2AEABE20-5E8F-4310-A228-66BD3D434683}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2AEABE20-5E8F-4310-A228-66BD3D434683}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2AEABE20-5E8F-4310-A228-66BD3D434683}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2AEABE20-5E8F-4310-A228-66BD3D434683}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AD8670C0-923C-4F6E-B38F-37C81FA163BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD8670C0-923C-4F6E-B38F-37C81FA163BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD8670C0-923C-4F6E-B38F-37C81FA163BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD8670C0-923C-4F6E-B38F-37C81FA163BC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{28619ECB-99C1-463C-9BEB-98EE74D594E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{28619ECB-99C1-463C-9BEB-98EE74D594E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{28619ECB-99C1-463C-9BEB-98EE74D594E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{28619ECB-99C1-463C-9BEB-98EE74D594E7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{33C9374E-433D-45D9-BD06-FD534B5D70A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33C9374E-433D-45D9-BD06-FD534B5D70A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33C9374E-433D-45D9-BD06-FD534B5D70A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33C9374E-433D-45D9-BD06-FD534B5D70A2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5DEABC4C-E0AD-422C-ABB0-B6106239044A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5DEABC4C-E0AD-422C-ABB0-B6106239044A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5DEABC4C-E0AD-422C-ABB0-B6106239044A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5DEABC4C-E0AD-422C-ABB0-B6106239044A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{059DAB53-D2B8-4BA4-BF5B-6B9BDC1FF784}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{059DAB53-D2B8-4BA4-BF5B-6B9BDC1FF784}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{059DAB53-D2B8-4BA4-BF5B-6B9BDC1FF784}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{059DAB53-D2B8-4BA4-BF5B-6B9BDC1FF784}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{2AEABE20-5E8F-4310-A228-66BD3D434683} = {1991DECE-92BB-4567-AD64-14CA40FFB49F}
+		{AD8670C0-923C-4F6E-B38F-37C81FA163BC} = {1991DECE-92BB-4567-AD64-14CA40FFB49F}
+		{28619ECB-99C1-463C-9BEB-98EE74D594E7} = {1991DECE-92BB-4567-AD64-14CA40FFB49F}
+	EndGlobalSection
+EndGlobal

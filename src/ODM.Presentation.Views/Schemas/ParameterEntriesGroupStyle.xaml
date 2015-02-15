@@ -1,0 +1,21 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:hdc="http://schemas.hdcrd.com/xaml">
+    <GroupStyle x:Key="ParameterEntriesGroupStyle">
+        <GroupStyle.Panel>
+            <ItemsPanelTemplate>
+                <WrapPanel Orientation="Horizontal" />
+            </ItemsPanelTemplate>
+        </GroupStyle.Panel>
+        <GroupStyle.HeaderTemplate>
+            <DataTemplate>
+                <StackPanel Background="{DynamicResource {x:Static hdc:HdcBrushes.GroupBoxHeaderBackgroundBrushKey}}"
+                            Margin="{DynamicResource {x:Static hdc:HdcLayout.MarginLargeKey}}">
+                    <TextBlock Text="{Binding Name}"
+                               FontSize="{DynamicResource {x:Static hdc:HdcFonts.FontSizeLargeKey}}"
+                               Margin="{DynamicResource {x:Static hdc:HdcLayout.MarginLargeKey}}" />
+                </StackPanel>
+            </DataTemplate>
+        </GroupStyle.HeaderTemplate>
+    </GroupStyle>
+</ResourceDictionary>

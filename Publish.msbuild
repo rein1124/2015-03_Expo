@@ -1,0 +1,38 @@
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <PublishDirectoryxxx>publish</PublishDirectoryxxx>
+  </PropertyGroup>
+  
+  <Import Project="Variable.msbuild"/>
+  <!--<Import Project="UnitTest.msbuild"/>-->
+  <Import Project="Build.Publish.msbuild"/>
+  <Import Project="Pre-Build.msbuild"/>
+  <Import Project="Post-Build.msbuild"/>
+  <Import Project="Zip.msbuild"/>
+  <!--<Import Project="InnoDeploy.msbuild"/>-->
+  
+  <Target Name="Publish">
+    
+	<Message Text="Publish..."></Message>
+    
+    <Message Text="Pre-Build..."></Message>
+    <CallTarget Targets="Pre-Build"></CallTarget>
+    
+    <Message Text="Call Build..."></Message>
+    <CallTarget Targets="Build"></CallTarget>
+    
+    <Message Text="Post-Build..."></Message>
+    <CallTarget Targets="Post-Build"></CallTarget>
+    
+    <!--<Message Text="InnoDeploy"></Message>
+    <CallTarget Targets="InnoDeploy"></CallTarget>-->
+    
+    
+    <Message Text="Zip"></Message>
+	<MSBuild Targets="ZipBin" Projects="Zip.msbuild">
+	</MSBuild>
+    
+    <Message Text="Publish finished"></Message>
+    
+  </Target>
+</Project>

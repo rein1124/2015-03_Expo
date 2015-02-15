@@ -1,0 +1,68 @@
+﻿<UserControl x:Class="ODM.Layout.MainScreen"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:odm="clr-namespace:Shared"
+             xmlns:prism="http://www.codeplex.com/prism"
+             xmlns:hdc="http://schemas.hdcrd.com/xaml"
+             mc:Ignorable="d"
+             d:DesignHeight="1080"
+             d:DesignWidth="1920"
+             Background="Black"
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity">
+    <Grid>
+        <ContentControl prism:RegionManager.RegionName="{x:Static odm:RegionNames.MainScreen_NavigationRegion}"
+                            Margin="0"></ContentControl>
+        <ContentControl prism:RegionManager.RegionName="{x:Static odm:RegionNames.Dialogs_CommonDialogsHost}"
+                            Margin="0"></ContentControl>
+        <ContentControl prism:RegionManager.RegionName="{x:Static odm:RegionNames.Dialogs_Dialogs}"
+                            Margin="0"></ContentControl>
+
+
+        <Border hdc:RegionPopupBehaviors.CreatePopupRegionWithName="{x:Static odm:RegionNames.DialogRegion}">
+            <hdc:RegionPopupBehaviors.ContainerWindowStyle>
+                <Style TargetType="Window">
+                    <Setter Property="Background"
+                            Value="Transparent" />
+                    <Setter Property="Margin"
+                            Value="0" />
+                    <Setter Property="Padding"
+                            Value="0" />
+                    <Setter Property="Width"
+                            Value="400" />
+                    <Setter Property="Height"
+                            Value="400" />
+                    <Setter Property="Topmost"
+                            Value="False" />
+                    <Setter Property="Title"
+                            Value="{Binding Path=Content.Title, RelativeSource={RelativeSource Self}}" />
+                </Style>
+            </hdc:RegionPopupBehaviors.ContainerWindowStyle>
+        </Border>
+
+
+        <Border>
+            <i:Interaction.Behaviors>
+                <hdc:AddDialogRegionBehavior RegionName="{x:Static odm:DialogNames.Calculate}"
+                                             ContainerWindowStyle="{DynamicResource {x:Static hdc:WindowStyles.TransparentMaximizedWindowRegionStyleKey}}"></hdc:AddDialogRegionBehavior>
+                <hdc:AddDialogRegionBehavior RegionName="{x:Static odm:DialogNames.StringInput}"
+                                             ContainerWindowStyle="{DynamicResource {x:Static hdc:WindowStyles.TransparentMaximizedWindowRegionStyleKey}}"></hdc:AddDialogRegionBehavior>
+                <hdc:AddDialogRegionBehavior RegionName="{x:Static odm:DialogNames.AskDialog}"
+                                             ContainerWindowStyle="{DynamicResource {x:Static hdc:WindowStyles.TransparentMaximizedWindowRegionStyleKey}}"></hdc:AddDialogRegionBehavior>
+                <hdc:AddDialogRegionBehavior RegionName="{x:Static odm:DialogNames.MessageDialog}"
+                                             ContainerWindowStyle="{DynamicResource {x:Static hdc:WindowStyles.TransparentMaximizedWindowRegionStyleKey}}"></hdc:AddDialogRegionBehavior>
+                <hdc:AddDialogRegionBehavior RegionName="{x:Static odm:DialogNames.BusyDialog}"
+                                             ContainerWindowStyle="{DynamicResource {x:Static hdc:WindowStyles.TransparentMaximizedWindowRegionStyleKey}}"></hdc:AddDialogRegionBehavior>
+            </i:Interaction.Behaviors>
+        </Border>
+        <Border>
+            <i:Interaction.Behaviors>
+                <hdc:AddDialogRegionBehavior RegionName="{x:Static odm:DialogNames.Schemas_EditProductionSchemaDialog}"
+                                             ContainerWindowStyle="{DynamicResource {x:Static hdc:WindowStyles.TransparentMaximizedWindowRegionStyleKey}}"></hdc:AddDialogRegionBehavior>
+                <hdc:AddDialogRegionBehavior RegionName="{x:Static odm:DialogNames.Reporting_PreviewReportingDialog}"
+                                             ContainerWindowStyle="{DynamicResource {x:Static hdc:WindowStyles.TransparentMaximizedWindowRegionStyleKey}}"></hdc:AddDialogRegionBehavior>
+            </i:Interaction.Behaviors>
+        </Border>
+    </Grid>
+</UserControl>

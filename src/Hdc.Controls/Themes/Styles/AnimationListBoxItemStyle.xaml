@@ -1,0 +1,115 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:Effects="clr-namespace:Hdc.Controls.Effects">
+    <!--    <ResourceDictionary.MergedDictionaries>-->
+    <!--        <Ui:SharedResourceDictionary Source="/Hdc.Cpc.Mercury.Ui.Themes.Generic;component\Themes\Generic.xaml"></Ui:SharedResourceDictionary>-->
+    <!--    </ResourceDictionary.MergedDictionaries>-->
+    <Style x:Key="AnimationListBoxItemStyle"
+           TargetType="{x:Type ListBoxItem}"
+           BasedOn="{x:Null}">
+        <Setter Property="FocusVisualStyle"
+                Value="{x:Null}" />
+        <Setter Property="IsTabStop"
+                Value="false" />
+        <!--                <Setter Property="Focusable"-->
+        <!--                        Value="false" />-->
+        <Setter Property="Padding"
+                Value="0" />
+        <Setter Property="Margin"
+                Value="0" />
+        <!--        <Setter Property="Foreground"-->
+        <!--                Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" />-->
+        <Setter Property="Background"
+                Value="Transparent" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ListBoxItem}">
+                    <ControlTemplate.Resources>
+                        <Storyboard x:Key="IsSelectedTrueStory">
+                            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00"
+                                                           Storyboard.TargetName="ClassicBorder"
+                                                           Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)">
+                                <SplineDoubleKeyFrame KeyTime="00:00:00.1000000"
+                                                      Value="1" />
+                            </DoubleAnimationUsingKeyFrames>
+                            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00"
+                                                           Storyboard.TargetName="ClassicBorder"
+                                                           Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)">
+                                <SplineDoubleKeyFrame KeyTime="00:00:00.1000000"
+                                                      Value="1" />
+                            </DoubleAnimationUsingKeyFrames>
+                            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00"
+                                                           Storyboard.TargetName="_grayscaleEffect"
+                                                           Storyboard.TargetProperty="(Effects:GrayScaleEffect.DesaturationFactor)">
+                                <SplineDoubleKeyFrame KeyTime="00:00:00.1000000"
+                                                      Value="1" />
+                            </DoubleAnimationUsingKeyFrames>
+                        </Storyboard>
+                        <Storyboard x:Key="IsSelectedFalseStory">
+                            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00"
+                                                           Storyboard.TargetName="ClassicBorder"
+                                                           Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)">
+                                <SplineDoubleKeyFrame KeyTime="00:00:00.3000000"
+                                                      Value="0.8" />
+                            </DoubleAnimationUsingKeyFrames>
+                            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00"
+                                                           Storyboard.TargetName="ClassicBorder"
+                                                           Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)">
+                                <SplineDoubleKeyFrame KeyTime="00:00:00.3000000"
+                                                      Value="0.8" />
+                            </DoubleAnimationUsingKeyFrames>
+                            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00"
+                                                           Storyboard.TargetName="_grayscaleEffect"
+                                                           Storyboard.TargetProperty="(Effects:GrayScaleEffect.DesaturationFactor)">
+                                <SplineDoubleKeyFrame KeyTime="00:00:00.3000000"
+                                                      Value="0.5" />
+                            </DoubleAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </ControlTemplate.Resources>
+                    <Border x:Name="ClassicBorder"
+                            RenderTransformOrigin="{Binding (UIElement.RenderTransformOrigin),RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type ListBox}}}"
+                            SnapsToDevicePixels="true"
+                            Background="{TemplateBinding Background}"
+                            BorderBrush="Transparent"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            Padding="{TemplateBinding Padding}"
+                            Margin="0,0,0,0">
+                        <Border.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform ScaleX="0.8"
+                                                ScaleY="0.8" />
+                            </TransformGroup>
+                        </Border.RenderTransform>
+                        <ContentControl HorizontalAlignment="{Binding Path=HorizontalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}"
+                                        Margin="{TemplateBinding Padding}"
+                                        Focusable="False"
+                                        VerticalAlignment="{Binding Path=VerticalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}"
+                                        SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}">
+                            <ContentControl.Effect>
+                                <Effects:GrayScaleEffect x:Name="_grayscaleEffect"
+                                                         DesaturationFactor="0.5">
+                                    </Effects:GrayScaleEffect>
+                            </ContentControl.Effect>
+                        </ContentControl>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="Selector.IsSelected"
+                                 Value="True">
+                            <Trigger.EnterActions>
+                                <BeginStoryboard Storyboard="{StaticResource IsSelectedTrueStory}" />
+                            </Trigger.EnterActions>
+                            <Trigger.ExitActions>
+                                <BeginStoryboard Storyboard="{StaticResource IsSelectedFalseStory}" />
+                            </Trigger.ExitActions>
+                        </Trigger>
+                        <Trigger Property="IsEnabled"
+                                 Value="false">
+                            <Setter Property="Foreground"
+                                    Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

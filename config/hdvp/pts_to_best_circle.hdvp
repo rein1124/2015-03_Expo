@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hdevelop file_version="1.0" halcon_version="10.0" cs="190304714">
+<procedure name="pts_to_best_circle">
+<interface>
+<oo>
+<par name="Circle"/>
+</oo>
+<ic>
+<par name="Rows"/>
+<par name="Cols"/>
+<par name="ActiveNum"/>
+<par name="ArcType"/>
+</ic>
+<oc>
+<par name="RowCenter"/>
+<par name="ColCenter"/>
+<par name="Radius"/>
+</oc>
+</interface>
+<xb>H2j5Qom5/NdFrJqUSDWMytoZiUe2m9b3TvaQ2g+I+CALTK9E1xviLhzGgyEyCw+76yEk7fSdxGrZ08JXNgeGNvr7zsKLGC297MGSY1unO5NGlvXUwbJwY8yVfK59D6kIey6usUoZJHxVgrnPwiPEhN5AM030n9RmrhZzMlPfL9IpbiGlvnaMqMcME6I/O4lm6bcLnyeEAbdNbcTB8oJOK5Qo8xjpvVCRpWNurxesimnt6/qsB4VlZsX3kMqirtpNVln1bbGemI3lhIzyKbuWEOqDs14Eg8covEEux83Y2lpLUMZYLYWbtaFvSOiSQKzzVFKuOGdsrKQAMOUJuekU4BJh1o2ZNnp1myF9oVjGRJ2j41dIHQQ35ucrs5oiARl62mBd9unSdaxtJxXugnzXv2bH80uqrzUJWxTPWRZjdRf/mTojRdyc9I2NFmKbZ1JKi4Srau1sXdrzgnV8Ptn6oOkVD9cDOaQQBoYFERt8BdI</xb>
+<docu id="pts_to_best_circle">
+<parameters>
+<parameter id="ActiveNum">
+<description lang="zh_CN">最小有效点数</description>
+<sem_type>any</sem_type>
+<type_list>
+<item>integer</item>
+<item>real</item>
+</type_list>
+</parameter>
+<parameter id="ArcType">
+<default_value>'circle'</default_value>
+<description lang="zh_CN">拟合圆弧类型：'arc'圆弧；'circle'圆</description>
+<multivalue>false</multivalue>
+<sem_type>string</sem_type>
+<type_list>
+<item>string</item>
+</type_list>
+<values>
+<item>'circle'</item>
+<item>'arc'</item>
+</values>
+</parameter>
+<parameter id="Circle">
+<description lang="zh_CN">输出拟合圆的xld</description>
+<sem_type>xld</sem_type>
+</parameter>
+<parameter id="ColCenter">
+<description lang="zh_CN">拟合的圆中心x</description>
+<sem_type>real</sem_type>
+</parameter>
+<parameter id="Cols">
+<description lang="zh_CN">拟合圆的输入x数组</description>
+<sem_type>real</sem_type>
+</parameter>
+<parameter id="Radius">
+<description lang="zh_CN">拟合的圆半径</description>
+<sem_type>real</sem_type>
+</parameter>
+<parameter id="RowCenter">
+<description lang="zh_CN">拟合的圆中心y</description>
+<sem_type>real</sem_type>
+</parameter>
+<parameter id="Rows">
+<description lang="zh_CN">拟合圆的输入y数组</description>
+<sem_type>real</sem_type>
+</parameter>
+</parameters>
+</docu>
+</procedure>
+</hdevelop>

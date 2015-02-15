@@ -1,0 +1,101 @@
+﻿<Window x:Class="Hdc.Controls.FolderBrowserDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:hdc="http://schemas.hdcrd.com/xaml"
+        x:Name="view"
+        xmlns:system="clr-namespace:System;assembly=mscorlib"
+        DataContext="{Binding ElementName=view, Path=ViewModel}" Width="800"
+        Height="600"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        ResizeMode="NoResize"
+        Title="Browse For Folder"
+        Background="Transparent">
+    <GroupBox Style="{DynamicResource DialogGroupBoxStyle}"
+              Header="{hdc:LocalizeExtension FolderBrowser}">
+        <DockPanel  Width="Auto"
+                    Height="Auto">
+
+            <!-- The selected folder path -->
+            <DockPanel DockPanel.Dock="Bottom">
+                <StackPanel Orientation="Horizontal"
+                            HorizontalAlignment="Right"
+                            DockPanel.Dock="Bottom">
+
+                    <Button Width="{DynamicResource AccButtonWidth}"
+                            Height="{DynamicResource AccButtonHeight}"
+                            HorizontalContentAlignment="Stretch"
+                            VerticalContentAlignment="Stretch"
+                            Click="Ok_Click"
+                            Margin="{DynamicResource AccMargin}">
+                        <Border Background="{hdc:DrawingBrushExtension Yes}" />
+                    </Button>
+
+                    <Button Width="{DynamicResource AccButtonWidth}"
+                            Height="{DynamicResource AccButtonHeight}"
+                            HorizontalContentAlignment="Stretch"
+                            VerticalContentAlignment="Stretch"
+                            IsCancel="True"
+                            Margin="{DynamicResource AccMargin}">
+                        <!--                        CANCEL-->
+                        <Border Background="{hdc:DrawingBrushExtension No}" />
+                    </Button>
+                    <!--                <Button Width="75"-->
+                    <!--                        Margin="10"-->
+                    <!--                        Click="Ok_Click">Ok</Button>-->
+                    <!--                <Button Width="75"-->
+                    <!--                        Margin="10"-->
+                    <!--                        IsCancel="True">Cancel</Button>-->
+                </StackPanel>
+                <TextBox Text="{Binding SelectedFolder}"
+                         MinHeight="{DynamicResource AccButtonHeight}"
+                         Margin="{DynamicResource AccMargin}"
+                         TextWrapping="Wrap"
+                         VerticalContentAlignment="Top" />
+            </DockPanel>
+
+            <DockPanel>
+
+                <!-- The windows explorer style treeview of folders -->
+                <TreeView ItemsSource="{Binding Folders}"
+                          Margin="{DynamicResource AccMargin}"
+                          Background="{DynamicResource AccBackground}"
+                          SelectedValuePath="">
+                    <TreeView.ItemContainerStyle>
+                        <Style TargetType="{x:Type TreeViewItem}">
+                            <Setter Property="IsExpanded"
+                                    Value="{Binding IsExpanded, Mode=TwoWay}" />
+                            <Setter Property="IsSelected"
+                                    Value="{Binding IsSelected, Mode=TwoWay}" />
+                            <Setter Property="FontWeight"
+                                    Value="Normal" />
+                            <Style.Triggers>
+                                <Trigger Property="IsSelected"
+                                         Value="True">
+                                    <Setter Property="FontWeight"
+                                            Value="Bold" />
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </TreeView.ItemContainerStyle>
+
+                    <TreeView.ItemTemplate>
+                        <HierarchicalDataTemplate ItemsSource="{Binding Folders}">
+                            <StackPanel Orientation="Horizontal">
+                                <Image Source="{Binding FolderIcon}"
+                                       Margin="2"
+                                       Height="auto" />
+                                <TextBlock Text="{Binding FolderName}"
+                                           Margin="2"
+                                           Height="auto" />
+                            </StackPanel>
+                        </HierarchicalDataTemplate>
+                    </TreeView.ItemTemplate>
+                </TreeView>
+
+            </DockPanel>
+
+        </DockPanel>
+    </GroupBox>
+
+</Window>

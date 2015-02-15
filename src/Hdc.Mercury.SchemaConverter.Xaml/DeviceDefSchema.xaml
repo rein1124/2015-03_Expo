@@ -1,0 +1,67 @@
+﻿<DeviceDefSchema GenerationCount="0"
+                 IsSimulated="False"
+                 xmlns="http://schemas.hdcrd.com/mercury"
+                 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <DeviceDefSchema.RootGroupDef>
+        <DeviceGroupDef Name="Press"
+                        Total="1">
+            <DeviceGroupDef Name="Side"
+                            Total="2">
+                <DeviceGroupDef Name="Unit"
+                                Total="4" />
+            </DeviceGroupDef>
+            <DeviceGroupDef Name="PaperPath"
+                            Total="4" />
+        </DeviceGroupDef>
+    </DeviceDefSchema.RootGroupDef>
+    <DeviceDef ModuleName="{x:Null}"
+               DataType="Decimal"
+               GroupName="Side"
+               IsArray="False"
+               IsSimulated="False"
+               Name="Sample"
+               Path="Path.To.Sample"
+               TagIndexLength="2"
+               TagIndexPosition="0" />
+    <DeviceDef ModuleName="{x:Null}"
+               DataType="Boolean"
+               GroupName="Press"
+               IsArray="False"
+               IsSimulated="False"
+               Name="IsLocked"
+               Path="Path.To.IsLocked"
+               TagIndexLength="0"
+               TagIndexPosition="0">
+        <DeviceDef.OffsetDefs>
+            <OffsetDef GroupName="Press"
+                       Prefix="0"
+                       Suffix="0" />
+        </DeviceDef.OffsetDefs>
+    </DeviceDef>
+    <DeviceDef ModuleName="{x:Null}"
+               DataType="Int16"
+               GroupName="Unit"
+               IsArray="False"
+               IsSimulated="False"
+               Name="Feedback"
+               Path="Path.To.Feedback"
+               TagIndexLength="4"
+               TagIndexPosition="800">
+        <DeviceDef.Converters>
+            <LinearValueConverter Factor="0.5" />
+            <LinearValueConverter Factor="0.5"
+                                   RoundingMode="Rounded" />
+        </DeviceDef.Converters>
+        <DeviceDef.OffsetDefs>
+            <OffsetDef GroupName="Press"
+                       Prefix="0"
+                       Suffix="0" />
+            <OffsetDef GroupName="Side"
+                       Prefix="0"
+                       Suffix="0" />
+            <OffsetDef GroupName="Unit"
+                       Prefix="0"
+                       Suffix="0" />
+        </DeviceDef.OffsetDefs>
+    </DeviceDef>
+</DeviceDefSchema>

@@ -1,0 +1,54 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:Hdc.Controls">
+    <Style TargetType="{x:Type local:DisplaySinlgeItemSelector}">
+        <Setter Property="FocusVisualStyle"
+                Value="{x:Null}"></Setter>
+        <!--        <Setter Property="TextElement.Foreground"-->
+        <!--                Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"></Setter>-->
+        <Setter Property="Panel.Background"
+                Value="Transparent"></Setter>
+        <Setter Property="Margin"
+                Value="0"></Setter>
+        <Setter Property="Padding"
+                Value="0"></Setter>
+        <!--        <Setter Property="Border.BorderBrush"-->
+        <!--                Value="{DynamicResource BorderBrush}"></Setter>-->
+        <!--        <Setter Property="Border.BorderThickness"-->
+        <!--                Value="{DynamicResource BorderThickness}"></Setter>-->
+        <Setter Property="Control.HorizontalContentAlignment"
+                Value="Stretch"></Setter>
+        <Setter Property="Control.VerticalContentAlignment"
+                Value="Stretch"></Setter>
+        <!--        <Setter Property="Border.BorderBrush"-->
+        <!--                Value="{DynamicResource BorderBrush}"></Setter>-->
+        <Setter Property="Border.BorderThickness"
+                Value="0"></Setter>
+        <Setter Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type local:DisplaySinlgeItemSelector}">
+                    <Border x:Name="Border"
+                            ClipToBounds="False"
+                            SnapsToDevicePixels="True"
+                            Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding  Border.BorderBrush}"
+                            BorderThickness="{TemplateBinding Border.BorderThickness}"
+                            CornerRadius="0">
+                        <Grid Name="ContentPanel">
+<!--                            <TabPanel Background="Transparent"-->
+<!--                                      IsItemsHost="True"-->
+<!--                                      Name="HeaderPanel"-->
+<!--                                      Visibility="Hidden" />-->
+                            <ContentPresenter Content="{TemplateBinding TabControl.SelectedContent}"
+                                              ContentTemplate="{TemplateBinding TabControl.SelectedContentTemplate}"
+                                              ContentStringFormat="{TemplateBinding TabControl.SelectedContentStringFormat}"
+                                              ContentSource="SelectedContent"
+                                              Name="PART_SelectedContentHost"
+                                              SnapsToDevicePixels="{TemplateBinding UIElement.SnapsToDevicePixels}" />
+                        </Grid>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

@@ -1,0 +1,12 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:hdc="http://schemas.hdcrd.com/xaml"
+                    xmlns:local="clr-namespace:Hdc.Controls">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/Hdc.Controls;component/Themes/Basic.xaml"></ResourceDictionary>
+        <ResourceDictionary Source="/Hdc.Controls;component/Themes/Styles.xaml"></ResourceDictionary>
+        <ResourceDictionary Source="/Hdc.Controls;component/Themes/Templates.xaml"></ResourceDictionary>
+        <ResourceDictionary Source="/Hdc.Controls;component/Themes/Controls.xaml"></ResourceDictionary>
+    </ResourceDictionary.MergedDictionaries>
+
+</ResourceDictionary>

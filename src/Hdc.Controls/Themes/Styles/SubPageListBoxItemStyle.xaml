@@ -1,0 +1,160 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:Effects="clr-namespace:Hdc.Controls.Effects">
+    <Style x:Key="SubPageListBoxItemStyle"
+           TargetType="{x:Type ListBoxItem}">
+        <Style.Resources>
+            <Storyboard x:Key="isSelectedTrue_activated">
+                <DoubleAnimationUsingKeyFrames BeginTime="00:00:00"
+                                               Storyboard.TargetName="Bd"
+                                               Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)">
+                    <SplineDoubleKeyFrame KeyTime="00:00:00.1000000"
+                                          Value="1" />
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames BeginTime="00:00:00"
+                                               Storyboard.TargetName="Bd"
+                                               Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)">
+                    <SplineDoubleKeyFrame KeyTime="00:00:00.1000000"
+                                          Value="1" />
+                </DoubleAnimationUsingKeyFrames>
+                <!--                <DoubleAnimationUsingKeyFrames BeginTime="00:00:00"-->
+                <!--                                               Storyboard.TargetName="Bd"-->
+                <!--                                               Storyboard.TargetProperty="(UIElement.Opacity)">-->
+                <!--                    <SplineDoubleKeyFrame KeyTime="00:00:00.1000000"-->
+                <!--                                          Value="1" />-->
+                <!--                </DoubleAnimationUsingKeyFrames>-->
+                <!--                <ColorAnimationUsingKeyFrames BeginTime="00:00:00"-->
+                <!--                                              Storyboard.TargetName="Bd"-->
+                <!--                                              Storyboard.TargetProperty="(TextElement.Foreground).(SolidColorBrush.Color)">-->
+                <!--                    <SplineColorKeyFrame KeyTime="00:00:00.1000000"-->
+                <!--                                         Value="#FF828282" />-->
+                <!--                </ColorAnimationUsingKeyFrames>-->
+                <DoubleAnimationUsingKeyFrames BeginTime="00:00:00"
+                                               Storyboard.TargetName="_grayscaleEffect"
+                                               Storyboard.TargetProperty="(Effects:GrayScaleEffect.DesaturationFactor)">
+                    <SplineDoubleKeyFrame KeyTime="00:00:00.1000000"
+                                          Value="1" />
+                </DoubleAnimationUsingKeyFrames>
+            </Storyboard>
+            <Storyboard x:Key="isSelectedTrue_deactivated">
+                <DoubleAnimationUsingKeyFrames BeginTime="00:00:00"
+                                               Storyboard.TargetName="Bd"
+                                               Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)">
+                    <SplineDoubleKeyFrame KeyTime="00:00:00.3000000"
+                                          Value="0.7" />
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames BeginTime="00:00:00"
+                                               Storyboard.TargetName="Bd"
+                                               Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)">
+                    <SplineDoubleKeyFrame KeyTime="00:00:00.3000000"
+                                          Value="0.7" />
+                </DoubleAnimationUsingKeyFrames>
+                <!--                <DoubleAnimationUsingKeyFrames BeginTime="00:00:00"-->
+                <!--                                               Storyboard.TargetName="Bd"-->
+                <!--                                               Storyboard.TargetProperty="(UIElement.Opacity)">-->
+                <!--                    <SplineDoubleKeyFrame KeyTime="00:00:00.3000000"-->
+                <!--                                          Value="0.8" />-->
+                <!--                </DoubleAnimationUsingKeyFrames>-->
+                <!--                <ColorAnimationUsingKeyFrames BeginTime="00:00:00"-->
+                <!--                                              Storyboard.TargetName="Bd"-->
+                <!--                                              Storyboard.TargetProperty="(TextElement.Foreground).(SolidColorBrush.Color)">-->
+                <!--                    <SplineColorKeyFrame KeyTime="00:00:00.3000000"-->
+                <!--                                         Value="#FF000000" />-->
+                <!--                </ColorAnimationUsingKeyFrames>-->
+                <DoubleAnimationUsingKeyFrames BeginTime="00:00:00"
+                                               Storyboard.TargetName="_grayscaleEffect"
+                                               Storyboard.TargetProperty="(Effects:GrayScaleEffect.DesaturationFactor)">
+                    <SplineDoubleKeyFrame KeyTime="00:00:00.3000000"
+                                          Value="0.3" />
+                </DoubleAnimationUsingKeyFrames>
+            </Storyboard>
+        </Style.Resources>
+        <!--        <Setter Property="Focusable"-->
+        <!--                Value="false"></Setter>-->
+        <Setter Property="FocusVisualStyle"
+                Value="{x:Null}"></Setter>
+        <Setter Property="IsSelected"
+                Value="False" />
+        <Setter Property="Foreground"
+                Value="#777" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ListBoxItem}">
+                    <Border SnapsToDevicePixels="true"
+                            x:Name="Bd"
+                            RenderTransformOrigin="{Binding (UIElement.RenderTransformOrigin),RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type ListBox}}}"
+                            Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            Padding="{TemplateBinding Padding}">
+                        <ContentPresenter SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+                                          HorizontalAlignment="{Binding Path=VerticalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}"
+                                          VerticalAlignment="{Binding Path=HorizontalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}"
+                                          x:Name="contentPresenter">
+                            <ContentPresenter.Effect>
+                                <Effects:GrayScaleEffect x:Name="_grayscaleEffect"
+                                                         DesaturationFactor="0.3">
+                                    </Effects:GrayScaleEffect>
+                            </ContentPresenter.Effect>
+                        </ContentPresenter>
+                        <Border.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform ScaleX="0.7"
+                                                ScaleY="0.7" />
+                                <!--                                <SkewTransform AngleX="0"-->
+                                <!--                                               AngleY="0" />-->
+                                <!--                                <RotateTransform Angle="0" />-->
+                                <!--                                <TranslateTransform X="0"-->
+                                <!--                                                    Y="0" />-->
+                            </TransformGroup>
+                        </Border.RenderTransform>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsSelected"
+                                 Value="true">
+                            <Setter Property="Foreground"
+                                    Value="{DynamicResource {x:Static SystemColors.HighlightTextBrushKey}}" />
+                        </Trigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsSelected"
+                                           Value="true" />
+                                <Condition Property="Selector.IsSelectionActive"
+                                           Value="false" />
+                            </MultiTrigger.Conditions>
+                            <Setter Property="Foreground"
+                                    Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" />
+                        </MultiTrigger>
+                        <Trigger Property="IsEnabled"
+                                 Value="false">
+                            <Setter Property="Foreground"
+                                    Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}" />
+                        </Trigger>
+                        <Trigger Property="Selector.IsSelected"
+                                 Value="True">
+                            <!--                            <Trigger.Setters>-->
+                            <!--                                <Setter TargetName="Bd"-->
+                            <!--                                        Property="RenderTransform">-->
+                            <!--                                    <Setter.Value>-->
+                            <!--                                        <TransformGroup>-->
+                            <!--                                            <ScaleTransform ScaleX="1"-->
+                            <!--                                                            ScaleY="1" />-->
+                            <!--                                        </TransformGroup>-->
+                            <!--                                    </Setter.Value>-->
+                            <!--                                </Setter>-->
+                            <!--                            </Trigger.Setters>-->
+                            <Trigger.EnterActions>
+                                <BeginStoryboard x:Name="isSelectedTrue_activated_BeginStoryboard"
+                                                 Storyboard="{StaticResource isSelectedTrue_activated}" />
+                            </Trigger.EnterActions>
+                            <Trigger.ExitActions>
+                                <BeginStoryboard x:Name="isSelectedTrue_deactivated_BeginStoryboard"
+                                                 Storyboard="{StaticResource isSelectedTrue_deactivated}" />
+                            </Trigger.ExitActions>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

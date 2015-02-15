@@ -1,0 +1,55 @@
+<Project DefaultTargets="Publish_All" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <!--<Import Project="Env.msbuild"/>-->
+  <Import Project="Variable.msbuild"/>
+  <!--<Import Project="UnitTest.msbuild"/>-->
+  <Import Project="Build_Debug.msbuild"/>
+  <Import Project="Build_Release.msbuild"/>
+  <Import Project="Pre-Build_Debug.msbuild"/>
+  <Import Project="Pre-Build_Release.msbuild"/>
+  <!--<Import Project="Zip.msbuild"/>-->
+  <!--<Import Project="InnoDeploy.msbuild"/>-->
+  
+  <Target Name="Publish_All">
+    
+	<Message Text="Publish_All..."></Message>
+    
+    <!--<Message Text="Zip Source"></Message>
+    <CallTarget Targets="ZipSrc"></CallTarget>-->
+	<!--<MSBuild Targets="ZipSrc" Projects="Zip.msbuild"></MSBuild>-->
+    
+    <Message Text="Pre-Build_Debug..."></Message>
+    <CallTarget Targets="Pre-Build_Debug"></CallTarget>
+    
+    <Message Text="Call Build_Debug..."></Message>
+    <CallTarget Targets="Build_Debug"></CallTarget>
+    
+    <!--<Message Text="Zip Debug"></Message>
+    <CallTarget Targets="ZipBinDebug"></CallTarget>-->
+	<!--<MSBuild Targets="ZipBin" Properties="Configuration=Debug" Projects="Zip.msbuild"></MSBuild>-->
+    
+    <Message Text="Pre-Build_Release..."></Message>
+    <CallTarget Targets="Pre-Build_Release"></CallTarget>
+    
+    <Message Text="Call Build_Release..."></Message>
+    <CallTarget Targets="Build_Release"></CallTarget>
+    
+    <!--<Message Text="Zip Release"></Message>
+    <CallTarget Targets="ZipBinRelease"></CallTarget>-->
+	<!--<MSBuild Targets="ZipBin" Properties="Configuration=Release" Projects="Zip.msbuild"></MSBuild>-->
+    
+    <!--<Message Text="Post-Build..."></Message>
+    <CallTarget Targets="Post-Build"></CallTarget>-->
+    
+    <!--<Message Text="InnoDeploy"></Message>
+    <CallTarget Targets="InnoDeploy"></CallTarget>-->
+    
+    
+    <Message Text="Zip All"></Message>
+    <!--<CallTarget Targets="ZipAll"></CallTarget>-->
+	<MSBuild Targets="ZipAll" Projects="Zip.msbuild"></MSBuild>
+    
+    
+    <Message Text="Publish_All finished"></Message>
+    
+  </Target>
+</Project>

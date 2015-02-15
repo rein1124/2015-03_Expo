@@ -1,0 +1,27 @@
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="Variable.msbuild"/>
+
+  <Target Name="Post-Build">
+
+    <Message Text="Copy include Files Start..."></Message>
+    <Copy SourceFiles="@(IncludeFiles)"
+          DestinationFolder="$(PublishDirectory)\include"
+          ContinueOnError="true"/>
+    <Message Text="Copy include Files Finished"></Message>
+    
+    <Message Text="Copy include Folders Start..."></Message>
+    <Message Text="&#x0D; &#x0A;RecursiveDir:&#x0D;&#x0A;@(DependentFolders->'%(RecursiveDir)%(Filename)%(Extension)','&#x0D; &#x0A;')&#x0D; &#x0A;"></Message>
+    <Copy DestinationFiles="@(IncludeFolders->'$(PublishDirectory)\include\%(RecursiveDir)%(Filename)%(Extension)')"
+          SourceFiles="@(IncludeFolders)"
+          ContinueOnError="true"/>
+    <Message Text="Copy include Folders Finished"></Message>
+
+
+    <Message Text="Copy lib Files Start..."></Message>
+    <Copy SourceFiles="@(LibFiles)"
+          DestinationFolder="$(PublishDirectory)\lib"
+          ContinueOnError="true"/>
+    <Message Text="Copy lib Files Finished"></Message>
+    
+  </Target>
+</Project>

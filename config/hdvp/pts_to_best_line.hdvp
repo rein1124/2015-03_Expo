@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hdevelop file_version="1.0" halcon_version="10.0" cs="1030398478">
+<procedure name="pts_to_best_line">
+<interface>
+<oo>
+<par name="Line"/>
+</oo>
+<ic>
+<par name="Rows"/>
+<par name="Cols"/>
+<par name="ActiveNum"/>
+</ic>
+<oc>
+<par name="Row1"/>
+<par name="Col1"/>
+<par name="Row2"/>
+<par name="Col2"/>
+</oc>
+</interface>
+<xb>y9HvtNPaRl22a2jOBN4XnVT7x7D2HsamlMKPCU3RQu3v9z5UAsgN8sAyw5LUrn8wXwbasdL6I0gwjGfIAb6DrmZpl5ztnO7aZVKxGe58Qg1WyK6bxdr2LQT1HEijt1AoClJKiQlMHKp+ow4oO3Zq5SuM8v4o80pAoeURAEXhtxGb8mqQqjP9kOME72jCLyx6GE1ENjqweDekydfA+qHalZfTh6IUcYptd8Vcm7cUeoX7Wing/T5XiWgcF09UEq+/HzXF+FzrL77RXenEJFt/YOaR/tt8ogwrIgKA6RD9XwU+Lwvlrc9lhoZU8naY8hJ3Y2Nc4km4EDxxbxa0kXPkz0lGA8ASQnxNKZR8d2lRbRCYqoj4Rdx/rDwEeyoFBP4k/GAtUA5H8byj3zavtxRzG547kQApGGR0bNQ8mVFMENA</xb>
+<docu id="pts_to_best_line">
+<parameters>
+<parameter id="ActiveNum">
+<description lang="zh_CN">最小有效点数</description>
+<sem_type>any</sem_type>
+<type_list>
+<item>integer</item>
+<item>real</item>
+</type_list>
+</parameter>
+<parameter id="Col1">
+<description lang="zh_CN">拟合的直线起点x值</description>
+<sem_type>real</sem_type>
+</parameter>
+<parameter id="Col2">
+<description lang="zh_CN">拟合的直线终点x值</description>
+<sem_type>real</sem_type>
+</parameter>
+<parameter id="Cols">
+<description lang="zh_CN">拟合直线的输入x数组</description>
+<sem_type>real</sem_type>
+</parameter>
+<parameter id="Line">
+<description lang="zh_CN">输出拟合直线的xld</description>
+<sem_type>xld</sem_type>
+</parameter>
+<parameter id="Row1">
+<description lang="zh_CN">拟合的直线起点y值</description>
+<sem_type>real</sem_type>
+</parameter>
+<parameter id="Row2">
+<description lang="zh_CN">拟合的直线终点y值</description>
+<sem_type>real</sem_type>
+</parameter>
+<parameter id="Rows">
+<description lang="zh_CN">拟合直线的输入y数组</description>
+<sem_type>real</sem_type>
+</parameter>
+</parameters>
+</docu>
+</procedure>
+</hdevelop>

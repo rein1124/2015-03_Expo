@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
+    targetNamespace="http://www.chinahdc.com/mv/idf/xsd" xmlns="http://www.chinahdc.com/mv/idf/xsd">
+    <xs:complexType name="Parameter">
+        <xs:attribute name="Name" type="xs:string"/>
+        <xs:attribute name="Description" type="xs:string"/>
+        <xs:attribute name="DataType" type="DataType"/>
+        <xs:attribute name="DefaultValue"/>
+        <xs:attribute name="Minimum"/>
+        <xs:attribute name="Maximum"/>
+    </xs:complexType>
+    <xs:complexType name="ParameterCollection">
+        <xs:sequence>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="Parameter" type="Parameter"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="Node">
+        <xs:sequence>
+            <xs:element name="Parameters" type="ParameterCollection"/>
+            <xs:element name="Nodes" type="NodeCollection"/>
+        </xs:sequence>
+        <xs:attribute name="Name" type="xs:string"/>
+    </xs:complexType>
+    <xs:complexType name="NodeCollection">
+        <xs:sequence>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="Node" type="Node"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:simpleType name="DataType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Boolean"/>
+            <xs:enumeration value="Byte"/>
+            <xs:enumeration value="Int16"/>
+            <xs:enumeration value="Int32"/>
+            <xs:enumeration value="Int64"/>
+            <xs:enumeration value="UInt16"/>
+            <xs:enumeration value="UInt32"/>
+            <xs:enumeration value="UInt64"/>
+            <xs:enumeration value="Single"/>
+            <xs:enumeration value="Double"/>
+            <xs:enumeration value="Decimal"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:element name="IDF">
+        <xs:annotation>
+            <xs:documentation>IDF: (Machine Vision) Inspector Description File</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="RootNode" type="Node"/>
+            </xs:sequence>
+            <xs:attribute name="Version" type="xs:string"/>
+            <xs:attribute name="ReleaseDateTime" type="xs:dateTime"/>
+            <xs:attribute name="Comment" type="xs:string"/>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

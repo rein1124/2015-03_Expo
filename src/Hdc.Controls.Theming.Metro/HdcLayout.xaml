@@ -1,0 +1,157 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:System="clr-namespace:System;assembly=mscorlib"
+                    xmlns:hdc="http://schemas.hdcrd.com/xaml">
+    <System:Double x:Key="{x:Static hdc:HdcLayout.ButtonSideLengthKey}">56</System:Double>
+    <System:Double x:Key="{x:Static hdc:HdcLayout.ButtonSideLengthM1Key}">56</System:Double>
+    <System:Double x:Key="{x:Static hdc:HdcLayout.ButtonSideLengthM2Key}">116</System:Double>
+    <System:Double x:Key="{x:Static hdc:HdcLayout.ButtonSideLengthM3Key}">176</System:Double>
+    <System:Double x:Key="{x:Static hdc:HdcLayout.ButtonSideLengthM4Key}">236</System:Double>
+
+    <System:Double x:Key="{x:Static hdc:HdcLayout.ButtonSideLengthWithBorderKey}">60</System:Double>
+    <System:Double x:Key="{x:Static hdc:HdcLayout.ButtonSideLengthM1WithBorderKey}">60</System:Double>
+    <System:Double x:Key="{x:Static hdc:HdcLayout.ButtonSideLengthM2WithBorderKey}">120</System:Double>
+    <System:Double x:Key="{x:Static hdc:HdcLayout.ButtonSideLengthM3WithBorderKey}">180</System:Double>
+    <System:Double x:Key="{x:Static hdc:HdcLayout.ButtonSideLengthM4WithBorderKey}">240</System:Double>
+
+    <System:Double x:Key="{x:Static hdc:HdcLayout.ButtonSideLengthSmallKey}">36</System:Double>
+    <System:Double x:Key="{x:Static hdc:HdcLayout.ButtonSideLengthSmallM1Key}">36</System:Double>
+    <System:Double x:Key="{x:Static hdc:HdcLayout.ButtonSideLengthSmallM2Key}">76</System:Double>
+    <System:Double x:Key="{x:Static hdc:HdcLayout.ButtonSideLengthSmallM3Key}">116</System:Double>
+    <System:Double x:Key="{x:Static hdc:HdcLayout.ButtonSideLengthSmallM4Key}">156</System:Double>
+    <System:Double x:Key="{x:Static hdc:HdcLayout.ButtonSideLengthSmallM5Key}">196</System:Double>
+    <System:Double x:Key="{x:Static hdc:HdcLayout.ButtonSideLengthSmallM6Key}">236</System:Double>
+
+    <System:Double x:Key="{x:Static hdc:HdcLayout.ButtonSideLengthSmallWithBorderKey}">40</System:Double>
+    <System:Double x:Key="{x:Static hdc:HdcLayout.ButtonSideLengthSmallM1WithBorderKey}">40</System:Double>
+    <System:Double x:Key="{x:Static hdc:HdcLayout.ButtonSideLengthSmallM2WithBorderKey}">80</System:Double>
+    <System:Double x:Key="{x:Static hdc:HdcLayout.ButtonSideLengthSmallM3WithBorderKey}">120</System:Double>
+    <System:Double x:Key="{x:Static hdc:HdcLayout.ButtonSideLengthSmallM4WithBorderKey}">160</System:Double>
+    <System:Double x:Key="{x:Static hdc:HdcLayout.ButtonSideLengthSmallM5WithBorderKey}">200</System:Double>
+    <System:Double x:Key="{x:Static hdc:HdcLayout.ButtonSideLengthSmallM6WithBorderKey}">240</System:Double>
+
+    <System:Double x:Key="{x:Static hdc:HdcLayout.ButtonSideLengthTinyKey}">26</System:Double>
+    <System:Double x:Key="{x:Static hdc:HdcLayout.ButtonSideLengthTinyM1Key}">26</System:Double>
+    <System:Double x:Key="{x:Static hdc:HdcLayout.ButtonSideLengthTinyM2Key}">56</System:Double>
+    <System:Double x:Key="{x:Static hdc:HdcLayout.ButtonSideLengthTinyM3Key}">86</System:Double>
+    <System:Double x:Key="{x:Static hdc:HdcLayout.ButtonSideLengthTinyM4Key}">116</System:Double>
+
+    <System:Double x:Key="{x:Static hdc:HdcLayout.ButtonSideLengthTinyWithBorderKey}">30</System:Double>
+    <System:Double x:Key="{x:Static hdc:HdcLayout.ButtonSideLengthTinyM1WithBorderKey}">30</System:Double>
+    <System:Double x:Key="{x:Static hdc:HdcLayout.ButtonSideLengthTinyM2WithBorderKey}">60</System:Double>
+    <System:Double x:Key="{x:Static hdc:HdcLayout.ButtonSideLengthTinyM3WithBorderKey}">90</System:Double>
+    <System:Double x:Key="{x:Static hdc:HdcLayout.ButtonSideLengthTinyM4WithBorderKey}">120</System:Double>
+
+    <System:Double x:Key="{x:Static hdc:HdcLayout.ButtonSideLengthLargeKey}">76</System:Double>
+    <System:Double x:Key="{x:Static hdc:HdcLayout.ButtonSideLengthLargeM1Key}">76</System:Double>
+    <System:Double x:Key="{x:Static hdc:HdcLayout.ButtonSideLengthLargeM2Key}">156</System:Double>
+    <System:Double x:Key="{x:Static hdc:HdcLayout.ButtonSideLengthLargeM3Key}">236</System:Double>
+    <System:Double x:Key="{x:Static hdc:HdcLayout.ButtonSideLengthLargeM4Key}">316</System:Double>
+
+    <System:Double x:Key="{x:Static hdc:HdcLayout.ButtonSideLengthLargeWithBorderKey}">80</System:Double>
+    <System:Double x:Key="{x:Static hdc:HdcLayout.ButtonSideLengthLargeM1WithBorderKey}">80</System:Double>
+    <System:Double x:Key="{x:Static hdc:HdcLayout.ButtonSideLengthLargeM2WithBorderKey}">160</System:Double>
+    <System:Double x:Key="{x:Static hdc:HdcLayout.ButtonSideLengthLargeM3WithBorderKey}">240</System:Double>
+    <System:Double x:Key="{x:Static hdc:HdcLayout.ButtonSideLengthLargeM4WithBorderKey}">320</System:Double>
+
+    <Thickness x:Key="{x:Static hdc:HdcLayout.MarginKey}">2</Thickness>
+    <Thickness x:Key="{x:Static hdc:HdcLayout.MarginLeftKey}">2,0,0,0</Thickness>
+    <Thickness x:Key="{x:Static hdc:HdcLayout.MarginTopKey}">0,2,0,0</Thickness>
+    <Thickness x:Key="{x:Static hdc:HdcLayout.MarginRightKey}">0,0,2,0</Thickness>
+    <Thickness x:Key="{x:Static hdc:HdcLayout.MarginBottomKey}">0,0,0,2</Thickness>
+    <Thickness x:Key="{x:Static hdc:HdcLayout.MarginVerticalKey}">0,2,0,2</Thickness>
+    <Thickness x:Key="{x:Static hdc:HdcLayout.MarginHorizontalKey}">2,0,2,0</Thickness>
+    <Thickness x:Key="{x:Static hdc:HdcLayout.MarginLeftTopKey}">2,2,0,0</Thickness>
+    <Thickness x:Key="{x:Static hdc:HdcLayout.MarginLeftBottomKey}">2,0,0,2</Thickness>
+    <Thickness x:Key="{x:Static hdc:HdcLayout.MarginRightTopKey}">0,2,2,0</Thickness>
+    <Thickness x:Key="{x:Static hdc:HdcLayout.MarginRightBottomKey}">0,0,2,2</Thickness>
+
+    <Thickness x:Key="{x:Static hdc:HdcLayout.MarginLargeKey}">8</Thickness>
+    <Thickness x:Key="{x:Static hdc:HdcLayout.MarginLargeLeftKey}">8,0,0,0</Thickness>
+    <Thickness x:Key="{x:Static hdc:HdcLayout.MarginLargeTopKey}">0,8,0,0</Thickness>
+    <Thickness x:Key="{x:Static hdc:HdcLayout.MarginLargeRightKey}">0,0,8,0</Thickness>
+    <Thickness x:Key="{x:Static hdc:HdcLayout.MarginLargeBottomKey}">0,0,0,8</Thickness>
+    <Thickness x:Key="{x:Static hdc:HdcLayout.MarginLargeVerticalKey}">0,8,0,8</Thickness>
+    <Thickness x:Key="{x:Static hdc:HdcLayout.MarginLargeHorizontalKey}">8,0,8,0</Thickness>
+    <Thickness x:Key="{x:Static hdc:HdcLayout.MarginLargeLeftTopKey}">8,8,0,0</Thickness>
+    <Thickness x:Key="{x:Static hdc:HdcLayout.MarginLargeLeftBottomKey}">8,0,0,8</Thickness>
+    <Thickness x:Key="{x:Static hdc:HdcLayout.MarginLargeRightTopKey}">0,8,8,0</Thickness>
+    <Thickness x:Key="{x:Static hdc:HdcLayout.MarginLargeRightBottomKey}">0,0,8,8</Thickness>
+
+
+    <Thickness x:Key="{x:Static hdc:HdcLayout.MarginExtraLargeKey}">16</Thickness>
+    <Thickness x:Key="{x:Static hdc:HdcLayout.MarginExtraLargeLeftKey}">16,0,0,0</Thickness>
+    <Thickness x:Key="{x:Static hdc:HdcLayout.MarginExtraLargeTopKey}">0,16,0,0</Thickness>
+    <Thickness x:Key="{x:Static hdc:HdcLayout.MarginExtraLargeRightKey}">0,0,16,0</Thickness>
+    <Thickness x:Key="{x:Static hdc:HdcLayout.MarginExtraLargeBottomKey}">0,0,0,16</Thickness>
+    <Thickness x:Key="{x:Static hdc:HdcLayout.MarginExtraLargeVerticalKey}">0,16,0,16</Thickness>
+    <Thickness x:Key="{x:Static hdc:HdcLayout.MarginExtraLargeHorizontalKey}">16,0,16,0</Thickness>
+    <Thickness x:Key="{x:Static hdc:HdcLayout.MarginExtraLargeLeftTopKey}">16,16,0,0</Thickness>
+    <Thickness x:Key="{x:Static hdc:HdcLayout.MarginExtraLargeLeftBottomKey}">16,0,0,16</Thickness>
+    <Thickness x:Key="{x:Static hdc:HdcLayout.MarginExtraLargeRightTopKey}">0,16,16,0</Thickness>
+    <Thickness x:Key="{x:Static hdc:HdcLayout.MarginExtraLargeRightBottomKey}">0,0,16,16</Thickness>
+
+    <Thickness x:Key="{x:Static hdc:HdcLayout.MarginExtraExtraLargeKey}">48</Thickness>
+    <Thickness x:Key="{x:Static hdc:HdcLayout.MarginExtraExtraLargeLeftKey}">48,0,0,0</Thickness>
+    <Thickness x:Key="{x:Static hdc:HdcLayout.MarginExtraExtraLargeTopKey}">0,48,0,0</Thickness>
+    <Thickness x:Key="{x:Static hdc:HdcLayout.MarginExtraExtraLargeRightKey}">0,0,48,0</Thickness>
+    <Thickness x:Key="{x:Static hdc:HdcLayout.MarginExtraExtraLargeBottomKey}">0,0,0,48</Thickness>
+    <Thickness x:Key="{x:Static hdc:HdcLayout.MarginExtraExtraLargeVerticalKey}">0,48,0,48</Thickness>
+    <Thickness x:Key="{x:Static hdc:HdcLayout.MarginExtraExtraLargeHorizontalKey}">48,0,48,0</Thickness>
+    <Thickness x:Key="{x:Static hdc:HdcLayout.MarginExtraExtraLargeLeftTopKey}">48,48,0,0</Thickness>
+    <Thickness x:Key="{x:Static hdc:HdcLayout.MarginExtraExtraLargeLeftBottomKey}">48,0,0,48</Thickness>
+    <Thickness x:Key="{x:Static hdc:HdcLayout.MarginExtraExtraLargeRightTopKey}">0,48,48,0</Thickness>
+    <Thickness x:Key="{x:Static hdc:HdcLayout.MarginExtraExtraLargeRightBottomKey}">0,0,48,48</Thickness>
+
+    <Thickness x:Key="{x:Static hdc:HdcLayout.PaddingKey}">2</Thickness>
+    <Thickness x:Key="{x:Static hdc:HdcLayout.PaddingLeftKey}">2,0,0,0</Thickness>
+    <Thickness x:Key="{x:Static hdc:HdcLayout.PaddingTopKey}">0,2,0,0</Thickness>
+    <Thickness x:Key="{x:Static hdc:HdcLayout.PaddingRightKey}">0,0,2,0</Thickness>
+    <Thickness x:Key="{x:Static hdc:HdcLayout.PaddingBottomKey}">0,0,0,2</Thickness>
+    <Thickness x:Key="{x:Static hdc:HdcLayout.PaddingVerticalKey}">0,2,0,2</Thickness>
+    <Thickness x:Key="{x:Static hdc:HdcLayout.PaddingHorizontalKey}">2,0,2,0</Thickness>
+    <Thickness x:Key="{x:Static hdc:HdcLayout.PaddingLeftTopKey}">2,2,0,0</Thickness>
+    <Thickness x:Key="{x:Static hdc:HdcLayout.PaddingLeftBottomKey}">2,0,0,2</Thickness>
+    <Thickness x:Key="{x:Static hdc:HdcLayout.PaddingRightTopKey}">0,2,2,0</Thickness>
+    <Thickness x:Key="{x:Static hdc:HdcLayout.PaddingRightBottomKey}">0,0,2,2</Thickness>
+
+    <Thickness x:Key="{x:Static hdc:HdcLayout.PaddingLargeKey}">8</Thickness>
+    <Thickness x:Key="{x:Static hdc:HdcLayout.PaddingLargeLeftKey}">8,0,0,0</Thickness>
+    <Thickness x:Key="{x:Static hdc:HdcLayout.PaddingLargeTopKey}">0,8,0,0</Thickness>
+    <Thickness x:Key="{x:Static hdc:HdcLayout.PaddingLargeRightKey}">0,0,8,0</Thickness>
+    <Thickness x:Key="{x:Static hdc:HdcLayout.PaddingLargeBottomKey}">0,0,0,8</Thickness>
+    <Thickness x:Key="{x:Static hdc:HdcLayout.PaddingLargeVerticalKey}">0,8,0,8</Thickness>
+    <Thickness x:Key="{x:Static hdc:HdcLayout.PaddingLargeHorizontalKey}">8,0,8,0</Thickness>
+    <Thickness x:Key="{x:Static hdc:HdcLayout.PaddingLargeLeftTopKey}">8,8,0,0</Thickness>
+    <Thickness x:Key="{x:Static hdc:HdcLayout.PaddingLargeLeftBottomKey}">8,0,0,8</Thickness>
+    <Thickness x:Key="{x:Static hdc:HdcLayout.PaddingLargeRightTopKey}">0,8,8,0</Thickness>
+    <Thickness x:Key="{x:Static hdc:HdcLayout.PaddingLargeRightBottomKey}">0,0,8,8</Thickness>
+
+
+    <Thickness x:Key="{x:Static hdc:HdcLayout.PaddingExtraLargeKey}">16</Thickness>
+    <Thickness x:Key="{x:Static hdc:HdcLayout.PaddingExtraLargeLeftKey}">16,0,0,0</Thickness>
+    <Thickness x:Key="{x:Static hdc:HdcLayout.PaddingExtraLargeTopKey}">0,16,0,0</Thickness>
+    <Thickness x:Key="{x:Static hdc:HdcLayout.PaddingExtraLargeRightKey}">0,0,16,0</Thickness>
+    <Thickness x:Key="{x:Static hdc:HdcLayout.PaddingExtraLargeBottomKey}">0,0,0,16</Thickness>
+    <Thickness x:Key="{x:Static hdc:HdcLayout.PaddingExtraLargeVerticalKey}">0,16,0,16</Thickness>
+    <Thickness x:Key="{x:Static hdc:HdcLayout.PaddingExtraLargeHorizontalKey}">16,0,16,0</Thickness>
+    <Thickness x:Key="{x:Static hdc:HdcLayout.PaddingExtraLargeLeftTopKey}">16,16,0,0</Thickness>
+    <Thickness x:Key="{x:Static hdc:HdcLayout.PaddingExtraLargeLeftBottomKey}">16,0,0,16</Thickness>
+    <Thickness x:Key="{x:Static hdc:HdcLayout.PaddingExtraLargeRightTopKey}">0,16,16,0</Thickness>
+    <Thickness x:Key="{x:Static hdc:HdcLayout.PaddingExtraLargeRightBottomKey}">0,0,16,16</Thickness>
+
+    <Thickness x:Key="{x:Static hdc:HdcLayout.PaddingExtraExtraLargeKey}">48</Thickness>
+    <Thickness x:Key="{x:Static hdc:HdcLayout.PaddingExtraExtraLargeLeftKey}">48,0,0,0</Thickness>
+    <Thickness x:Key="{x:Static hdc:HdcLayout.PaddingExtraExtraLargeTopKey}">0,48,0,0</Thickness>
+    <Thickness x:Key="{x:Static hdc:HdcLayout.PaddingExtraExtraLargeRightKey}">0,0,48,0</Thickness>
+    <Thickness x:Key="{x:Static hdc:HdcLayout.PaddingExtraExtraLargeBottomKey}">0,0,0,48</Thickness>
+    <Thickness x:Key="{x:Static hdc:HdcLayout.PaddingExtraExtraLargeVerticalKey}">0,48,0,48</Thickness>
+    <Thickness x:Key="{x:Static hdc:HdcLayout.PaddingExtraExtraLargeHorizontalKey}">48,0,48,0</Thickness>
+    <Thickness x:Key="{x:Static hdc:HdcLayout.PaddingExtraExtraLargeLeftTopKey}">48,48,0,0</Thickness>
+    <Thickness x:Key="{x:Static hdc:HdcLayout.PaddingExtraExtraLargeLeftBottomKey}">48,0,0,48</Thickness>
+    <Thickness x:Key="{x:Static hdc:HdcLayout.PaddingExtraExtraLargeRightTopKey}">0,48,48,0</Thickness>
+    <Thickness x:Key="{x:Static hdc:HdcLayout.PaddingExtraExtraLargeRightBottomKey}">0,0,48,48</Thickness>
+    
+    <!--BorderThickness-->
+    <Thickness x:Key="{x:Static hdc:HdcLayout.BorderThicknessKey}">2</Thickness>
+</ResourceDictionary>

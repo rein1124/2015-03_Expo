@@ -1,0 +1,95 @@
+<Project DefaultTargets="ZipAll" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <!--<Import Project="Variable.msbuild"/>-->  
+  <Import Project="Env.msbuild"/>
+  <PropertyGroup>
+    <PublishDirectory>_publish</PublishDirectory>
+    <!--<GetNowDateTime>$([System.DateTime]::Now.ToString("yyyymmddThhmmss"))</GetNowDateTime> 
+    <NowDateTime>$(GetNowDateTime)</NowDateTime>-->  
+    <SrcExcludeFiles>$(PublishDirectory)\**\*</SrcExcludeFiles>
+    <SrcExcludeFiles>**\bin\**\*</SrcExcludeFiles>
+    <SrcExcludeFiles>**\obj\**\*</SrcExcludeFiles>
+    <SrcExcludeFiles>**\.git\**\*</SrcExcludeFiles>
+    <SrcExcludeFiles>**\.svn\**\*</SrcExcludeFiles>
+    <ProductVersion>$(BuildNumber)</ProductVersion>
+  </PropertyGroup>
+  
+  <UsingTask TaskName="MSBuild.Community.Tasks.Zip" AssemblyFile="sln\.build\MSBuild.Community.Tasks.dll" />
+  <ItemGroup>
+    <!--    <BinDebugFiles Include="$(BinDebugDirectory)\**\*.*" />-->
+    <!--    <BinReleaseFiles Include="$(BinReleaseDirectory)\**\*.*"-->
+    <!--		            Exclude="$(BinReleaseDirectory)\**\*.pdb"/>-->
+    <BinFiles Condition="$(Configuration)==Debug"
+              Include="bin\$(Configuration)\**\*" />
+    <BinFiles Condition="$(Configuration)==Release"
+              Include="bin\$(Configuration)\**\*"
+              Exclude="bin\$(Configuration)\**\*.pdb"/>
+    <SrcFiles Include="**\*"
+              Exclude="$(PublishDirectory)\**\*;**\bin\**\*;**\obj\**\*;**\.git\**\*;**\.svn\**\*;**\.gitattributes;**\.gitsvnextmodules;"/>
+    <!--<SrcFiles Include="**\*.*"
+              Exclude="@(SrcExcludeFiles)"/>-->
+    <!--<SrcFiles Include="**\*.*"/>
+    <SrcFiles Exclude="$(PublishDirectory)\**\*.*"/>
+    <SrcFiles Exclude="**\bin\**\*.*"/>
+    <SrcFiles Exclude="**\obj\**\*.*"/>
+    <SrcFiles Exclude="**\.git\**\*.*"/>
+    <SrcFiles Exclude="**\.svn\**\*.*"/>-->
+  </ItemGroup>
+  <Target Name="ZipBin_Inner">
+     <Message Text="ZipBin_Inner"></Message>
+     <Message Text="NowDateTime=$(NowDateTime)"></Message>
+     <Message Text="Configuration=$(Configuration)"></Message>
+     <MSBuild.Community.Tasks.Zip ZipFileName="$(PublishDirectory)\$(VendorNameShort)_$(ProductNameShort)_$(ProductVersion)_bin_$(Configuration).zip" Files="@(BinFiles)" WorkingDirectory="bin\$(Configuration)\"/> 
+  </Target>
+  <Target Name="ZipSrc_Inner">
+     <MSBuild.Community.Tasks.Zip ZipFileName="$(PublishDirectory)\$(VendorNameShort)_$(ProductNameShort)_$(ProductVersion)_src.zip" Files="@(SrcFiles)" /> 
+  </Target>
+  <Target Name="ZipBin">
+	<!--<MSBuild Targets="ZipBin" Projects="Zip.bin.msbuild"/>-->
+    <Message Text="NowDateTime=$(NowDateTime)"></Message>
+    <Message Text="Configuration=$(Configuration)"></Message>
+	<CallTarget Targets="ZipBin_Inner"></CallTarget>
+  </Target>
+  <Target Name="ZipBinDebug">
+    <!--<PropertyGroup>
+        <Configuration>Debug</Configuration>
+    </PropertyGroup>-->
+    <!--<CreateProperty Value="Debug">
+      <Output TaskParameter="Value" PropertyName="Configuration" />
+    </CreateProperty>-->
+    <Message Text="ZipBinDebug"></Message>
+    <Message Text="NowDateTime=$(NowDateTime)"></Message>
+    <Message Text="Configuration=$(Configuration)"></Message>
+	<!--<CallTarget Targets="ZipBin_Inner"></CallTarget>-->
+	<MSBuild Targets="ZipBin_Inner" Properties="NowDateTime=$(NowDateTime);Configuration=Debug;" Projects="Zip.msbuild"/>
+  </Target>
+  <Target Name="ZipBinRelease">
+    <!--<PropertyGroup>
+        <Configuration>Release</Configuration>
+    </PropertyGroup>-->
+    <!--<CreateProperty Value="Release">
+      <Output TaskParameter="Value" PropertyName="Configuration" />
+    </CreateProperty>-->
+    <Message Text="ZipBinRelease"></Message>
+    <Message Text="NowDateTime=$(NowDateTime)"></Message>
+    <Message Text="Configuration=$(Configuration)"></Message>
+	<!--<CallTarget Targets="ZipBin_Inner"></CallTarget>-->
+	<MSBuild Targets="ZipBin_Inner" Properties="NowDateTime=$(NowDateTime);Configuration=Debug;" Projects="Zip.msbuild"/>
+  </Target>
+  <Target Name="ZipSrc">
+	<!--<MSBuild Targets="ZipSrc" Projects="Zip.src.msbuild"/>-->
+	<CallTarget Targets="ZipSrc_Inner"></CallTarget>
+  </Target>
+  <Target Name="ZipAll">
+    <Message Text="ZipAll"></Message>
+    <Message Text="NowDateTime=$(NowDateTime)"></Message>
+    <Message Text="Configuration=$(Configuration)"></Message>
+	<MSBuild Targets="ZipBin_Inner" Properties="NowDateTime=$(NowDateTime);Configuration=Debug;" Projects="Zip.msbuild"/>
+	<MSBuild Targets="ZipBin_Inner" Properties="NowDateTime=$(NowDateTime);Configuration=Release;" Projects="Zip.msbuild"/>
+	<MSBuild Targets="ZipSrc" Properties="NowDateTime=$(NowDateTime);" Projects="Zip.msbuild"/>
+    <!--<CallTarget Targets="ZipBinRelease"></CallTarget>
+    <Message Text="ZipBinDebug"></Message>
+    <CallTarget Targets="ZipBinDebug"></CallTarget>
+    <Message Text="ZipSrc"></Message>
+    <CallTarget Targets="ZipSrc"></CallTarget>-->
+  </Target>
+</Project>
