@@ -75,7 +75,7 @@ namespace ODM.Presentation.ViewModels.Inspection
             SurfaceMonitors = new List<SurfaceMonitorViewModel>();
 
             int surfaceCount = 0;
-            surfaceCount = 2;
+            surfaceCount = 1;
 
             for (int i = 0; i < surfaceCount; i++)
             {

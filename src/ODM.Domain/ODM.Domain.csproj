@@ -191,6 +191,10 @@
       <Project>{D72F14A9-4848-4405-AA6E-99EBF8213609}</Project>
       <Name>Hdc.Mercury</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Hdc.Mv.ImageAcquisition.JAI\Hdc.Mv.ImageAcquisition.JAI.csproj">
+      <Project>{E5FE173D-EE1B-46D5-9045-C7781EBDB0E0}</Project>
+      <Name>Hdc.Mv.ImageAcquisition.JAI</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Hdc.Mv\Hdc.Mv.csproj">
       <Project>{1345186B-AF53-4DB9-A1D9-64EC7F14EE2F}</Project>
       <Name>Hdc.Mv</Name>
@@ -206,10 +210,6 @@
     <ProjectReference Include="..\Hdc.Toolkit\Hdc.Toolkit.csproj">
       <Project>{2AEABE20-5E8F-4310-A228-66BD3D434683}</Project>
       <Name>Hdc.Toolkit</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\MvInspection.Matrox.NativeApi.Interop\MvInspection.Matrox.NativeApi.Interop.csproj">
-      <Project>{1FED39FE-3A83-46B3-91A0-4A733D902847}</Project>
-      <Name>MvInspection.Matrox.NativeApi.Interop</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

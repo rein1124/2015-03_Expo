@@ -418,30 +418,30 @@
                     <!--                        <RowDefinition Height="*" />-->
                     <!--                        <RowDefinition Height="*" />-->
                     <!--                    </Grid.RowDefinitions>-->
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*" />
-                        <ColumnDefinition Width="*" />
-                    </Grid.ColumnDefinitions>
+<!--                    <Grid.ColumnDefinitions>-->
+<!--                        <ColumnDefinition Width="*" />-->
+<!--                        <ColumnDefinition Width="*" />-->
+<!--                    </Grid.ColumnDefinitions>-->
                     <ContentPresenter Content="{Binding SurfaceMonitors[0]}"
                                       Grid.Column="0"
                                       Grid.Row="0"
                                       ContentTemplate="{StaticResource SurfaceMonitorDataTemplate}"
                                       Style="{StaticResource TopmostContentPresenterStyle}"></ContentPresenter>
-                    <ContentPresenter Content="{Binding SurfaceMonitors[1]}"
-                                      Grid.Column="1"
-                                      Grid.Row="0"
-                                      ContentTemplate="{StaticResource SurfaceMonitorDataTemplate}"
-                                      Style="{StaticResource TopmostContentPresenterStyle}"></ContentPresenter>
-                    <ContentPresenter Content="{Binding SurfaceMonitors[2]}"
-                                      Grid.Column="0"
-                                      Grid.Row="1"
-                                      ContentTemplate="{StaticResource SurfaceMonitorDataTemplate}"
-                                      Style="{StaticResource TopmostContentPresenterStyle}"></ContentPresenter>
-                    <ContentPresenter Content="{Binding SurfaceMonitors[3]}"
-                                      Grid.Column="1"
-                                      Grid.Row="1"
-                                      ContentTemplate="{StaticResource SurfaceMonitorDataTemplate}"
-                                      Style="{StaticResource TopmostContentPresenterStyle}"></ContentPresenter>
+<!--                    <ContentPresenter Content="{Binding SurfaceMonitors[1]}"-->
+<!--                                      Grid.Column="1"-->
+<!--                                      Grid.Row="0"-->
+<!--                                      ContentTemplate="{StaticResource SurfaceMonitorDataTemplate}"-->
+<!--                                      Style="{StaticResource TopmostContentPresenterStyle}"></ContentPresenter>-->
+<!--                    <ContentPresenter Content="{Binding SurfaceMonitors[2]}"-->
+<!--                                      Grid.Column="0"-->
+<!--                                      Grid.Row="1"-->
+<!--                                      ContentTemplate="{StaticResource SurfaceMonitorDataTemplate}"-->
+<!--                                      Style="{StaticResource TopmostContentPresenterStyle}"></ContentPresenter>-->
+<!--                    <ContentPresenter Content="{Binding SurfaceMonitors[3]}"-->
+<!--                                      Grid.Column="1"-->
+<!--                                      Grid.Row="1"-->
+<!--                                      ContentTemplate="{StaticResource SurfaceMonitorDataTemplate}"-->
+<!--                                      Style="{StaticResource TopmostContentPresenterStyle}"></ContentPresenter>-->
                 </Grid>
             </Grid>
         </DockPanel>

@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{342FA3E2-FAFD-4537-B39F-A5E2A475AA05}</ProjectGuid>
+    <ProjectGuid>{E5FE173D-EE1B-46D5-9045-C7781EBDB0E0}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Hdc.Mv.Inspection.Mil</RootNamespace>
-    <AssemblyName>Hdc.Mv.Inspection.Mil</AssemblyName>
+    <RootNamespace>Hdc.Mv.ImageAcquisition</RootNamespace>
+    <AssemblyName>Hdc.Mv.ImageAcquisition.JAI</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -30,6 +30,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Jai_FactoryDotNET">
+      <HintPath>..\..\lib\JAI\Jai_FactoryDotNET.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -40,12 +44,18 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Ex.cs" />
+    <Compile Include="JaiCamera.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Hdc.Mv\Hdc.Mv.csproj">
       <Project>{1345186B-AF53-4DB9-A1D9-64EC7F14EE2F}</Project>
       <Name>Hdc.Mv</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Hdc.Toolkit\Hdc.Toolkit.csproj">
+      <Project>{2AEABE20-5E8F-4310-A228-66BD3D434683}</Project>
+      <Name>Hdc.Toolkit</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

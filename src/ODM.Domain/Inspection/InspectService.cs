@@ -18,8 +18,6 @@ using Hdc.Mv.Inspection;
 using Hdc.Patterns;
 using Hdc.Reactive;
 using Microsoft.Practices.Unity;
-using MvInspection;
-using MvInspection.ImageAcquisition;
 using ODM.Domain.Configs;
 
 namespace ODM.Domain.Inspection
@@ -106,7 +104,7 @@ namespace ODM.Domain.Inspection
             }
             else
             {
-                _camera = new E2VMatroxCamera();
+                _camera = new JaiCamera();
             }
 
             if (!MachineConfig.MV_SimulationInspectorEnabled)

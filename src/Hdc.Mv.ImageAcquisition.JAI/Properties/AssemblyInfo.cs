@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Hdc.Mv.Inspection.Mil.NativeApi.Sim.Interop")]
+[assembly: AssemblyTitle("Hdc.Mv.ImageAcquisition.JAI")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Hdc.Mv.Inspection.Mil.NativeApi.Sim.Interop")]
+[assembly: AssemblyProduct("Hdc.Mv.ImageAcquisition.JAI")]
 [assembly: AssemblyCopyright("Copyright ©  2014")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("75980ba6-8b8f-4f2b-82a0-0c1b9d775beb")]
+[assembly: Guid("060c23ee-a464-4d96-902f-c84e42c85fe1")]
 
 // Version information for an assembly consists of the following four values:
 //
